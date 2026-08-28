@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#040711">
+  
+  <!-- Primary SEO Metadata -->
+  <title>TENSORA 2026 | National Level AI Innovation Hackathon | KLN College of Engineering</title>
+  <meta name="title" content="TENSORA 2026 | National Level AI Innovation Hackathon">
+  <meta name="description" content="TENSORA 2026 is a premier national-level AI innovation hackathon hosted by the Department of AI & Data Science, KLN College of Engineering. 24-hour online sprint + offline grand finale from 21–23 September 2026.">
+  <meta name="keywords" content="TENSORA 2026, AI Hackathon, Hackathon India, KLNCE, Machine Learning Hackathon, Artificial Intelligence, Turing Club, Student Hackathon">
+  <meta name="author" content="The Turing Club & Dept of AI & DS, KLNCE">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tensora2026.klnce.edu/">
+  <meta property="og:title" content="TENSORA 2026 | National Level AI Innovation Hackathon">
+  <meta property="og:description" content="Build Intelligence. Solve Reality. 24-Hour Online Build Sprint + Offline Grand Finale on 21–23 September 2026.">
+
+  <!-- Google Fonts & Font Awesome Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       1. FREE & SPACIOUS FLOATING NAVIGATION BAR
+       ========================================================================= -->
+  <header class="main-header">
+    <div class="nav-container">
+      <a href="#home" class="brand-logo" aria-label="TENSORA 2K26 Homepage">
+        <div class="brand-logo-icon">
+          <i class="fa-solid fa-atom"></i>
+        </div>
+        <span>TENSORA</span>
+        <span class="brand-year">2K26</span>
+      </a>
+
+      <!-- Uncluttered, Free Primary Menu -->
+      <nav>
+        <ul class="nav-menu" id="primaryNavMenu">
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#format" class="nav-link">How It Works</a></li>
+          <li><a href="#tracks" class="nav-link">Tracks</a></li>
+          <li><a href="#schedule" class="nav-link">Schedule</a></li>
+          <li><a href="#prizes" class="nav-link">Prizes</a></li>
+          <li><a href="#rules" class="nav-link">Rules</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <button class="btn btn-secondary btn-sm" data-open-submission aria-label="Open Submission Portal">
+          <i class="fa-solid fa-code-commit"></i> Submit Project
+        </button>
+        <button class="btn btn-primary btn-sm" data-open-register aria-label="Register Your Team">
+          <i class="fa-solid fa-bolt"></i> Register Now
+        </button>
+        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+  <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
+
+  <!-- =========================================================================
+       2. 3D HERO SECTION & DYNAMIC VIBRANT COUNTDOWN
+       ========================================================================= -->
+  <section class="hero-section" id="home">
+    <div class="hero-3d-sphere"></div>
+    <div class="container hero-content">
+      
+      <!-- Event Master Status Badge -->
+      <div class="hero-badge-wrap">
+        <div class="hero-event-pill">
+          <span class="pulse-dot"></span>
+          <span>21–23 SEPTEMBER 2026 | HYBRID | KLN COLLEGE OF ENGINEERING</span>
+        </div>
+      </div>
+
+      <!-- Massive TENSORA 2K26 Hero Display -->
+      <div class="hero-brand-block">
+        <h1 class="hero-giant-title">
+          <span class="brand-word">TENSORA</span>
+          <span class="brand-year-tag">2K26</span>
+        </h1>
+        <div class="hero-tagline-strip">
+          <span class="tagline-dot"></span>
+          <span class="tagline-text">BUILD INTELLIGENCE. SOLVE REALITY.</span>
+          <span class="tagline-dot"></span>
+        </div>
+      </div>
+
+      <!-- Subheadline -->
+      <p class="hero-subtitle">
+        TENSORA 2026 is a national-level AI innovation hackathon where student teams transform real-world challenges into working AI-powered solutions.
+      </p>
+
+      <!-- Dual Call to Action Buttons -->
+      <div class="hero-ctas">
+        <button class="btn btn-primary btn-lg" data-open-register>
+          <i class="fa-solid fa-user-astronaut"></i> Register Your Team
+        </button>
+        <a href="#tracks" class="btn btn-secondary btn-lg">
+          <i class="fa-solid fa-shapes"></i> Explore Innovation Tracks
+        </a>
+      </div>
+
+      <!-- Live 3D Countdown Hologram Card -->
+      <div class="countdown-container" id="countdownCard">
+        <div class="countdown-header">
+          <span class="countdown-phase-badge" id="countdownPhaseBadge">PHASE 1: CHALLENGE REVEAL</span>
+          <div class="live-ist-clock">
+            <i class="fa-regular fa-clock"></i>
+            <span id="liveIstClock">--:--:-- IST</span>
+          </div>
+        </div>
+
+        <h3 class="countdown-title" id="countdownPhaseTitle">Problem Statements Drop In</h3>
+        <p class="countdown-target" id="countdownPhaseTarget">Target: 21 September 2026 — 12:00 PM IST</p>
+
+        <div class="countdown-digits-grid">
+          <div class="digit-box">
+            <span class="digit-value" id="cdDays">00</span>
+            <span class="digit-label">Days</span>
+          </div>
+          <div class="digit-box">
+            <span class="digit-value" id="cdHours">00</span>
+            <span class="digit-label">Hours</span>
+          </div>
+          <div class="digit-box">
+            <span class="digit-value" id="cdMinutes">00</span>
+            <span class="digit-label">Minutes</span>
+          </div>
+          <div class="digit-box">
+            <span class="digit-value" id="cdSeconds">00</span>
+            <span class="digit-label">Seconds</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Glance Statistics -->
+      <div class="glance-stats-grid">
+        <div class="glance-card">
+          <i class="fa-regular fa-calendar-check glance-icon"></i>
+          <div class="glance-value">21–23 Sept</div>
+          <div class="glance-label">Master Event Dates</div>
+        </div>
+        <div class="glance-card">
+          <i class="fa-solid fa-hourglass-half glance-icon"></i>
+          <div class="glance-value">24 Hours</div>
+          <div class="glance-label">Online Build Sprint</div>
+        </div>
+        <div class="glance-card">
+          <i class="fa-solid fa-users glance-icon"></i>
+          <div class="glance-value">2–4 Members</div>
+          <div class="glance-label">Team Capacity</div>
+        </div>
+        <div class="glance-card">
+          <i class="fa-solid fa-brain glance-icon"></i>
+          <div class="glance-value">Mandatory AI</div>
+          <div class="glance-label">Core Evaluation Pillar</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. ABOUT & 4 CORE PILLARS
+       ========================================================================= -->
+  <section id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-compass"></i> Why TENSORA?</span>
+        <h2 class="section-title">More Than a Conventional Hackathon</h2>
+        <p class="section-subtitle">
+          TENSORA 2026 brings together student innovators, developers, designers, and AI researchers to solve high-stakes challenges with working prototypes.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3 class="pillar-title">AI Is Not Optional</h3>
+          <p class="pillar-desc">
+            Every solution must demonstrate meaningful AI/ML implementation (deep learning, computer vision, NLP, or LLM agents). Decorative or static algorithms receive zero AI score.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <i class="fa-solid fa-earth-americas"></i>
+          </div>
+          <h3 class="pillar-title">Problems With Purpose</h3>
+          <p class="pillar-desc">
+            Challenges curated across Transport, Healthcare, Agriculture, Education, and Sustainable Energy rather than abstract synthetic coding puzzles.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h3 class="pillar-title">Build Online → Defend Offline</h3>
+          <p class="pillar-desc">
+            An intensive 24-hour remote development sprint followed by an elite offline grand finale where shortlisted teams present live prototypes before industry leaders.
+          </p>
+        </div>
+
+        <div class="pillar-card">
+          <div class="pillar-icon-box">
+            <i class="fa-solid fa-trophy"></i>
+          </div>
+          <h3 class="pillar-title">National Stage Exposure</h3>
+          <p class="pillar-desc">
+            Compete alongside top student engineering teams across India, gain direct industry mentorship, and earn recognized cash prizes, trophies, and certificates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. HOW IT WORKS / 5-PHASE PIPELINE
+       ========================================================================= -->
+  <section id="format">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-route"></i> Event Architecture</span>
+        <h2 class="section-title">The TENSORA Participant Journey</h2>
+        <p class="section-subtitle">
+          From problem release to live stage defense, follow our transparent 5-phase competition pipeline.
+        </p>
+      </div>
+
+      <div class="pipeline-track">
+        <div class="pipeline-step-card">
+          <span class="step-num-badge">PHASE 01</span>
+          <h3 class="step-title">Discover</h3>
+          <span class="step-time">21 Sept 2026 | 12:00 PM IST</span>
+          <p class="step-desc">
+            The official problem statements and dataset guidelines will be disclosed online. Teams analyze scopes and select their problem statement.
+          </p>
+        </div>
+
+        <div class="pipeline-step-card">
+          <span class="step-num-badge">PHASE 02</span>
+          <h3 class="step-title">Build Sprint</h3>
+          <span class="step-time">21 Sept (6 PM) – 22 Sept (6 PM)</span>
+          <p class="step-desc">
+            The 24-hour remote development sprint begins. Teams build, train models, code frontend/backend, and test their prototype.
+          </p>
+        </div>
+
+        <div class="pipeline-step-card">
+          <span class="step-num-badge">PHASE 03</span>
+          <h3 class="step-title">Submit</h3>
+          <span class="step-time">22 Sept 2026 | 6:00 PM IST</span>
+          <p class="step-desc">
+            Submission closes. Teams upload their GitHub repository, 3-minute video demo, slide deck, and technical architecture report.
+          </p>
+        </div>
+
+        <div class="pipeline-step-card">
+          <span class="step-num-badge">PHASE 04</span>
+          <h3 class="step-title">Grand Finale</h3>
+          <span class="step-time">23 Sept 2026 | 9:00 AM IST</span>
+          <p class="step-desc">
+            Shortlisted teams assemble at KLN College of Engineering for a 15-minute pitch: 7m presentation, 5m live demo, and 3m jury Q&A.
+          </p>
+        </div>
+
+        <div class="pipeline-step-card">
+          <span class="step-num-badge">PHASE 05</span>
+          <h3 class="step-title">Awards</h3>
+          <span class="step-time">23 Sept 2026 | 5:30 PM IST</span>
+          <p class="step-desc">
+            Winners, runners-up, and 7 special track awards are crowned during the valedictory ceremony at KLNCE auditorium.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. PROBLEM STATEMENTS DISCLOSURE TEASER & 5 INNOVATION TRACKS
+       ========================================================================= -->
+  <section id="tracks">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-lock-open"></i> Innovation Domains</span>
+        <h2 class="section-title">5 Strategic AI Innovation Tracks</h2>
+        <p class="section-subtitle">
+          Specific problem statements will be revealed to registered participants on 21 September 2026 at 12:00 PM IST. Explore the core tracks below.
+        </p>
+      </div>
+
+      <!-- 3D Locked Vault Teaser Box -->
+      <div class="vault-hero-card">
+        <div class="vault-lock-icon">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3 class="vault-title">Official Problem Statements Locked</h3>
+        <p class="vault-desc">
+          To maintain equal competitive fairness, problem statements will be unlocked on <strong>21 September 2026 at 12:00 PM IST</strong>. Assemble your team, choose your preferred domain, and prepare your development stack.
+        </p>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+          <button class="btn btn-primary" onclick="notifyOnRelease()">
+            <i class="fa-regular fa-bell"></i> Get Alert When Challenges Unlock
+          </button>
+          <button class="btn btn-secondary" data-open-register>
+            <i class="fa-solid fa-user-plus"></i> Pre-Register Your Team
+          </button>
+        </div>
+      </div>
+
+      <!-- 5 Vibrant 3D Track Cards -->
+      <div class="themes-grid-5">
+        
+        <!-- Track 1 -->
+        <div class="theme-card-3d theme-transport">
+          <div class="theme-icon-orb">
+            <i class="fa-solid fa-train-subway"></i>
+          </div>
+          <h3 class="theme-card-title">Intelligent Mobility & Transport</h3>
+          <p class="theme-card-desc">
+            AI for predictive transit maintenance, edge-vision driver cognitive safety, automated airport/railway traffic routing, and corridor wildlife collision mitigation.
+          </p>
+          <div class="theme-focus-chips">
+            <span class="focus-chip">Edge Vision</span>
+            <span class="focus-chip">Time-Series</span>
+            <span class="focus-chip">Reinforcement Learning</span>
+            <span class="focus-chip">IoT Telemetry</span>
+          </div>
+        </div>
+
+        <!-- Track 2 -->
+        <div class="theme-card-3d theme-education">
+          <div class="theme-icon-orb">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="theme-card-title">AI for Education & Inclusion</h3>
+          <p class="theme-card-desc">
+            Socratic algorithmic visualizers, vernacular dialect adaptation, 3D spatial sign language translation, and smartphone camera OMR/handwritten grading engines.
+          </p>
+          <div class="theme-focus-chips">
+            <span class="focus-chip">LLM Agents</span>
+            <span class="focus-chip">Indian Vernacular NLP</span>
+            <span class="focus-chip">Spatial Hand Tracking</span>
+            <span class="focus-chip">Document OCR</span>
+          </div>
+        </div>
+
+        <!-- Track 3 -->
+        <div class="theme-card-3d theme-agriculture">
+          <div class="theme-icon-orb">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 class="theme-card-title">AgriTech & Rural Innovation</h3>
+          <p class="theme-card-desc">
+            Multispectral foliar pathogen severity segmentation, NPK soil health prescription models, livestock muzzle biometrics, and autonomous drone weed mapping.
+          </p>
+          <div class="theme-focus-chips">
+            <span class="focus-chip">Satellite NDVI</span>
+            <span class="focus-chip">Semantic Segmentation</span>
+            <span class="focus-chip">Bio-Acoustics</span>
+            <span class="focus-chip">Drone Mission Waypoints</span>
+          </div>
+        </div>
+
+        <!-- Track 4 -->
+        <div class="theme-card-3d theme-healthcare">
+          <div class="theme-icon-orb">
+            <i class="fa-solid fa-heart-pulse"></i>
+          </div>
+          <h3 class="theme-card-title">AI for Health & Wellbeing</h3>
+          <p class="theme-card-desc">
+            Prescription OCR contraindication sentinels, explainable radiograph triaging with Grad-CAM, regional meal calorie estimation, and acoustic vocal tremor Parkinson's screening.
+          </p>
+          <div class="theme-focus-chips">
+            <span class="focus-chip">Medical Imaging</span>
+            <span class="focus-chip">Biomedical NLP</span>
+            <span class="focus-chip">Explainable AI (XAI)</span>
+            <span class="focus-chip">Signal Biomarkers</span>
+          </div>
+        </div>
+
+        <!-- Track 5 -->
+        <div class="theme-card-3d theme-climate">
+          <div class="theme-icon-orb">
+            <i class="fa-solid fa-solar-panel"></i>
+          </div>
+          <h3 class="theme-card-title">Climate, Energy & Safety</h3>
+          <p class="theme-card-desc">
+            Spatio-temporal solar/wind generation forecasting, Scope 1-3 industrial carbon accounting, CCTV PPE safety sentinel, and smart campus load balancers.
+          </p>
+          <div class="theme-focus-chips">
+            <span class="focus-chip">Grid Forecasting</span>
+            <span class="focus-chip">Carbon Analytics</span>
+            <span class="focus-chip">Industrial CCTV Vision</span>
+            <span class="focus-chip">NILM Load Shaving</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       6. MASTER SCHEDULE & TIMELINE
+       ========================================================================= -->
+  <section id="schedule">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-calendar-days"></i> Official Schedule</span>
+        <h2 class="section-title">Master Timeline (21–23 September 2026)</h2>
+        <p class="section-subtitle">
+          Every phase operates on a synchronized schedule. Make note of all critical milestones.
+        </p>
+      </div>
+
+      <div class="timeline-track">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta-row">
+              <span class="timeline-date">21 SEPTEMBER 2026</span>
+              <span class="timeline-time-badge"><i class="fa-regular fa-clock"></i> 12:00 PM IST</span>
+            </div>
+            <h3 class="timeline-title">Problem Statements Release</h3>
+            <p class="timeline-desc">The official problem statements, technical constraints, evaluation rubrics, and dataset guides are unlocked online.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta-row">
+              <span class="timeline-date">21 SEPTEMBER 2026</span>
+              <span class="timeline-time-badge"><i class="fa-solid fa-play"></i> 06:00 PM IST</span>
+            </div>
+            <h3 class="timeline-title">24-Hour Online Hackathon Begins</h3>
+            <p class="timeline-desc">The official development clock starts. Teams code, integrate AI models, build interfaces, and prepare deliverables remotely.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta-row">
+              <span class="timeline-date">22 SEPTEMBER 2026</span>
+              <span class="timeline-time-badge"><i class="fa-solid fa-stop"></i> 06:00 PM IST</span>
+            </div>
+            <h3 class="timeline-title">Submissions Close (Strict Deadline)</h3>
+            <p class="timeline-desc">All GitHub repository links, video demonstrations, slide decks, and architecture summaries must be locked in the portal.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta-row">
+              <span class="timeline-date">22–23 SEPTEMBER 2026</span>
+              <span class="timeline-time-badge"><i class="fa-solid fa-list-check"></i> OVERNIGHT REVIEW</span>
+            </div>
+            <h3 class="timeline-title">Jury Evaluation & Shortlisting</h3>
+            <p class="timeline-desc">Expert technical committee assesses submissions against the 6 evaluation criteria to shortlist top finalist teams for stage defense.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta-row">
+              <span class="timeline-date">23 SEPTEMBER 2026</span>
+              <span class="timeline-time-badge"><i class="fa-solid fa-building-columns"></i> 09:00 AM – 05:30 PM</span>
+            </div>
+            <h3 class="timeline-title">Offline Grand Finale @ KLNCE</h3>
+            <p class="timeline-desc">Shortlisted teams present on stage at K.L.N. College of Engineering: 7m pitch + 5m live working prototype demo + 3m jury Q&A.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-card">
+            <div class="timeline-meta-row">
+              <span class="timeline-date">23 SEPTEMBER 2026</span>
+              <span class="timeline-time-badge"><i class="fa-solid fa-trophy"></i> 05:30 PM – 06:30 PM</span>
+            </div>
+            <h3 class="timeline-title">Valedictory & Awards Ceremony</h3>
+            <p class="timeline-desc">Announcement of TENSORA 2026 Champions, Runners-Up, Special Category Winners, and distribution of trophies & certificates.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       7. JUDGING RUBRIC & EVALUATION
+       ========================================================================= -->
+  <section id="rubric">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-chart-pie"></i> Evaluation Standards</span>
+        <h2 class="section-title">Official Judging Rubric & Weightage</h2>
+        <p class="section-subtitle">
+          Transparent 100-point scoring matrix applied consistently by our industry and academic jury.
+        </p>
+      </div>
+
+      <div class="judging-grid">
+        <div class="rubric-card">
+          <div class="rubric-item">
+            <div class="rubric-header">
+              <span><i class="fa-solid fa-microchip"></i> AI/ML Technical Implementation</span>
+              <span class="rubric-weight">25% (25 Points)</span>
+            </div>
+            <div class="rubric-bar-bg">
+              <div class="rubric-bar-fill" style="width: 25%;"></div>
+            </div>
+          </div>
+
+          <div class="rubric-item">
+            <div class="rubric-header">
+              <span><i class="fa-solid fa-lightbulb"></i> Innovation & Originality</span>
+              <span class="rubric-weight">20% (20 Points)</span>
+            </div>
+            <div class="rubric-bar-bg">
+              <div class="rubric-bar-fill" style="width: 20%;"></div>
+            </div>
+          </div>
+
+          <div class="rubric-item">
+            <div class="rubric-header">
+              <span><i class="fa-solid fa-cube"></i> Working Prototype / Functionality</span>
+              <span class="rubric-weight">20% (20 Points)</span>
+            </div>
+            <div class="rubric-bar-bg">
+              <div class="rubric-bar-fill" style="width: 20%;"></div>
+            </div>
+          </div>
+
+          <div class="rubric-item">
+            <div class="rubric-header">
+              <span><i class="fa-solid fa-bullseye"></i> Problem Understanding & Relevance</span>
+              <span class="rubric-weight">15% (15 Points)</span>
+            </div>
+            <div class="rubric-bar-bg">
+              <div class="rubric-bar-fill" style="width: 15%;"></div>
+            </div>
+          </div>
+
+          <div class="rubric-item">
+            <div class="rubric-header">
+              <span><i class="fa-solid fa-chart-line"></i> Scalability & Social/Commercial Impact</span>
+              <span class="rubric-weight">10% (10 Points)</span>
+            </div>
+            <div class="rubric-bar-bg">
+              <div class="rubric-bar-fill" style="width: 10%;"></div>
+            </div>
+          </div>
+
+          <div class="rubric-item">
+            <div class="rubric-header">
+              <span><i class="fa-solid fa-person-chalkboard"></i> Presentation & Defense Quality</span>
+              <span class="rubric-weight">10% (10 Points)</span>
+            </div>
+            <div class="rubric-bar-bg">
+              <div class="rubric-bar-fill" style="width: 10%;"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mandatory-alert-card">
+          <h3><i class="fa-solid fa-triangle-exclamation"></i> Mandatory AI Policy</h3>
+          <p>
+            TENSORA is strictly an <strong>Artificial Intelligence hackathon</strong>. If a submitted project uses purely static mock logic, hard-coded rules, or superficial UI without functional ML/DL models or genuine LLM orchestration, the submission will receive <strong>0 / 25 in the AI category</strong> and will not be eligible for podium honors.
+          </p>
+          <ul class="modal-list" style="margin-top: 1rem; list-style: none;">
+            <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--neon-emerald);"></i> <span>Custom trained or fine-tuned model architectures</span></li>
+            <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--neon-emerald);"></i> <span>Explainable AI outputs (Grad-CAM, SHAP, etc.)</span></li>
+            <li style="display: flex; gap: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--neon-emerald);"></i> <span>Original feature engineering & pipeline code</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       8. 3D PRIZE PODIUM & SPECIAL RECOGNITION
+       ========================================================================= -->
+  <section id="prizes">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-trophy"></i> Awards & Recognition</span>
+        <h2 class="section-title">Build for Impact. Win for Your Work.</h2>
+        <p class="section-subtitle">
+          Celebrating technical depth, breakthrough innovation, and student engineering excellence.
+        </p>
+      </div>
+
+      <!-- Main 3D Podium (1st, 2nd, 3rd) -->
+      <div class="prize-podium-grid">
+        <div class="podium-card runner-1">
+          <div class="podium-badge"><i class="fa-solid fa-medal"></i></div>
+          <span class="podium-rank">1st Runner-Up</span>
+          <h3 class="podium-title">Silver Award</h3>
+          <ul class="podium-perks">
+            <li><i class="fa-solid fa-check"></i> <span>Cash Prize & Runner-Up Trophy</span></li>
+            <li><i class="fa-solid fa-check"></i> <span>Certificate of Excellence</span></li>
+            <li><i class="fa-solid fa-check"></i> <span>Incubation & Mentorship Access</span></li>
+          </ul>
+        </div>
+
+        <div class="podium-card champion">
+          <div class="podium-badge"><i class="fa-solid fa-crown"></i></div>
+          <span class="podium-rank">Overall Champion</span>
+          <h3 class="podium-title">TENSORA 2026 Champion</h3>
+          <ul class="podium-perks">
+            <li><i class="fa-solid fa-check"></i> <span>Grand Cash Prize & Rolling Trophy</span></li>
+            <li><i class="fa-solid fa-check"></i> <span>Winner Certificate of Distinction</span></li>
+            <li><i class="fa-solid fa-check"></i> <span>Direct Investor & Mentorship Connect</span></li>
+            <li><i class="fa-solid fa-check"></i> <span>Exclusive Partner Cloud Credits</span></li>
+          </ul>
+        </div>
+
+        <div class="podium-card runner-2">
+          <div class="podium-badge"><i class="fa-solid fa-award"></i></div>
+          <span class="podium-rank">2nd Runner-Up</span>
+          <h3 class="podium-title">Bronze Award</h3>
+          <ul class="podium-perks">
+            <li><i class="fa-solid fa-check"></i> <span>Cash Prize & Merit Trophy</span></li>
+            <li><i class="fa-solid fa-check"></i> <span>Certificate of Excellence</span></li>
+            <li><i class="fa-solid fa-check"></i> <span>Sponsor Partner Tool Credits</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- 7 Special Track Awards -->
+      <h3 style="text-align: center; margin-bottom: 2rem;">7 Special Innovation Track Awards</h3>
+      <div class="special-awards-grid">
+        <div class="special-award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-brain"></i></div>
+          <div>
+            <h4 class="award-name">Best AI Innovation</h4>
+            <p class="award-desc">Awarded to the most novel algorithmic AI architecture.</p>
+          </div>
+        </div>
+
+        <div class="special-award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-hand-holding-heart"></i></div>
+          <div>
+            <h4 class="award-name">Best Social Impact</h4>
+            <p class="award-desc">Recognizing solutions that uplift underserved communities.</p>
+          </div>
+        </div>
+
+        <div class="special-award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-gears"></i></div>
+          <div>
+            <h4 class="award-name">Best Technical Implementation</h4>
+            <p class="award-desc">Honoring production-grade code cleanliness and low-latency.</p>
+          </div>
+        </div>
+
+        <div class="special-award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-wand-magic-sparkles"></i></div>
+          <div>
+            <h4 class="award-name">Best UI/UX & Product Design</h4>
+            <p class="award-desc">For intuitive user experience and accessible visual aesthetics.</p>
+          </div>
+        </div>
+
+        <div class="special-award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-seedling"></i></div>
+          <div>
+            <h4 class="award-name">Best Emerging Idea</h4>
+            <p class="award-desc">Spotlighting bold, out-of-the-box conceptual thinking.</p>
+          </div>
+        </div>
+
+        <div class="special-award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-users-gear"></i></div>
+          <div>
+            <h4 class="award-name">Best All-Student Team</h4>
+            <p class="award-desc">Excellence in multi-disciplinary team collaboration.</p>
+          </div>
+        </div>
+
+        <div class="special-award-card">
+          <div class="award-icon-box"><i class="fa-solid fa-shield-halved"></i></div>
+          <div>
+            <h4 class="award-name">Responsible AI Solution</h4>
+            <p class="award-desc">For privacy preservation, bias mitigation, and ethical AI design.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       9. ELIGIBILITY & OFFICIAL RULEBOOK
+       ========================================================================= -->
+  <section id="rules">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-book-bookmark"></i> Regulations</span>
+        <h2 class="section-title">Official Hackathon Rulebook</h2>
+        <p class="section-subtitle">
+          Ensure your team complies with all guidelines governing participation, code originality, and IP ownership.
+        </p>
+      </div>
+
+      <div class="pillars-grid">
+        <div class="pillar-card">
+          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-id-card"></i> Rule 01: Eligibility & Teams</h4>
+          <p class="pillar-desc">Open to enrolled UG/PG students across recognized Indian colleges. Teams must comprise 2–4 members. Cross-college teams are fully permitted.</p>
+        </div>
+        <div class="pillar-card">
+          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-code"></i> Rule 02: Build Window</h4>
+          <p class="pillar-desc">All core coding and pipeline construction must take place between 21 Sept 6:00 PM and 22 Sept 6:00 PM IST. Pre-built apps are strictly prohibited.</p>
+        </div>
+        <div class="pillar-card">
+          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-copyright"></i> Rule 03: 100% IP Ownership</h4>
+          <p class="pillar-desc">Participants retain complete ownership of the intellectual property they independently create during the hackathon.</p>
+        </div>
+        <div class="pillar-card">
+          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-box-open"></i> Rule 04: Open Source & APIs</h4>
+          <p class="pillar-desc">Public open-source libraries, frameworks, and foundational model weights are allowed with proper citation in the README.</p>
+        </div>
+        <div class="pillar-card">
+          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-file-arrow-up"></i> Rule 05: Submission Deliverables</h4>
+          <p class="pillar-desc">Teams must submit public GitHub repo, setup documentation, 3-min video demo link, and presentation slide deck before the deadline.</p>
+        </div>
+        <div class="pillar-card">
+          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-scale-balanced"></i> Rule 06: Zero Plagiarism</h4>
+          <p class="pillar-desc">Direct copying of other teams' code or submitting existing commercial products will result in immediate disqualification.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       10. SEARCHABLE FAQ
+       ========================================================================= -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Clarifications</span>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">
+          Everything you need to know about registration, AI requirements, submissions, and the offline grand finale.
+        </p>
+      </div>
+
+      <!-- FAQ Category Tabs -->
+      <div class="faq-filter-tabs">
+        <button class="faq-tab-btn active" data-category="all">All FAQs</button>
+        <button class="faq-tab-btn" data-category="eligibility">Eligibility & Teams</button>
+        <button class="faq-tab-btn" data-category="ai">AI Mandate & Tools</button>
+        <button class="faq-tab-btn" data-category="submissions">Timeline & Submissions</button>
+        <button class="faq-tab-btn" data-category="finale">Offline Finale @ KLNCE</button>
+        <button class="faq-tab-btn" data-category="policy">IP & Policies</button>
+      </div>
+
+      <!-- Search Input -->
+      <div class="search-input-wrapper" style="max-width: 600px; margin: 0 auto 2.5rem;">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="faqSearchInput" placeholder="Search FAQ (e.g. fee, accommodation, team size, ChatGPT, travel)...">
+      </div>
+
+      <!-- FAQ Accordion -->
+      <div class="faq-accordion" id="faqAccordionContainer">
+        <!-- Rendered dynamically by faq.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       11. ORGANIZING BODY (THE TURING CLUB & KLNCE)
+       ========================================================================= -->
+  <section id="organizers">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-users-viewfinder"></i> The Turing Club</span>
+        <h2 class="section-title">Organized by AI Innovators, for AI Innovators</h2>
+        <p class="section-subtitle">
+          Department of Artificial Intelligence & Data Science, K.L.N. College of Engineering.
+        </p>
+      </div>
+
+      <div class="organizer-turing-hero">
+        <div style="max-width: 760px; margin: 0 auto;">
+          <h3 style="margin-bottom: 0.85rem;"><i class="fa-solid fa-brain" style="color: var(--neon-cyan);"></i> The Turing Club</h3>
+          <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">
+            The Turing Club is the student innovation community at KLNCE driving technical excellence, open-source AI development, and competitive problem-solving. From challenge curation to 24/7 participant support, the club bridges academic rigor and real-world AI deployment.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       14. FOOTER (STARK INDUSTRIES THEMED)
+       ========================================================================= -->
+  <footer class="main-footer">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div>
+          <div class="brand-logo" style="margin-bottom: 0.75rem;">
+            <div class="brand-logo-icon"><i class="fa-solid fa-atom"></i></div>
+            <span>TENSORA</span>
+            <span class="brand-year">2K26</span>
+          </div>
+          <p class="footer-brand-desc">
+            National Level AI Innovation Hackathon organized by The Turing Club & Department of Artificial Intelligence and Data Science, K.L.N. College of Engineering.
+          </p>
+          <div class="social-links-row">
+            <a href="#" class="social-icon-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-icon-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="#" class="social-icon-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Quick Navigation</h5>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#format">How It Works</a></li>
+            <li><a href="#tracks">Innovation Tracks</a></li>
+            <li><a href="#schedule">Schedule</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Event Links</h5>
+          <ul>
+            <li><a href="#prizes">Prizes & Awards</a></li>
+            <li><a href="#rubric">Judging Criteria</a></li>
+            <li><a href="#rules">Official Rulebook</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Master Event Schedule</h5>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.7;">
+            <strong>21 Sept 2026:</strong> Problem Reveal (12 PM) & 24h Sprint (6 PM)<br>
+            <strong>22 Sept 2026:</strong> Submission Deadline (6 PM)<br>
+            <strong>23 Sept 2026:</strong> Offline Finale @ KLNCE (9 AM - 6:30 PM)
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom-bar">
+        <span>© 2026 TENSORA — Department of AI & DS, K.L.N. College of Engineering. All rights reserved.</span>
+        <span>Stark Arc Reactor AI Edition • Built for College Innovators.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODAL 1: 5-STEP TEAM REGISTRATION WIZARD
+       ========================================================================= -->
+  <div class="modal-backdrop" id="registerModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="closeRegisterModalBtn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div style="margin-bottom: 1.75rem;">
+        <h3 id="wizardStepTitle" style="color: #ffffff; margin-bottom: 0.25rem;">Step 1: Team & Institution Info</h3>
+        <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">Register your 2–4 member team for TENSORA 2026.</p>
+      </div>
+
+      <!-- Step Progress Bar -->
+      <div class="wizard-progress-bar">
+        <div class="wizard-progress-step active">1</div>
+        <div class="wizard-progress-step">2</div>
+        <div class="wizard-progress-step">3</div>
+        <div class="wizard-progress-step">4</div>
+        <div class="wizard-progress-step">5</div>
+      </div>
+
+      <!-- STEP 1: Team Basics -->
+      <div class="wizard-step-pane active" id="paneStep1">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Team Name *</label>
+            <input type="text" id="regTeamName" class="form-control" placeholder="e.g. NeuralKnights" required>
+          </div>
+          <div class="form-group">
+            <label>Team Size (Members) *</label>
+            <select id="regTeamSize" class="form-control">
+              <option value="2">2 Members</option>
+              <option value="3" selected>3 Members (Recommended)</option>
+              <option value="4">4 Members</option>
+            </select>
+          </div>
+          <div class="form-group full-width">
+            <label>College / Institution Name *</label>
+            <input type="text" id="regInstitution" class="form-control" placeholder="e.g. K.L.N. College of Engineering" required>
+          </div>
+          <div class="form-group">
+            <label>City *</label>
+            <input type="text" id="regCity" class="form-control" placeholder="e.g. Madurai" required>
+          </div>
+          <div class="form-group">
+            <label>State *</label>
+            <input type="text" id="regState" class="form-control" placeholder="e.g. Tamil Nadu" required>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 2: Team Roster -->
+      <div class="wizard-step-pane" id="paneStep2">
+        <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid var(--neon-cyan); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem;">
+            <h5><i class="fa-solid fa-crown" style="color: #ffb703;"></i> Team Leader (Point of Contact)</h5>
+            <span style="font-size: 0.75rem; font-family: var(--font-mono); color: #ffb703; background: rgba(255, 183, 3, 0.15); padding: 0.2rem 0.6rem; border-radius: 4px;">Team Lead</span>
+          </div>
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Full Name *</label>
+              <input type="text" id="regLeaderName" class="form-control" placeholder="e.g. Vignesh R." required>
+            </div>
+            <div class="form-group">
+              <label>Email Address *</label>
+              <input type="email" id="regLeaderEmail" class="form-control" placeholder="vignesh@college.edu" required>
+            </div>
+            <div class="form-group">
+              <label>Mobile Number *</label>
+              <input type="tel" id="regLeaderMobile" class="form-control" placeholder="+91 98765 43210" required>
+            </div>
+            <div class="form-group">
+              <label>Primary Technical Role *</label>
+              <select id="regLeaderRole" class="form-control" required>
+                <option value="AI/ML Lead">AI / ML Lead</option>
+                <option value="Full-Stack Engineer">Full-Stack Engineer</option>
+                <option value="Data Scientist">Data Scientist</option>
+                <option value="Product / UI Designer">Product / UI Designer</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label>Department & Year</label>
+              <input type="text" id="regLeaderDept" class="form-control" placeholder="e.g. AI & DS / 3rd Year">
+            </div>
+            <div class="form-group">
+              <label>GitHub Profile (Optional)</label>
+              <input type="url" id="regLeaderGithub" class="form-control" placeholder="https://github.com/leadusername">
+            </div>
+          </div>
+        </div>
+
+        <!-- Additional Members Dynamic Container -->
+        <div id="additionalMembersContainer"></div>
+      </div>
+
+      <!-- STEP 3: Innovation Track Preference -->
+      <div class="wizard-step-pane" id="paneStep3">
+        <div class="form-group">
+          <label>Primary Innovation Track Preference *</label>
+          <select id="regTrack1" class="form-control" required>
+            <!-- Populated dynamically -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Secondary Innovation Track Preference (Backup)</label>
+          <select id="regTrack2" class="form-control">
+            <!-- Populated dynamically -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Brief Technical Vision / Frameworks (Optional)</label>
+          <textarea id="regApproachSummary" class="form-control" rows="3" placeholder="Outline what AI libraries, frameworks (PyTorch, TensorFlow, YOLO, Transformers, LangChain) and tech stack your team plans to leverage..."></textarea>
+        </div>
+      </div>
+
+      <!-- STEP 4: Review & Fee Breakdown -->
+      <div class="wizard-step-pane" id="paneStep4">
+        <div id="regReviewSummary"></div>
+      </div>
+
+      <!-- STEP 5: Official Confirmation Pass -->
+      <div class="wizard-step-pane" id="paneStep5">
+        <div class="confirmation-pass-card">
+          <div class="pass-success-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h3 style="color: #ffffff; margin-bottom: 0.25rem;">Team Registration Confirmed!</h3>
+          <p style="color: var(--text-secondary); font-size: 0.95rem;">Your official team pass for TENSORA 2026 has been generated.</p>
+
+          <div class="pass-reg-id" id="confirmedRegId">TNS26-XXXX</div>
+          <p style="font-size: 0.95rem; color: #ffffff;">Team: <strong id="confirmedTeamName"></strong></p>
+          <p style="font-size: 0.85rem; color: var(--text-muted);">Lead Email: <span id="confirmedLeaderEmail"></span></p>
+          <p style="font-size: 0.88rem; color: var(--neon-cyan); margin-top: 0.25rem;" id="confirmedTrack"></p>
+
+          <div class="pass-actions" style="display: flex; gap: 1rem; justify-content: center; margin-top: 1.75rem; flex-wrap: wrap;">
+            <button class="btn btn-primary" onclick="downloadRegistrationPass()">
+              <i class="fa-solid fa-download"></i> Download Official Pass (.txt)
+            </button>
+            <button class="btn btn-secondary" onclick="generateGoogleCalendarUrl()">
+              <i class="fa-regular fa-calendar-plus"></i> Add to Google Calendar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wizard Navigation Action Buttons -->
+      <div class="wizard-footer-actions" id="wizardNavActions">
+        <button class="btn btn-secondary" id="btnWizardPrev" onclick="prevStep()">
+          <i class="fa-solid fa-arrow-left"></i> Previous
+        </button>
+        <button class="btn btn-primary" id="btnWizardNext" onclick="nextStep()">
+          Next Step <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       MODAL 2: PROJECT SUBMISSION PORTAL
+       ========================================================================= -->
+  <div class="modal-backdrop" id="submissionModal">
+    <div class="modal-window">
+      <button class="modal-close-btn" id="closeSubmissionModalBtn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div id="submissionFormPane">
+        <div style="margin-bottom: 1.5rem;">
+          <span style="font-family: var(--font-mono); font-size: 0.78rem; font-weight: 700; color: #040711; background: var(--grad-vibrant-1); padding: 0.25rem 0.75rem; border-radius: 9999px; display: inline-block; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-lock"></i> 24-HOUR SPRINT SUBMISSION PORTAL
+          </span>
+          <h3 style="color: #ffffff; margin-bottom: 0.25rem;">Submit Your Solution</h3>
+          <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 0;">Make sure your GitHub repository and demonstration video links are public before submitting.</p>
+        </div>
+
+        <form id="projectSubmissionForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label>Registration ID (TNS26-XXXX) *</label>
+              <input type="text" id="subRegId" class="form-control" placeholder="e.g. TNS26-8942" required>
+            </div>
+            <div class="form-group">
+              <label>Team Leader Email *</label>
+              <input type="email" id="subEmail" class="form-control" placeholder="leader@college.edu" required>
+            </div>
+            <div class="form-group full-width">
+              <label>Innovation Track Solved *</label>
+              <select id="subTrack" class="form-control" required>
+                <!-- Populated dynamically -->
+              </select>
+            </div>
+            <div class="form-group full-width">
+              <label>Project Name / Solution Title *</label>
+              <input type="text" id="subProjectTitle" class="form-control" placeholder="e.g. NeuroSentinel: Edge AI Anomaly Detector" required>
+            </div>
+            <div class="form-group full-width">
+              <label>Public GitHub Repository URL *</label>
+              <input type="url" id="subGithub" class="form-control" placeholder="https://github.com/your-team/tensora2026-solution" required>
+            </div>
+            <div class="form-group">
+              <label>3-Minute Demo Video URL (YouTube/Drive/Loom) *</label>
+              <input type="url" id="subVideo" class="form-control" placeholder="https://youtube.com/watch?v=..." required>
+            </div>
+            <div class="form-group">
+              <label>Presentation Deck URL (Google Slides/Canva/PDF) *</label>
+              <input type="url" id="subDeck" class="form-control" placeholder="https://docs.google.com/presentation/..." required>
+            </div>
+          </div>
+
+          <!-- Mandatory AI & Originality Declaration Checklist -->
+          <div class="mandatory-alert-card" style="margin: 1.5rem 0; padding: 1.25rem;">
+            <h5 style="color: #ffffff; margin-bottom: 0.75rem;"><i class="fa-solid fa-clipboard-check"></i> Mandatory Declarations</h5>
+            <label style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 0.5rem; cursor: pointer;">
+              <input type="checkbox" id="chkAiCore" required>
+              <span>Our project incorporates functional AI/ML as the core component of the solution.</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; margin-bottom: 0.5rem; cursor: pointer;">
+              <input type="checkbox" id="chkOriginal" required>
+              <span>The core codebase was created during the official 24-hour hackathon window.</span>
+            </label>
+            <label style="display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; cursor: pointer;">
+              <input type="checkbox" id="chkReadme" required>
+              <span>Our GitHub README includes setup steps, dependency instructions, and model descriptions.</span>
+            </label>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">
+            <i class="fa-solid fa-lock"></i> Finalize & Lock Project Submission
+          </button>
+        </form>
+      </div>
+
+      <!-- Submission Success State Pane -->
+      <div id="submissionSuccessPane" style="display: none; text-align: center; padding: 2rem 0;">
+        <div class="pass-success-icon"><i class="fa-solid fa-shield-halved"></i></div>
+        <h3 style="color: #ffffff; margin-bottom: 0.5rem;">Submission Successfully Locked!</h3>
+        <p style="color: var(--text-secondary); max-width: 520px; margin: 0 auto 1.5rem;">
+          Your deliverables have been securely logged. The evaluation committee will assess your repository and demonstration. Shortlist results will be published ahead of the Grand Finale.
+        </p>
+        <div class="pass-reg-id" id="subRefCode">SUB26-XXXXXX</div>
+        <p style="font-size: 0.9rem; color: var(--text-muted);">Registered ID: <span id="subConfirmedId"></span></p>
+        <button class="btn btn-secondary" onclick="closeSubmissionModal()" style="margin-top: 1.5rem;">
+          Close Portal
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <!-- Scroll To Top Floating Button -->
+  <button class="scroll-top-btn" id="scrollToTopBtn" aria-label="Scroll to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/countdown.js"></script>
+  <script src="js/register.js"></script>
+  <script src="js/submission.js"></script>
+  <script src="js/faq.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
