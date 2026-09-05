@@ -9,17 +9,18 @@
   }
 }
 
-/* Medium Desktops & Tablets (≤ 1180px) */
+/* Medium Desktops (≤ 1180px) */
 @media (max-width: 1180px) {
   .nav-menu {
-    gap: 1rem;
+    gap: 0.25rem;
   }
   .nav-link {
     font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
   }
 }
 
-/* Mobile & Tablet Drawer Navigation (≤ 1024px) */
+/* Mobile & Tablet Navigation Breakpoint (≤ 1024px) */
 @media (max-width: 1024px) {
   :root {
     --header-height: 68px;
@@ -31,8 +32,22 @@
   }
 
   .nav-container {
-    padding: 0.5rem 1.15rem;
-    height: 58px;
+    padding: 0 1rem;
+    height: 56px;
+    max-width: 100%;
+  }
+
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .nav-actions .btn-sm {
+    display: none !important;
+  }
+
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+    z-index: 1100;
   }
 
   .judging-grid {
@@ -56,176 +71,6 @@
 
   .podium-card.champion:hover {
     transform: translateY(-6px);
-  }
-
-  /* Mobile Navigation Menu Toggle */
-  .mobile-menu-toggle {
-    display: flex;
-    z-index: 1100;
-  }
-
-  .nav-actions .btn-sm {
-    display: none;
-  }
-
-  /* Mobile Drawer Menu */
-  .nav-menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 88%;
-    max-width: 340px;
-    height: 100vh;
-    height: 100dvh;
-    background: rgba(8, 12, 24, 0.98);
-    backdrop-filter: blur(28px);
-    -webkit-backdrop-filter: blur(28px);
-    border-left: 1px solid rgba(255, 215, 0, 0.35);
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    padding: 1.5rem 1.25rem 2.5rem;
-    gap: 0.4rem;
-    overflow-y: auto;
-    z-index: 1200;
-    box-shadow: -15px 0 45px rgba(0, 0, 0, 0.95);
-    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  .nav-menu.open {
-    right: 0;
-  }
-
-  .mobile-drawer-header {
-    display: flex !important;
-    align-items: center;
-    justify-content: space-between;
-    padding-bottom: 1rem;
-    margin-bottom: 0.6rem;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.18);
-  }
-
-  .drawer-brand {
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-  }
-
-  .drawer-brand-title {
-    font-family: var(--font-display);
-    font-size: 1.2rem;
-    font-weight: 900;
-    color: #ffffff;
-  }
-
-  .drawer-brand-year {
-    color: var(--stark-gold);
-    font-family: var(--font-mono);
-  }
-
-  .drawer-close-btn {
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-full);
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid rgba(255, 215, 0, 0.25);
-    color: var(--text-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-  }
-
-  .drawer-close-btn:hover {
-    background: var(--stark-red);
-    color: #ffffff;
-    border-color: var(--stark-red);
-  }
-
-  .nav-menu li {
-    width: 100%;
-    display: block;
-  }
-
-  .nav-link {
-    display: flex !important;
-    align-items: center;
-    gap: 0.85rem;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border-radius: var(--radius-md);
-    font-size: 0.95rem;
-    font-weight: 600;
-    color: var(--text-secondary);
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid transparent;
-  }
-
-  .nav-link:hover,
-  .nav-link.active {
-    background: rgba(255, 215, 0, 0.1);
-    border-color: rgba(255, 215, 0, 0.35);
-    color: #ffffff;
-  }
-
-  .nav-icon {
-    display: inline-flex !important;
-    font-size: 0.95rem;
-    color: var(--stark-gold);
-    width: 20px;
-    text-align: center;
-  }
-
-  .mobile-drawer-actions {
-    display: flex !important;
-    flex-direction: column;
-    gap: 0.65rem;
-    margin-top: 1rem;
-    padding-top: 1rem;
-    border-top: 1px solid rgba(255, 215, 0, 0.18);
-  }
-
-  .drawer-footer-badge {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 700;
-    color: var(--text-muted);
-    margin-top: 0.75rem;
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 215, 0, 0.15);
-    border-radius: var(--radius-full);
-  }
-
-  .mobile-nav-overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    z-index: 1150;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.3s ease;
-  }
-
-  .mobile-nav-overlay.open {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  .nav-actions .btn-sm {
-    display: none;
   }
 
   /* Hero & Countdown */
@@ -255,7 +100,10 @@
   .digit-value {
     font-size: 2.25rem;
   }
+}
 
+/* Tablet / Mobile Layouts (≤ 768px) */
+@media (max-width: 768px) {
   /* Single Left-Aligned Mobile Timeline */
   .timeline-track::before {
     left: 16px;

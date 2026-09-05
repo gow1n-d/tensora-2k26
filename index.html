@@ -33,7 +33,7 @@
 <body>
 
   <!-- =========================================================================
-       1. FREE & SPACIOUS FLOATING NAVIGATION BAR
+       1. SLEEK FLOATING STARK HUD NAVIGATION BAR
        ========================================================================= -->
   <header class="main-header">
     <div class="nav-container">
@@ -45,36 +45,16 @@
         <span class="brand-year">2K26</span>
       </a>
 
-      <!-- Desktop & Mobile Drawer Menu -->
-      <nav>
+      <!-- Desktop Primary Menu -->
+      <nav class="desktop-nav">
         <ul class="nav-menu" id="primaryNavMenu">
-          <li class="mobile-drawer-header">
-            <div class="drawer-brand">
-              <div class="brand-logo-icon"><i class="fa-solid fa-atom"></i></div>
-              <span class="drawer-brand-title">TENSORA <span class="drawer-brand-year">2K26</span></span>
-            </div>
-            <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation drawer">
-              <i class="fa-solid fa-xmark"></i>
-            </button>
-          </li>
-          <li><a href="#about" class="nav-link"><i class="fa-solid fa-compass nav-icon"></i> About</a></li>
-          <li><a href="#format" class="nav-link"><i class="fa-solid fa-layer-group nav-icon"></i> How It Works</a></li>
-          <li><a href="#tracks" class="nav-link"><i class="fa-solid fa-shapes nav-icon"></i> Tracks</a></li>
-          <li><a href="#schedule" class="nav-link"><i class="fa-solid fa-calendar-days nav-icon"></i> Schedule</a></li>
-          <li><a href="#prizes" class="nav-link"><i class="fa-solid fa-trophy nav-icon"></i> Prizes</a></li>
-          <li><a href="#rules" class="nav-link"><i class="fa-solid fa-book-bookmark nav-icon"></i> Rules</a></li>
-          <li><a href="#faq" class="nav-link"><i class="fa-solid fa-circle-question nav-icon"></i> FAQ</a></li>
-
-          <!-- Mobile Drawer Action Buttons -->
-          <li class="mobile-drawer-actions">
-            <button class="btn btn-primary btn-block" data-open-register>
-              <i class="fa-solid fa-bolt"></i> Register Team Now
-            </button>
-            <div class="drawer-footer-badge">
-              <span class="pulse-dot"></span>
-              <span>21–23 SEPT 2026 • KLNCE</span>
-            </div>
-          </li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#format" class="nav-link">How It Works</a></li>
+          <li><a href="#tracks" class="nav-link">Tracks</a></li>
+          <li><a href="#schedule" class="nav-link">Schedule</a></li>
+          <li><a href="#prizes" class="nav-link">Prizes</a></li>
+          <li><a href="#rules" class="nav-link">Rules</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
         </ul>
       </nav>
 
@@ -89,6 +69,39 @@
       </div>
     </div>
   </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation">
+    <div class="drawer-header">
+      <div class="drawer-brand">
+        <div class="brand-logo-icon"><i class="fa-solid fa-atom"></i></div>
+        <span class="drawer-brand-title">TENSORA <span class="drawer-brand-year">2K26</span></span>
+      </div>
+      <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close navigation drawer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <ul class="drawer-menu">
+      <li><a href="#about" class="drawer-link"><i class="fa-solid fa-compass drawer-icon"></i> <span>About</span></a></li>
+      <li><a href="#format" class="drawer-link"><i class="fa-solid fa-layer-group drawer-icon"></i> <span>How It Works</span></a></li>
+      <li><a href="#tracks" class="drawer-link"><i class="fa-solid fa-shapes drawer-icon"></i> <span>Tracks</span></a></li>
+      <li><a href="#schedule" class="drawer-link"><i class="fa-solid fa-calendar-days drawer-icon"></i> <span>Schedule</span></a></li>
+      <li><a href="#prizes" class="drawer-link"><i class="fa-solid fa-trophy drawer-icon"></i> <span>Prizes</span></a></li>
+      <li><a href="#rules" class="drawer-link"><i class="fa-solid fa-book-bookmark drawer-icon"></i> <span>Rules</span></a></li>
+      <li><a href="#faq" class="drawer-link"><i class="fa-solid fa-circle-question drawer-icon"></i> <span>FAQ</span></a></li>
+    </ul>
+
+    <div class="drawer-footer">
+      <button class="btn btn-primary btn-block" data-open-register>
+        <i class="fa-solid fa-bolt"></i> Register Team Now
+      </button>
+      <div class="drawer-status-pill">
+        <span class="pulse-dot"></span>
+        <span>21–23 SEPT 2026 • KLNCE</span>
+      </div>
+    </div>
+  </aside>
   <div class="mobile-nav-overlay" id="mobileNavOverlay"></div>
 
   <!-- =========================================================================
