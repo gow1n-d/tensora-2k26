@@ -93,43 +93,6 @@ function initScrollSpy() {
   onScroll();
 }
 
-// Mobile drawer navigation
-function initMobileNav() {
-  const menuToggle = document.getElementById('mobileMenuToggle');
-  const mobileDrawer = document.getElementById('mobileDrawer');
-  const overlay = document.getElementById('mobileNavOverlay');
-  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
-
-  if (!menuToggle || !mobileDrawer) return;
-
-  function toggleMenu() {
-    const isOpen = mobileDrawer.classList.contains('open');
-    mobileDrawer.classList.toggle('open', !isOpen);
-    if (overlay) overlay.classList.toggle('open', !isOpen);
-    menuToggle.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
-    document.body.style.overflow = !isOpen ? 'hidden' : '';
-  }
-
-  function closeMenu() {
-    mobileDrawer.classList.remove('open');
-    if (overlay) overlay.classList.remove('open');
-    menuToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-
-  menuToggle.addEventListener('click', toggleMenu);
-  if (overlay) overlay.addEventListener('click', closeMenu);
-  if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeMenu);
-
-  mobileDrawer.querySelectorAll('.drawer-link').forEach(link => {
-    link.addEventListener('click', closeMenu);
-  });
-
-  mobileDrawer.querySelectorAll('[data-open-register], [data-open-submission]').forEach(btn => {
-    btn.addEventListener('click', closeMenu);
-  });
-}
-
 // Challenge reminder notify action
 function notifyOnRelease() {
   showToast("You're subscribed! We'll alert you on 21 Sept, 12:00 PM IST when challenges unlock.", "success");
@@ -160,7 +123,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initFaq === 'function') initFaq();
   
   initScrollSpy();
-  initMobileNav();
   init3DTilt();
   initKeyboardAccessibility();
 
