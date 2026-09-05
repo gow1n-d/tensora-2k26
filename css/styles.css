@@ -339,6 +339,32 @@ section {
   box-shadow: 0 0 30px rgba(0, 240, 255, 0.5);
 }
 
+/* Nav Glow Pill Button */
+button.nav-cta-btn,
+.nav-cta-btn {
+  background: linear-gradient(135deg, #e62429 0%, #ff1a2b 50%, #ffd700 100%) !important;
+  color: #ffffff !important;
+  border: 1.5px solid #ffd700 !important;
+  border-radius: 9999px !important;
+  box-shadow: 0 0 20px rgba(230, 36, 41, 0.8), 0 0 40px rgba(255, 215, 0, 0.55), 0 0 60px rgba(230, 36, 41, 0.4) !important;
+  animation: navBtnGlow 2.4s infinite ease-in-out !important;
+  font-family: var(--font-body, 'Inter', sans-serif) !important;
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  padding: 0.68rem 1.75rem !important;
+  cursor: pointer !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.5rem !important;
+  white-space: nowrap !important;
+  position: relative !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
 .btn-sm {
   padding: 0.55rem 1.25rem;
   font-size: 0.88rem;

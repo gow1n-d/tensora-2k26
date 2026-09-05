@@ -749,37 +749,71 @@
   </section>
 
   <!-- =========================================================================
-       10. SEARCHABLE FAQ
+       10. SEARCHABLE FAQ (STARK CYBER UI)
        ========================================================================= -->
-  <section id="faq">
+  <section id="faq" class="faq-section">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Clarifications</span>
+        <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Clarifications & FAQs</span>
         <h2 class="section-title">Frequently Asked Questions</h2>
         <p class="section-subtitle">
-          Everything you need to know about registration, AI requirements, submissions, and the offline grand finale.
+          Everything you need to know about registration, AI requirements, submission deliverables, and the offline grand finale.
         </p>
       </div>
 
       <!-- FAQ Category Tabs -->
       <div class="faq-filter-tabs">
-        <button class="faq-tab-btn active" data-category="all">All FAQs</button>
-        <button class="faq-tab-btn" data-category="eligibility">Eligibility & Teams</button>
-        <button class="faq-tab-btn" data-category="ai">AI Mandate & Tools</button>
-        <button class="faq-tab-btn" data-category="submissions">Timeline & Submissions</button>
-        <button class="faq-tab-btn" data-category="finale">Offline Finale @ KLNCE</button>
-        <button class="faq-tab-btn" data-category="policy">IP & Policies</button>
+        <button type="button" class="faq-tab-btn active" data-category="all">
+          <i class="fa-solid fa-layer-group"></i> All FAQs
+        </button>
+        <button type="button" class="faq-tab-btn" data-category="eligibility">
+          <i class="fa-solid fa-users"></i> Eligibility & Teams
+        </button>
+        <button type="button" class="faq-tab-btn" data-category="ai">
+          <i class="fa-solid fa-brain"></i> AI Mandate & Tools
+        </button>
+        <button type="button" class="faq-tab-btn" data-category="submissions">
+          <i class="fa-solid fa-clock-rotate-left"></i> Timeline & Submissions
+        </button>
+        <button type="button" class="faq-tab-btn" data-category="finale">
+          <i class="fa-solid fa-trophy"></i> Offline Finale @ KLNCE
+        </button>
+        <button type="button" class="faq-tab-btn" data-category="policy">
+          <i class="fa-solid fa-shield-halved"></i> IP & Policies
+        </button>
       </div>
 
       <!-- Search Input -->
-      <div class="search-input-wrapper" style="max-width: 600px; margin: 0 auto 2.5rem;">
-        <i class="fa-solid fa-magnifying-glass"></i>
-        <input type="text" id="faqSearchInput" placeholder="Search FAQ (e.g. fee, accommodation, team size, ChatGPT, travel)...">
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="faqSearchInput" placeholder="Search FAQ (e.g. fee, accommodation, team size, ChatGPT, travel, IP)..." aria-label="Search FAQ questions">
+        <span class="search-badge"><i class="fa-solid fa-bolt"></i> Live Filter</span>
       </div>
 
       <!-- FAQ Accordion -->
       <div class="faq-accordion" id="faqAccordionContainer">
         <!-- Rendered dynamically by faq.js -->
+      </div>
+
+      <!-- FAQ Helpdesk Banner -->
+      <div class="faq-help-card">
+        <div class="faq-help-content">
+          <div class="faq-help-icon">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <div>
+            <h4>Still Have Unanswered Questions?</h4>
+            <p>Our Turing Club mentor team and hackathon coordinators are ready to help your team succeed.</p>
+          </div>
+        </div>
+        <div class="faq-help-actions">
+          <a href="mailto:tensora2026@klnce.edu" class="btn btn-secondary btn-sm">
+            <i class="fa-solid fa-envelope"></i> Email Helpdesk
+          </a>
+          <button type="button" class="btn btn-primary btn-sm" data-open-register>
+            <i class="fa-solid fa-bolt"></i> Register Now
+          </button>
+        </div>
       </div>
     </div>
   </section>
