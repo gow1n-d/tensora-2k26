@@ -97,6 +97,7 @@ function initMobileNav() {
   const menuToggle = document.getElementById('mobileMenuToggle');
   const navMenu = document.getElementById('primaryNavMenu');
   const overlay = document.getElementById('mobileNavOverlay');
+  const drawerCloseBtn = document.getElementById('drawerCloseBtn');
 
   if (!menuToggle || !navMenu) return;
 
@@ -105,7 +106,6 @@ function initMobileNav() {
     navMenu.classList.toggle('open', !isOpen);
     if (overlay) overlay.classList.toggle('open', !isOpen);
     menuToggle.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
-    menuToggle.innerHTML = !isOpen ? '<i class="fa-solid fa-xmark"></i>' : '<i class="fa-solid fa-bars"></i>';
     document.body.style.overflow = !isOpen ? 'hidden' : '';
   }
 
@@ -113,15 +113,19 @@ function initMobileNav() {
     navMenu.classList.remove('open');
     if (overlay) overlay.classList.remove('open');
     menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
     document.body.style.overflow = '';
   }
 
   menuToggle.addEventListener('click', toggleMenu);
   if (overlay) overlay.addEventListener('click', closeMenu);
+  if (drawerCloseBtn) drawerCloseBtn.addEventListener('click', closeMenu);
 
   navMenu.querySelectorAll('.nav-link').forEach(link => {
     link.addEventListener('click', closeMenu);
+  });
+
+  navMenu.querySelectorAll('[data-open-register], [data-open-submission]').forEach(btn => {
+    btn.addEventListener('click', closeMenu);
   });
 }
 

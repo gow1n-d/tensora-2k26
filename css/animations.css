@@ -1,0 +1,565 @@
+/* ==========================================================================
+   TENSORA 2026 - Master Animations & Cyber Visual FX Library
+   THEME: IRON MAN / STARK INDUSTRIES / ARC REACTOR CYBER EDITION
+   High-performance, 60 FPS GPU-accelerated micro-interactions & motion design
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. KEYFRAME DEFINITIONS
+   -------------------------------------------------------------------------- */
+
+/* Flowing metallic / stark gradient animation */
+@keyframes gradientTextFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Arc Reactor Rotation & Energy Flare */
+@keyframes reactorSpin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes reactorPulse {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(230, 36, 41, 0.7), 0 0 30px rgba(255, 215, 0, 0.4), inset 0 0 10px rgba(0, 240, 255, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(230, 36, 41, 1), 0 0 60px rgba(255, 215, 0, 0.8), inset 0 0 20px rgba(0, 240, 255, 0.9);
+  }
+}
+
+/* Floating Elements (Sine-wave hover) */
+@keyframes floatSubtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+@keyframes floatHeroCard {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(0.5deg); }
+}
+
+@keyframes floatTrophy {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-12px) scale(1.04); }
+}
+
+/* Pulsing Radar Ring */
+@keyframes radarRing {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.9;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+/* Shimmer Light Sheen Sweep */
+@keyframes shimmerLight {
+  0% { transform: translateX(-100%) rotate(25deg); }
+  100% { transform: translateX(250%) rotate(25deg); }
+}
+
+/* Laser Flow along Timeline & Borders */
+@keyframes laserTrack {
+  0% { background-position: 0% 0%; }
+  100% { background-position: 0% 100%; }
+}
+
+@keyframes laserHorizontal {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Cyber Border Breathing Glow */
+@keyframes cyberBorderGlow {
+  0%, 100% {
+    border-color: rgba(255, 215, 0, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(230, 36, 41, 0.2);
+  }
+  50% {
+    border-color: rgba(255, 215, 0, 0.75);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 215, 0, 0.4), 0 0 50px rgba(230, 36, 41, 0.35);
+  }
+}
+
+/* Header Slide In */
+@keyframes headerSlideDown {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. HEADER & NAVIGATION ANIMATIONS
+   -------------------------------------------------------------------------- */
+.main-header {
+  animation: headerSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.brand-logo-icon {
+  position: relative;
+  overflow: hidden;
+  animation: reactorPulse 3s infinite ease-in-out;
+}
+
+.brand-logo-icon::before {
+  content: '';
+  position: absolute;
+  inset: -50%;
+  background: conic-gradient(from 0deg, transparent 0deg, rgba(255, 215, 0, 0.4) 180deg, transparent 360deg);
+  animation: reactorSpin 4s linear infinite;
+  pointer-events: none;
+}
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--grad-vibrant-1);
+  border-radius: var(--radius-full);
+  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  box-shadow: 0 0 10px var(--stark-gold);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+  left: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. BUTTONS & INTERACTIVE MICRO-ANIMATIONS
+   -------------------------------------------------------------------------- */
+.btn {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, filter 0.25s ease;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 40%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
+  transform: rotate(25deg);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn:hover::before {
+  opacity: 1;
+  animation: shimmerLight 1.2s infinite ease-in-out;
+}
+
+.btn:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-primary {
+  box-shadow: 0 0 20px rgba(230, 36, 41, 0.45);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 0 35px rgba(230, 36, 41, 0.75), 0 0 50px rgba(255, 215, 0, 0.4);
+}
+
+.btn-secondary:hover {
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5), 0 0 35px rgba(0, 240, 255, 0.3);
+}
+
+/* --------------------------------------------------------------------------
+   4. HERO SECTION MOTION FX
+   -------------------------------------------------------------------------- */
+.hero-event-pill {
+  animation: floatSubtle 4s ease-in-out infinite;
+  box-shadow: 0 0 25px rgba(230, 36, 41, 0.4), inset 0 0 15px rgba(255, 215, 0, 0.15);
+}
+
+.brand-word {
+  background: linear-gradient(135deg, #ffffff 10%, #ffd700 35%, #e62429 70%, #ff1a2b 90%, #ffffff 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientTextFlow 6s ease infinite;
+}
+
+.hero-3d-sphere {
+  animation: floatArcReactor 9s ease-in-out infinite alternate;
+}
+
+.countdown-container {
+  animation: cyberBorderGlow 4s infinite ease-in-out, floatHeroCard 6s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--arc-cyan), var(--stark-gold), var(--stark-red), transparent);
+  background-size: 200% 100%;
+  animation: laserHorizontal 3s linear infinite;
+}
+
+.digit-box {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.digit-box:hover {
+  transform: translateY(-5px) scale(1.05);
+  border-color: var(--stark-gold);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.5);
+}
+
+.glance-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+  animation: floatSubtle 5s ease-in-out infinite;
+}
+
+.glance-card:nth-child(2) { animation-delay: -1.2s; }
+.glance-card:nth-child(3) { animation-delay: -2.4s; }
+.glance-card:nth-child(4) { animation-delay: -3.6s; }
+
+.glance-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  border-color: var(--stark-gold);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 215, 0, 0.4);
+}
+
+.glance-icon {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.glance-card:hover .glance-icon {
+  transform: scale(1.2) rotate(8deg);
+  color: var(--stark-gold);
+}
+
+/* --------------------------------------------------------------------------
+   5. SCROLL REVEAL STYLES (INTERSECTION OBSERVER)
+   -------------------------------------------------------------------------- */
+.reveal-init {
+  opacity: 0;
+  transform: translateY(35px) scale(0.96);
+  filter: blur(6px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, filter;
+}
+
+.reveal-init.revealed {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  filter: blur(6px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-left.revealed {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  filter: blur(6px);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-right.revealed {
+  opacity: 1;
+  transform: translateX(0);
+  filter: blur(0);
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.88);
+  filter: blur(8px);
+  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-scale.revealed {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
+
+/* --------------------------------------------------------------------------
+   6. CARDS HOLOGRAPHIC SPOTLIGHT & GLOW EFFECT
+   -------------------------------------------------------------------------- */
+.theme-card-3d,
+.card-3d,
+.podium-card,
+.pillar-card,
+.special-award-card,
+.timeline-card,
+.rubric-card,
+.glance-card {
+  position: relative;
+}
+
+.theme-card-3d::before,
+.card-3d::before,
+.podium-card::before,
+.pillar-card::before,
+.special-award-card::before,
+.timeline-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+    rgba(255, 215, 0, 0.12),
+    rgba(230, 36, 41, 0.06) 40%,
+    transparent 80%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.theme-card-3d:hover::before,
+.card-3d:hover::before,
+.podium-card:hover::before,
+.pillar-card:hover::before,
+.special-award-card:hover::before,
+.timeline-card:hover::before {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   7. HOW IT WORKS / PIPELINE LASER LINE
+   -------------------------------------------------------------------------- */
+.pipeline-flow {
+  position: relative;
+}
+
+.pipeline-step {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.pipeline-step:hover {
+  transform: translateY(-8px);
+}
+
+.step-icon {
+  position: relative;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+}
+
+.pipeline-step:hover .step-icon {
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 0 35px var(--stark-gold);
+}
+
+/* --------------------------------------------------------------------------
+   8. PRIZE PODIUM ANIMATIONS
+   -------------------------------------------------------------------------- */
+.podium-card.champion {
+  animation: floatTrophy 5s ease-in-out infinite, cyberBorderGlow 4s infinite ease-in-out;
+}
+
+.podium-card.runner-1 {
+  animation: floatSubtle 4.5s ease-in-out infinite -1s;
+}
+
+.podium-card.runner-2 {
+  animation: floatSubtle 5.2s ease-in-out infinite -2.5s;
+}
+
+.podium-badge {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.podium-card:hover .podium-badge {
+  transform: scale(1.25) rotate(12deg);
+  filter: drop-shadow(0 0 25px var(--stark-gold));
+}
+
+.special-award-card {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.special-award-card:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: var(--stark-gold);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.35);
+}
+
+.award-icon-box {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.special-award-card:hover .award-icon-box {
+  transform: scale(1.2) rotate(10deg);
+}
+
+/* --------------------------------------------------------------------------
+   9. TIMELINE / SCHEDULE RADAR MARKER
+   -------------------------------------------------------------------------- */
+.timeline-marker {
+  position: relative;
+}
+
+.timeline-marker::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 2px solid var(--stark-red);
+  animation: radarRing 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
+  pointer-events: none;
+}
+
+.timeline-item:hover .timeline-card {
+  transform: translateX(8px);
+  border-color: var(--stark-gold);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 30px rgba(230, 36, 41, 0.4);
+}
+
+/* --------------------------------------------------------------------------
+   10. JUDGING RUBRIC ANIMATED PROGRESS BARS
+   -------------------------------------------------------------------------- */
+.rubric-bar-fill {
+  width: 0% !important;
+  transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.rubric-bar-fill.bar-animated {
+  /* Set width via inline style or dataset */
+}
+
+/* --------------------------------------------------------------------------
+   11. FAQ ACCORDION TRANSITIONS
+   -------------------------------------------------------------------------- */
+.faq-item {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: translateY(-2px);
+  border-color: rgba(255, 215, 0, 0.45);
+}
+
+.faq-item.active {
+  border-color: var(--stark-gold);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.25);
+}
+
+.faq-icon-toggle {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.faq-item.active .faq-icon-toggle {
+  transform: rotate(180deg);
+  color: var(--stark-gold);
+}
+
+/* --------------------------------------------------------------------------
+   12. FOOTER & SOCIAL LINKS FX
+   -------------------------------------------------------------------------- */
+.main-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.main-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent 0%, var(--stark-red) 25%, var(--stark-gold) 50%, var(--arc-cyan) 75%, transparent 100%);
+  background-size: 200% 100%;
+  animation: laserHorizontal 4s linear infinite;
+}
+
+.social-icon-link {
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-icon-link:hover {
+  transform: translateY(-6px) scale(1.15);
+  background: linear-gradient(135deg, var(--stark-red), var(--stark-gold));
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(230, 36, 41, 0.6), 0 0 20px rgba(255, 215, 0, 0.5);
+}
+
+.footer-col ul li a {
+  transition: transform 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
+  display: inline-block;
+}
+
+.footer-col ul li a:hover {
+  transform: translateX(6px);
+  color: var(--stark-gold);
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   13. SCROLL-TO-TOP FLOATING BUTTON
+   -------------------------------------------------------------------------- */
+.scroll-top-btn {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-8px) scale(1.12);
+  box-shadow: 0 15px 35px rgba(230, 36, 41, 0.7), 0 0 30px rgba(255, 215, 0, 0.6);
+}
+
+/* --------------------------------------------------------------------------
+   14. INTERACTIVE CANVAS AMBIENT PARTICLES
+   -------------------------------------------------------------------------- */
+#cyberParticleCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -2;
+  opacity: 0.65;
+}
