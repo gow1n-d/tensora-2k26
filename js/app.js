@@ -58,10 +58,10 @@ function init3DTilt() {
   });
 }
 
-// Scroll spy for clean floating navbar
+// Scroll spy for clean navbar with active underline indicator
 function initScrollSpy() {
   const sections = document.querySelectorAll('section[id]');
-  const navLinks = document.querySelectorAll('.nav-link');
+  const navLinks = document.querySelectorAll('.nav-link, .drawer-link');
   const header = document.querySelector('.main-header');
   const scrollToTopBtn = document.getElementById('scrollToTopBtn');
 
@@ -69,27 +69,28 @@ function initScrollSpy() {
     const scrollY = window.pageYOffset;
 
     if (header) {
-      header.classList.toggle('scrolled', scrollY > 50);
+      header.classList.toggle('scrolled', scrollY > 40);
     }
 
     if (scrollToTopBtn) {
       scrollToTopBtn.classList.toggle('visible', scrollY > 500);
     }
 
+    let currentSectionId = 'home';
     sections.forEach(current => {
-      const sectionHeight = current.offsetHeight;
       const sectionTop = current.offsetTop - 140;
-      const sectionId = current.getAttribute('id');
-
-      if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-        navLinks.forEach(link => {
-          link.classList.toggle('active', link.getAttribute('href') === `#${sectionId}`);
-        });
+      if (scrollY >= sectionTop) {
+        currentSectionId = current.getAttribute('id');
       }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === `#${currentSectionId}`);
     });
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 }
 
 // Mobile drawer navigation

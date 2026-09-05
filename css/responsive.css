@@ -9,31 +9,49 @@
   }
 }
 
-/* Medium Desktops (≤ 1180px) */
-@media (max-width: 1180px) {
+/* Medium Desktops (≤ 1280px) */
+@media (max-width: 1280px) {
   .nav-menu {
-    gap: 0.25rem;
+    gap: 1.15rem;
   }
   .nav-link {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.6rem;
+    font-size: 0.78rem;
+    letter-spacing: 0.06em;
+  }
+  .nav-container {
+    padding: 0 1.5rem;
+  }
+}
+
+/* Compact Desktops (≤ 1120px) */
+@media (max-width: 1120px) {
+  .nav-menu {
+    gap: 0.75rem;
+  }
+  .nav-link {
+    font-size: 0.74rem;
+    letter-spacing: 0.04em;
+  }
+  .nav-cta-btn {
+    padding: 0.55rem 1.25rem;
+    font-size: 0.74rem;
   }
 }
 
 /* Mobile & Tablet Navigation Breakpoint (≤ 1024px) */
 @media (max-width: 1024px) {
   :root {
-    --header-height: 68px;
+    --header-height: 64px;
   }
 
   .main-header {
-    top: 0.6rem;
-    padding: 0 0.75rem;
+    height: 64px;
+    padding: 0;
   }
 
   .nav-container {
-    padding: 0 1rem;
-    height: 56px;
+    padding: 0 1.25rem;
+    height: 100%;
     max-width: 100%;
   }
 
@@ -41,6 +59,7 @@
     display: none !important;
   }
 
+  .nav-actions .nav-cta-btn,
   .nav-actions .btn-sm {
     display: none !important;
   }
