@@ -1,14 +1,6 @@
 /**
- * TENSORA 2026 - Interactive FAQ Accordion Component (Stark Cyber Edition)
+ * TENSORA 2026 - Interactive FAQ Accordion Component
  */
-
-const FAQ_CATEGORIES = {
-  eligibility: { label: "Eligibility & Teams", icon: "fa-solid fa-users", color: "#ffd700" },
-  ai: { label: "AI Mandate & Tools", icon: "fa-solid fa-brain", color: "#00f0ff" },
-  submissions: { label: "Timeline & Sprint", icon: "fa-solid fa-clock-rotate-left", color: "#ff9f1c" },
-  finale: { label: "Offline Finale @ KLNCE", icon: "fa-solid fa-trophy", color: "#ffd700" },
-  policy: { label: "IP Ownership & Rules", icon: "fa-solid fa-shield-halved", color: "#10b981" }
-};
 
 const FAQ_DATA = [
   {
@@ -99,64 +91,36 @@ function renderFaq() {
 
   if (filtered.length === 0) {
     container.innerHTML = `
-      <div class="faq-empty-state">
-        <div class="faq-empty-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
-        <h4>No Matching Questions Found</h4>
-        <p>We couldn't find any questions matching "${faqSearchQuery}". Try another keyword or reach out directly to the Turing Club team!</p>
-        <button class="btn btn-secondary btn-sm" onclick="clearFaqSearch()">
-          <i class="fa-solid fa-arrows-rotate"></i> Reset Filters
-        </button>
+      <div class="no-challenges-state">
+        <i class="fa-solid fa-circle-question"></i>
+        <p>No matching questions found for "${faqSearchQuery}". Reach out to our helpdesk directly!</p>
       </div>
     `;
     return;
   }
 
-  container.innerHTML = filtered.map((item, idx) => {
-    const cat = FAQ_CATEGORIES[item.category] || { label: "General", icon: "fa-solid fa-circle-question", color: "#ffd700" };
-    const isFirst = idx === 0 && !faqSearchQuery && activeFaqCategory === 'all';
-    
-    return `
-      <div class="faq-item ${isFirst ? 'active' : ''}" data-category="${item.category}">
-        <button type="button" class="faq-question" aria-expanded="${isFirst ? 'true' : 'false'}" onclick="toggleFaq(this)">
-          <div class="faq-question-content">
-            <span class="faq-category-pill" style="color: ${cat.color}; border-color: ${cat.color}44; background: ${cat.color}15;">
-              <i class="${cat.icon}"></i> ${cat.label}
-            </span>
-            <span class="faq-question-text">${item.q}</span>
-          </div>
-          <div class="faq-chevron-badge">
-            <i class="fa-solid fa-chevron-down faq-icon"></i>
-          </div>
-        </button>
-        <div class="faq-answer">
-          <div class="faq-answer-inner">
-            <div class="faq-answer-bar"></div>
-            <div class="faq-answer-text">${item.a}</div>
-          </div>
+  container.innerHTML = filtered.map((item, idx) => `
+    <div class="faq-item ${idx === 0 && !faqSearchQuery ? 'active' : ''}" data-category="${item.category}">
+      <button type="button" class="faq-question" aria-expanded="${idx === 0 && !faqSearchQuery ? 'true' : 'false'}" onclick="toggleFaq(this)">
+        <span>${item.q}</span>
+        <i class="fa-solid fa-chevron-down faq-icon"></i>
+      </button>
+      <div class="faq-answer">
+        <div class="faq-answer-inner">
+          <p>${item.a}</p>
         </div>
       </div>
-    `;
-  }).join('');
-}
-
-function clearFaqSearch() {
-  faqSearchQuery = '';
-  activeFaqCategory = 'all';
-  const searchInput = document.getElementById('faqSearchInput');
-  if (searchInput) searchInput.value = '';
-  document.querySelectorAll('.faq-tab-btn').forEach(b => {
-    b.classList.toggle('active', b.dataset.category === 'all');
-  });
-  renderFaq();
+    </div>
+  `).join('');
 }
 
 function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
+  const item = btn.closest('.faq-item') || btn.parentElement;
   if (!item) return;
 
   const isActive = item.classList.contains('active');
   
-  // Close other open items in the same container for clean accordion UX
+  // Close other open items in the same container
   document.querySelectorAll('.faq-item').forEach(el => {
     if (el !== item) {
       el.classList.remove('active');
@@ -193,5 +157,5 @@ function initFaq() {
 }
 
 if (typeof module !== 'undefined' && module.exports) {
-  module.exports = { initFaq, renderFaq, toggleFaq, clearFaqSearch };
+  module.exports = { initFaq, renderFaq, toggleFaq };
 }
