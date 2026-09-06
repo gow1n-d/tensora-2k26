@@ -25,23 +25,10 @@ let registrationData = {
   regId: ''
 };
 
+const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSca6LaVMwjD99GuWNA_cbKprjUCKUn7OVdA8V9fW3o_5U5fmA/viewform?usp=publish-editor";
+
 function openRegisterModal(preselectedTrackId = null) {
-  const modal = document.getElementById('registerModal');
-  if (!modal) return;
-
-  if (preselectedTrackId) {
-    const trkSelect = document.getElementById('regTrack1');
-    if (trkSelect) trkSelect.value = preselectedTrackId;
-    registrationData.track1 = preselectedTrackId;
-  }
-
-  currentStep = 1;
-  showStep(1);
-  populateTrackDropdowns();
-  updateMemberInputs();
-
-  modal.classList.add('active');
-  document.body.style.overflow = 'hidden';
+  window.open(GOOGLE_FORM_URL, '_blank', 'noopener,noreferrer');
 }
 
 function closeRegisterModal() {
