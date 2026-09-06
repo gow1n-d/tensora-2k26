@@ -174,6 +174,55 @@ function initMobileDrawer() {
   window.closeMobileDrawer = closeDrawer;
 }
 
+// Robust, Silent, Seamless Looping Background Video Controller
+function initHeroBackgroundVideo() {
+  const video = document.getElementById('heroBgVideo');
+  if (!video) return;
+
+  // Enforce zero audio strictly per user instruction
+  video.muted = true;
+  video.defaultMuted = true;
+  video.playsInline = true;
+  video.loop = true;
+
+  // Autoplay attempt with resilient interaction fallback
+  const startPlayback = () => {
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch((err) => {
+        console.warn('Background video autoplay waiting for user interaction:', err);
+        const onFirstInteraction = () => {
+          video.play().catch(() => {});
+          document.removeEventListener('click', onFirstInteraction);
+          document.removeEventListener('touchstart', onFirstInteraction);
+          document.removeEventListener('keydown', onFirstInteraction);
+        };
+        document.addEventListener('click', onFirstInteraction, { once: true, passive: true });
+        document.addEventListener('touchstart', onFirstInteraction, { once: true, passive: true });
+        document.addEventListener('keydown', onFirstInteraction, { once: true, passive: true });
+      });
+    }
+  };
+
+  // Immediate start
+  startPlayback();
+
+  // Seamless looping guarantee (instantly restart if loop event stutters)
+  video.addEventListener('ended', () => {
+    video.currentTime = 0;
+    video.play().catch(() => {});
+  });
+
+  // Resource optimization on tab visibility change
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      video.pause();
+    } else {
+      video.play().catch(() => {});
+    }
+  });
+}
+
 // App initialization
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof initCountdown === 'function') initCountdown();
@@ -181,6 +230,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initSubmission === 'function') initSubmission();
   if (typeof initFaq === 'function') initFaq();
   
+  initHeroBackgroundVideo();
   initScrollSpy();
   init3DTilt();
   initKeyboardAccessibility();

@@ -21,60 +21,46 @@
   }
 }
 
-/* Hero — sequential reveal */
+/* Hero — smooth entrance without hiding text */
 .hero-badge-wrap {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroReveal 700ms var(--ease-emphasized) forwards;
-  animation-delay: 150ms;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-brand-block {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroReveal 700ms var(--ease-emphasized) forwards;
-  animation-delay: 300ms;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-tagline-strip {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroReveal 600ms var(--ease-emphasized) forwards;
-  animation-delay: 450ms;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-subtitle {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroReveal 600ms var(--ease-emphasized) forwards;
-  animation-delay: 550ms;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .hero-ctas {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroReveal 600ms var(--ease-emphasized) forwards;
-  animation-delay: 700ms;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .countdown-container {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroReveal 700ms var(--ease-emphasized) forwards;
-  animation-delay: 850ms;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .glance-stats-grid {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: heroReveal 600ms var(--ease-emphasized) forwards;
-  animation-delay: 1000ms;
+  opacity: 1;
+  transform: translateY(0);
 }
 
 @keyframes heroReveal {
   from {
-    opacity: 0;
-    transform: translateY(20px);
+    opacity: 0.8;
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
@@ -84,65 +70,63 @@
 
 
 /* --------------------------------------------------------------------------
-   2. SCROLL REVEAL SYSTEM — Rich Variants
+   2. SCROLL REVEAL SYSTEM — High-Performance & Non-Hiding
    -------------------------------------------------------------------------- */
 .reveal-init {
-  opacity: 0;
-  transform: translateY(24px);
-  filter: blur(3px);
+  opacity: 1;
+  transform: translateY(0);
+  filter: none;
   transition:
-    opacity 650ms var(--ease-emphasized),
-    transform 650ms var(--ease-emphasized),
-    filter 650ms var(--ease-emphasized);
-  will-change: opacity, transform, filter;
+    opacity 400ms var(--ease-emphasized),
+    transform 400ms var(--ease-emphasized);
 }
 
 .reveal-init.revealed {
   opacity: 1;
   transform: translateY(0);
-  filter: blur(0);
+  filter: none;
 }
 
 /* Slide from left */
 .reveal-left {
-  opacity: 0;
-  transform: translateX(-28px);
-  filter: blur(3px);
-  transition: all 650ms var(--ease-emphasized);
+  opacity: 1;
+  transform: translateX(0);
+  filter: none;
+  transition: all 400ms var(--ease-emphasized);
 }
 
 .reveal-left.revealed {
   opacity: 1;
   transform: translateX(0);
-  filter: blur(0);
+  filter: none;
 }
 
 /* Slide from right */
 .reveal-right {
-  opacity: 0;
-  transform: translateX(28px);
-  filter: blur(3px);
-  transition: all 650ms var(--ease-emphasized);
+  opacity: 1;
+  transform: translateX(0);
+  filter: none;
+  transition: all 400ms var(--ease-emphasized);
 }
 
 .reveal-right.revealed {
   opacity: 1;
   transform: translateX(0);
-  filter: blur(0);
+  filter: none;
 }
 
 /* Scale in */
 .reveal-scale {
-  opacity: 0;
-  transform: scale(0.92);
-  filter: blur(4px);
-  transition: all 700ms var(--ease-emphasized);
+  opacity: 1;
+  transform: scale(1);
+  filter: none;
+  transition: all 400ms var(--ease-emphasized);
 }
 
 .reveal-scale.revealed {
   opacity: 1;
   transform: scale(1);
-  filter: blur(0);
+  filter: none;
 }
 
 /* Stagger delays for card grids */
