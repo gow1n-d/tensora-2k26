@@ -192,7 +192,7 @@
     // Particle pool
     const particleCount = Math.min(Math.floor((width * height) / 28000), 45);
     const particles = [];
-    const colors = ['rgba(230, 36, 41, ', 'rgba(255, 215, 0, ', 'rgba(0, 240, 255, '];
+    const colors = ['rgba(37, 99, 235, ', 'rgba(255, 51, 102, ', 'rgba(0, 194, 168, '];
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
@@ -202,7 +202,7 @@
         vy: (Math.random() - 0.5) * 0.45,
         size: Math.random() * 2 + 1,
         colorBase: colors[Math.floor(Math.random() * colors.length)],
-        alpha: Math.random() * 0.5 + 0.2,
+        alpha: Math.random() * 0.4 + 0.15,
         pulseSpeed: Math.random() * 0.02 + 0.005
       });
     }
@@ -245,8 +245,8 @@
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fillStyle = `${p.colorBase}${p.alpha})`;
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = `${p.colorBase}0.8)`;
+        ctx.shadowBlur = 6;
+        ctx.shadowColor = `${p.colorBase}0.5)`;
         ctx.fill();
 
         // Draw subtle interconnecting energy lines
@@ -257,7 +257,7 @@
             ctx.beginPath();
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = `rgba(255, 215, 0, ${0.15 * (1 - dist2 / 110)})`;
+            ctx.strokeStyle = `rgba(37, 99, 235, ${0.12 * (1 - dist2 / 110)})`;
             ctx.lineWidth = 0.6;
             ctx.shadowBlur = 0;
             ctx.stroke();

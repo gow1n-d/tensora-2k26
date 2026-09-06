@@ -1,293 +1,114 @@
 /* ==========================================================================
-   TENSORA 2026 - Master Animations & Cyber Visual FX Library
-   THEME: IRON MAN / STARK INDUSTRIES / ARC REACTOR CYBER EDITION
-   High-performance, 60 FPS GPU-accelerated micro-interactions & motion design
+   TENSORA 2K26 — Motion & Visual FX Library
+   Bright, Vibrant, Kinetic Interactions with Polished Craftsmanship
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. KEYFRAME DEFINITIONS
-   -------------------------------------------------------------------------- */
-
-/* Flowing metallic / stark gradient animation */
-@keyframes gradientTextFlow {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Arc Reactor Rotation & Energy Flare */
-@keyframes reactorSpin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes reactorPulse {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(230, 36, 41, 0.7), 0 0 30px rgba(255, 215, 0, 0.4), inset 0 0 10px rgba(0, 240, 255, 0.6);
-  }
-  50% {
-    box-shadow: 0 0 30px rgba(230, 36, 41, 1), 0 0 60px rgba(255, 215, 0, 0.8), inset 0 0 20px rgba(0, 240, 255, 0.9);
-  }
-}
-
-/* Floating Elements (Sine-wave hover) */
-@keyframes floatSubtle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-7px); }
-}
-
-@keyframes floatHeroCard {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(-10px) rotate(0.5deg); }
-}
-
-@keyframes floatTrophy {
-  0%, 100% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(-12px) scale(1.04); }
-}
-
-/* Pulsing Radar Ring */
-@keyframes radarRing {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.9;
-  }
-  100% {
-    transform: scale(2.4);
-    opacity: 0;
-  }
-}
-
-/* Shimmer Light Sheen Sweep */
-@keyframes shimmerLight {
-  0% { transform: translateX(-100%) rotate(25deg); }
-  100% { transform: translateX(250%) rotate(25deg); }
-}
-
-/* Laser Flow along Timeline & Borders */
-@keyframes laserTrack {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 0% 100%; }
-}
-
-@keyframes laserHorizontal {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
-}
-
-/* Cyber Border Breathing Glow */
-@keyframes cyberBorderGlow {
-  0%, 100% {
-    border-color: rgba(255, 215, 0, 0.35);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), 0 0 15px rgba(230, 36, 41, 0.2);
-  }
-  50% {
-    border-color: rgba(255, 215, 0, 0.75);
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 215, 0, 0.4), 0 0 50px rgba(230, 36, 41, 0.35);
-  }
-}
-
-/* Header Slide In */
-@keyframes headerSlideDown {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* --------------------------------------------------------------------------
-   2. HEADER & NAVIGATION ANIMATIONS
+   1. HERO ENTRANCE SEQUENCE — Staggered Entrance
    -------------------------------------------------------------------------- */
 .main-header {
-  animation: headerSlideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: headerEntrance 800ms var(--ease-emphasized) forwards;
 }
 
-.brand-logo-icon {
-  position: relative;
-  overflow: hidden;
-  animation: reactorPulse 3s infinite ease-in-out;
+@keyframes headerEntrance {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
-.brand-logo-icon::before {
-  content: '';
-  position: absolute;
-  inset: -50%;
-  background: conic-gradient(from 0deg, transparent 0deg, rgba(255, 215, 0, 0.4) 180deg, transparent 360deg);
-  animation: reactorSpin 4s linear infinite;
-  pointer-events: none;
-}
-
-.nav-link {
-  position: relative;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -4px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: var(--grad-vibrant-1);
-  border-radius: var(--radius-full);
-  transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1), left 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
-  box-shadow: 0 0 10px var(--stark-gold);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-  left: 0;
-}
-
-/* --------------------------------------------------------------------------
-   3. BUTTONS & INTERACTIVE MICRO-ANIMATIONS
-   -------------------------------------------------------------------------- */
-.btn {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, filter 0.25s ease;
-}
-
-.btn::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -60%;
-  width: 40%;
-  height: 200%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-  transform: rotate(25deg);
-  pointer-events: none;
+/* Hero — sequential reveal */
+.hero-badge-wrap {
   opacity: 0;
-  transition: opacity 0.2s ease;
+  transform: translateY(20px);
+  animation: heroReveal 700ms var(--ease-emphasized) forwards;
+  animation-delay: 150ms;
 }
 
-.btn:hover {
-  transform: translateY(-3px) scale(1.02);
+.hero-brand-block {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 700ms var(--ease-emphasized) forwards;
+  animation-delay: 300ms;
 }
 
-.btn:hover::before {
-  opacity: 1;
-  animation: shimmerLight 1.2s infinite ease-in-out;
+.hero-tagline-strip {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 600ms var(--ease-emphasized) forwards;
+  animation-delay: 450ms;
 }
 
-.btn:active {
-  transform: translateY(0) scale(0.98);
+.hero-subtitle {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 600ms var(--ease-emphasized) forwards;
+  animation-delay: 550ms;
 }
 
-.btn-primary {
-  box-shadow: 0 0 20px rgba(230, 36, 41, 0.45);
-}
-
-.btn-primary:hover {
-  box-shadow: 0 0 35px rgba(230, 36, 41, 0.75), 0 0 50px rgba(255, 215, 0, 0.4);
-}
-
-.btn-secondary:hover {
-  box-shadow: 0 0 25px rgba(255, 215, 0, 0.5), 0 0 35px rgba(0, 240, 255, 0.3);
-}
-
-/* --------------------------------------------------------------------------
-   4. HERO SECTION MOTION FX
-   -------------------------------------------------------------------------- */
-.hero-event-pill {
-  animation: floatSubtle 4s ease-in-out infinite;
-  box-shadow: 0 0 25px rgba(230, 36, 41, 0.4), inset 0 0 15px rgba(255, 215, 0, 0.15);
-}
-
-.brand-word {
-  background: linear-gradient(135deg, #ffffff 10%, #ffd700 35%, #e62429 70%, #ff1a2b 90%, #ffffff 100%);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientTextFlow 6s ease infinite;
-}
-
-.hero-3d-sphere {
-  animation: floatArcReactor 9s ease-in-out infinite alternate;
+.hero-ctas {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 600ms var(--ease-emphasized) forwards;
+  animation-delay: 700ms;
 }
 
 .countdown-container {
-  animation: cyberBorderGlow 4s infinite ease-in-out, floatHeroCard 6s ease-in-out infinite;
-  position: relative;
-  overflow: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 700ms var(--ease-emphasized) forwards;
+  animation-delay: 850ms;
 }
 
-.countdown-container::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--arc-cyan), var(--stark-gold), var(--stark-red), transparent);
-  background-size: 200% 100%;
-  animation: laserHorizontal 3s linear infinite;
+.glance-stats-grid {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: heroReveal 600ms var(--ease-emphasized) forwards;
+  animation-delay: 1000ms;
 }
 
-.digit-box {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+@keyframes heroReveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.digit-box:hover {
-  transform: translateY(-5px) scale(1.05);
-  border-color: var(--stark-gold);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.5);
-}
-
-.glance-card {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-  animation: floatSubtle 5s ease-in-out infinite;
-}
-
-.glance-card:nth-child(2) { animation-delay: -1.2s; }
-.glance-card:nth-child(3) { animation-delay: -2.4s; }
-.glance-card:nth-child(4) { animation-delay: -3.6s; }
-
-.glance-card:hover {
-  transform: translateY(-8px) scale(1.03);
-  border-color: var(--stark-gold);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 35px rgba(255, 215, 0, 0.4);
-}
-
-.glance-icon {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
-}
-
-.glance-card:hover .glance-icon {
-  transform: scale(1.2) rotate(8deg);
-  color: var(--stark-gold);
-}
 
 /* --------------------------------------------------------------------------
-   5. SCROLL REVEAL STYLES (INTERSECTION OBSERVER)
+   2. SCROLL REVEAL SYSTEM — Rich Variants
    -------------------------------------------------------------------------- */
 .reveal-init {
   opacity: 0;
-  transform: translateY(35px) scale(0.96);
-  filter: blur(6px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
-              filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px);
+  filter: blur(3px);
+  transition:
+    opacity 650ms var(--ease-emphasized),
+    transform 650ms var(--ease-emphasized),
+    filter 650ms var(--ease-emphasized);
   will-change: opacity, transform, filter;
 }
 
 .reveal-init.revealed {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
   filter: blur(0);
 }
 
+/* Slide from left */
 .reveal-left {
   opacity: 0;
-  transform: translateX(-40px);
-  filter: blur(6px);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(-28px);
+  filter: blur(3px);
+  transition: all 650ms var(--ease-emphasized);
 }
 
 .reveal-left.revealed {
@@ -296,11 +117,12 @@
   filter: blur(0);
 }
 
+/* Slide from right */
 .reveal-right {
   opacity: 0;
-  transform: translateX(40px);
-  filter: blur(6px);
-  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateX(28px);
+  filter: blur(3px);
+  transition: all 650ms var(--ease-emphasized);
 }
 
 .reveal-right.revealed {
@@ -309,11 +131,12 @@
   filter: blur(0);
 }
 
+/* Scale in */
 .reveal-scale {
   opacity: 0;
-  transform: scale(0.88);
-  filter: blur(8px);
-  transition: all 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: scale(0.92);
+  filter: blur(4px);
+  transition: all 700ms var(--ease-emphasized);
 }
 
 .reveal-scale.revealed {
@@ -322,236 +145,179 @@
   filter: blur(0);
 }
 
+/* Stagger delays for card grids */
+.reveal-delay-1 { transition-delay: 0ms; }
+.reveal-delay-2 { transition-delay: 80ms; }
+.reveal-delay-3 { transition-delay: 160ms; }
+.reveal-delay-4 { transition-delay: 240ms; }
+.reveal-delay-5 { transition-delay: 320ms; }
+.reveal-delay-6 { transition-delay: 400ms; }
+
+/* Dynamic stagger for card containers */
+.pillars-grid .pillar-card:nth-child(1),
+.themes-grid-5 .theme-card-3d:nth-child(1),
+.special-awards-grid .special-award-card:nth-child(1) { transition-delay: 0ms; }
+
+.pillars-grid .pillar-card:nth-child(2),
+.themes-grid-5 .theme-card-3d:nth-child(2),
+.special-awards-grid .special-award-card:nth-child(2) { transition-delay: 80ms; }
+
+.pillars-grid .pillar-card:nth-child(3),
+.themes-grid-5 .theme-card-3d:nth-child(3),
+.special-awards-grid .special-award-card:nth-child(3) { transition-delay: 160ms; }
+
+.pillars-grid .pillar-card:nth-child(4),
+.themes-grid-5 .theme-card-3d:nth-child(4),
+.special-awards-grid .special-award-card:nth-child(4) { transition-delay: 240ms; }
+
+.pillars-grid .pillar-card:nth-child(5),
+.themes-grid-5 .theme-card-3d:nth-child(5),
+.special-awards-grid .special-award-card:nth-child(5) { transition-delay: 320ms; }
+
+/* Podium stagger */
+.prize-podium-grid .podium-card:nth-child(1) { transition-delay: 80ms; }
+.prize-podium-grid .podium-card:nth-child(2) { transition-delay: 0ms; }
+.prize-podium-grid .podium-card:nth-child(3) { transition-delay: 160ms; }
+
+/* Timeline stagger */
+.timeline-track .timeline-item:nth-child(1) { transition-delay: 0ms; }
+.timeline-track .timeline-item:nth-child(2) { transition-delay: 90ms; }
+.timeline-track .timeline-item:nth-child(3) { transition-delay: 180ms; }
+.timeline-track .timeline-item:nth-child(4) { transition-delay: 270ms; }
+.timeline-track .timeline-item:nth-child(5) { transition-delay: 360ms; }
+.timeline-track .timeline-item:nth-child(6) { transition-delay: 450ms; }
+.timeline-track .timeline-item:nth-child(7) { transition-delay: 540ms; }
+.timeline-track .timeline-item:nth-child(8) { transition-delay: 630ms; }
+
+
 /* --------------------------------------------------------------------------
-   6. CARDS HOLOGRAPHIC SPOTLIGHT & GLOW EFFECT
+   3. BUTTON & CARD MICRO-INTERACTIONS
    -------------------------------------------------------------------------- */
+.btn {
+  transition:
+    transform 180ms var(--ease-emphasized),
+    background-color var(--duration-normal) ease,
+    box-shadow var(--duration-normal) ease,
+    border-color var(--duration-normal) ease;
+}
+
 .theme-card-3d,
-.card-3d,
-.podium-card,
 .pillar-card,
+.pipeline-step-card,
+.glance-card,
 .special-award-card,
 .timeline-card,
-.rubric-card,
-.glance-card {
-  position: relative;
+.podium-card {
+  transition:
+    transform 300ms var(--ease-emphasized),
+    border-color 300ms ease,
+    box-shadow 300ms ease;
 }
 
-.theme-card-3d::before,
-.card-3d::before,
-.podium-card::before,
-.pillar-card::before,
-.special-award-card::before,
-.timeline-card::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  background: radial-gradient(
-    600px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
-    rgba(255, 215, 0, 0.12),
-    rgba(230, 36, 41, 0.06) 40%,
-    transparent 80%
-  );
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  pointer-events: none;
-  z-index: 1;
-}
-
-.theme-card-3d:hover::before,
-.card-3d:hover::before,
-.podium-card:hover::before,
-.pillar-card:hover::before,
-.special-award-card:hover::before,
-.timeline-card:hover::before {
-  opacity: 1;
-}
 
 /* --------------------------------------------------------------------------
-   7. HOW IT WORKS / PIPELINE LASER LINE
-   -------------------------------------------------------------------------- */
-.pipeline-flow {
-  position: relative;
-}
-
-.pipeline-step {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.pipeline-step:hover {
-  transform: translateY(-8px);
-}
-
-.step-icon {
-  position: relative;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
-}
-
-.pipeline-step:hover .step-icon {
-  transform: scale(1.15) rotate(10deg);
-  box-shadow: 0 0 35px var(--stark-gold);
-}
-
-/* --------------------------------------------------------------------------
-   8. PRIZE PODIUM ANIMATIONS
-   -------------------------------------------------------------------------- */
-.podium-card.champion {
-  animation: floatTrophy 5s ease-in-out infinite, cyberBorderGlow 4s infinite ease-in-out;
-}
-
-.podium-card.runner-1 {
-  animation: floatSubtle 4.5s ease-in-out infinite -1s;
-}
-
-.podium-card.runner-2 {
-  animation: floatSubtle 5.2s ease-in-out infinite -2.5s;
-}
-
-.podium-badge {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
-}
-
-.podium-card:hover .podium-badge {
-  transform: scale(1.25) rotate(12deg);
-  filter: drop-shadow(0 0 25px var(--stark-gold));
-}
-
-.special-award-card {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s ease, border-color 0.35s ease;
-}
-
-.special-award-card:hover {
-  transform: translateY(-6px) scale(1.02);
-  border-color: var(--stark-gold);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.35);
-}
-
-.award-icon-box {
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
-}
-
-.special-award-card:hover .award-icon-box {
-  transform: scale(1.2) rotate(10deg);
-}
-
-/* --------------------------------------------------------------------------
-   9. TIMELINE / SCHEDULE RADAR MARKER
-   -------------------------------------------------------------------------- */
-.timeline-marker {
-  position: relative;
-}
-
-.timeline-marker::after {
-  content: '';
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 2px solid var(--stark-red);
-  animation: radarRing 2.2s cubic-bezier(0.2, 0.8, 0.2, 1) infinite;
-  pointer-events: none;
-}
-
-.timeline-item:hover .timeline-card {
-  transform: translateX(8px);
-  border-color: var(--stark-gold);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 30px rgba(230, 36, 41, 0.4);
-}
-
-/* --------------------------------------------------------------------------
-   10. JUDGING RUBRIC ANIMATED PROGRESS BARS
+   4. RUBRIC BAR ANIMATION
    -------------------------------------------------------------------------- */
 .rubric-bar-fill {
   width: 0% !important;
-  transition: width 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: width 1.4s var(--ease-emphasized);
 }
 
-.rubric-bar-fill.bar-animated {
-  /* Set width via inline style or dataset */
-}
 
 /* --------------------------------------------------------------------------
-   11. FAQ ACCORDION TRANSITIONS
+   5. ICON & BADGE HOVER EFFECTS
    -------------------------------------------------------------------------- */
-.faq-item {
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+.glance-icon,
+.pillar-icon-box,
+.podium-badge,
+.award-icon-box,
+.theme-icon-orb {
+  transition: transform var(--duration-normal) var(--ease-emphasized);
 }
 
-.faq-item:hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 215, 0, 0.45);
-}
-
-.faq-item.active {
-  border-color: var(--stark-gold);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.8), 0 0 25px rgba(255, 215, 0, 0.25);
-}
-
-.faq-icon-toggle {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.faq-item.active .faq-icon-toggle {
-  transform: rotate(180deg);
-  color: var(--stark-gold);
-}
 
 /* --------------------------------------------------------------------------
-   12. FOOTER & SOCIAL LINKS FX
+   6. TIMELINE LINE DRAW ANIMATION
    -------------------------------------------------------------------------- */
-.main-footer {
-  position: relative;
-  overflow: hidden;
+.timeline-track::before {
+  transform-origin: top;
+  animation: timelineLineDraw 1.5s var(--ease-emphasized) forwards;
 }
 
-.main-footer::before {
+@keyframes timelineLineDraw {
+  from {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  to {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}
+
+
+/* --------------------------------------------------------------------------
+   7. FLOATING KINETIC MICRO-DOTS
+   -------------------------------------------------------------------------- */
+.hero-section::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background: linear-gradient(90deg, transparent 0%, var(--stark-red) 25%, var(--stark-gold) 50%, var(--arc-cyan) 75%, transparent 100%);
-  background-size: 200% 100%;
-  animation: laserHorizontal 4s linear infinite;
+  top: 25%;
+  right: 10%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  box-shadow: 0 0 14px rgba(37, 99, 235, 0.4);
+  opacity: 0.6;
+  animation: floatParticle1 12s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.social-icon-link {
-  position: relative;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+@keyframes floatParticle1 {
+  0%, 100% { transform: translate(0, 0); opacity: 0.4; }
+  25% { transform: translate(-20px, -25px); opacity: 0.7; }
+  50% { transform: translate(12px, -45px); opacity: 0.5; }
+  75% { transform: translate(-14px, -18px); opacity: 0.6; }
 }
 
-.social-icon-link:hover {
-  transform: translateY(-6px) scale(1.15);
-  background: linear-gradient(135deg, var(--stark-red), var(--stark-gold));
-  color: #ffffff;
-  box-shadow: 0 10px 25px rgba(230, 36, 41, 0.6), 0 0 20px rgba(255, 215, 0, 0.5);
+section:nth-child(even)::after {
+  content: '';
+  position: absolute;
+  bottom: 15%;
+  left: 6%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-coral);
+  box-shadow: 0 0 12px rgba(255, 51, 102, 0.35);
+  opacity: 0.5;
+  animation: floatParticle2 16s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.footer-col ul li a {
-  transition: transform 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
-  display: inline-block;
+@keyframes floatParticle2 {
+  0%, 100% { transform: translate(0, 0); opacity: 0.3; }
+  33% { transform: translate(20px, -30px); opacity: 0.6; }
+  66% { transform: translate(-12px, -15px); opacity: 0.4; }
 }
 
-.footer-col ul li a:hover {
-  transform: translateX(6px);
-  color: var(--stark-gold);
-  text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-}
 
 /* --------------------------------------------------------------------------
-   13. SCROLL-TO-TOP FLOATING BUTTON
+   8. VAULT ICON FLOAT
    -------------------------------------------------------------------------- */
-.scroll-top-btn {
-  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.35s ease, background 0.3s ease, box-shadow 0.3s ease;
+.vault-lock-icon {
+  animation: vaultFloat 6s ease-in-out infinite;
 }
 
-.scroll-top-btn:hover {
-  transform: translateY(-8px) scale(1.12);
-  box-shadow: 0 15px 35px rgba(230, 36, 41, 0.7), 0 0 30px rgba(255, 215, 0, 0.6);
+@keyframes vaultFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
 }
+
 
 /* --------------------------------------------------------------------------
-   14. INTERACTIVE CANVAS AMBIENT PARTICLES
+   9. CANVAS PARTICLE LAYER
    -------------------------------------------------------------------------- */
 #cyberParticleCanvas {
   position: fixed;
@@ -560,6 +326,126 @@
   width: 100vw;
   height: 100vh;
   pointer-events: none;
-  z-index: -2;
-  opacity: 0.65;
+  z-index: var(--z-particles);
+  opacity: 0.6;
+}
+
+
+/* --------------------------------------------------------------------------
+   10. STITCH DESIGN SYSTEM — BUTTON & CTA ANIMATIONS
+   -------------------------------------------------------------------------- */
+@keyframes stitchBtnPulse {
+  0%, 100% {
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35), 0 0 0 0 rgba(37, 99, 235, 0.25);
+  }
+  50% {
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.55), 0 0 0 8px rgba(37, 99, 235, 0.08);
+  }
+}
+
+@keyframes stitchRippleExpand {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.2);
+    opacity: 0;
+  }
+}
+
+@keyframes stitchFloatBob {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+@keyframes stitchIconBounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(4px);
+  }
+}
+
+/* Floating Action Button Stitch Animation */
+.scroll-top-btn {
+  transition: all 250ms cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.scroll-top-btn.visible {
+  animation: stitchFloatBob 3s ease-in-out infinite;
+}
+
+.scroll-top-btn:hover {
+  transform: translateY(-4px) scale(1.1) !important;
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45) !important;
+}
+
+.scroll-top-btn:hover i {
+  transform: translateY(-2px);
+  transition: transform 200ms ease;
+}
+
+/* Modal Close Button Stitch Spring Animation */
+.modal-close-btn {
+  transition: all 250ms cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+.modal-close-btn:hover {
+  transform: rotate(90deg) scale(1.12) !important;
+  background: #FEE2E2 !important;
+  color: #DC2626 !important;
+  border-color: #FCA5A5 !important;
+}
+
+
+/* --------------------------------------------------------------------------
+   11. ACCESSIBILITY — REDUCED MOTION
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal-init,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+
+  .hero-badge-wrap,
+  .hero-brand-block,
+  .hero-tagline-strip,
+  .hero-subtitle,
+  .hero-ctas,
+  .countdown-container,
+  .glance-stats-grid {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  body::before,
+  body::after,
+  section::before,
+  section::after,
+  .hero-3d-sphere {
+    animation: none !important;
+  }
+
+  #cyberParticleCanvas {
+    display: none !important;
+  }
 }

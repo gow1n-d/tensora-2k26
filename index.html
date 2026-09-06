@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#040711">
+  <meta name="theme-color" content="#FAFCFF">
   
   <!-- Primary SEO Metadata -->
   <title>TENSORA 2026 | National Level AI Innovation Hackathon | KLN College of Engineering</title>
@@ -21,7 +21,7 @@
   <!-- Google Fonts & Font Awesome Icons -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Stylesheets -->
@@ -61,12 +61,47 @@
 
       <!-- Action Buttons -->
       <div class="nav-actions">
-        <button class="nav-cta-btn" data-open-register aria-label="Register Your Team">
+        <button class="nav-cta-btn" data-open-register aria-label="Register Your Team" onclick="openRegisterModal()">
           <i class="fa-solid fa-bolt"></i> Register Now
+        </button>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop">
+    <div class="mobile-drawer-pane" id="mobileDrawerPane">
+      <div class="drawer-header">
+        <div class="brand-logo">
+          <div class="brand-logo-icon"><i class="fa-solid fa-atom"></i></div>
+          <span>TENSORA</span>
+          <span class="brand-year">2K26</span>
+        </div>
+        <button class="drawer-close-btn" id="drawerCloseBtn" aria-label="Close menu">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <ul class="drawer-menu">
+        <li><a href="#home" class="drawer-link"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#about" class="drawer-link"><i class="fa-solid fa-compass"></i> About</a></li>
+        <li><a href="#format" class="drawer-link"><i class="fa-solid fa-diagram-project"></i> How It Works</a></li>
+        <li><a href="#tracks" class="drawer-link"><i class="fa-solid fa-shapes"></i> Innovation Tracks</a></li>
+        <li><a href="#schedule" class="drawer-link"><i class="fa-solid fa-calendar-days"></i> Schedule</a></li>
+        <li><a href="#rubric" class="drawer-link"><i class="fa-solid fa-list-check"></i> Judging Rubric</a></li>
+        <li><a href="#prizes" class="drawer-link"><i class="fa-solid fa-trophy"></i> Prizes & Awards</a></li>
+        <li><a href="#rules" class="drawer-link"><i class="fa-solid fa-book-bookmark"></i> Rulebook</a></li>
+        <li><a href="#faq" class="drawer-link"><i class="fa-solid fa-circle-question"></i> FAQ</a></li>
+      </ul>
+      <div class="drawer-cta-wrap">
+        <button class="btn btn-primary btn-block" onclick="if (typeof closeMobileDrawer === 'function') closeMobileDrawer(); openRegisterModal();">
+          <i class="fa-solid fa-bolt"></i> Register Team Now
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- =========================================================================
        2. 3D HERO SECTION & DYNAMIC VIBRANT COUNTDOWN
@@ -103,7 +138,7 @@
 
       <!-- Dual Call to Action Buttons -->
       <div class="hero-ctas">
-        <button class="btn btn-primary btn-lg" data-open-register>
+        <button class="btn btn-primary btn-lg btn-pulse" data-open-register onclick="openRegisterModal()">
           <i class="fa-solid fa-user-astronaut"></i> Register Your Team
         </button>
         <a href="#tracks" class="btn btn-secondary btn-lg">
@@ -291,48 +326,49 @@
   </section>
 
   <!-- =========================================================================
-       5. PROBLEM STATEMENTS DISCLOSURE TEASER & 5 INNOVATION TRACKS
+       5. PROBLEM STATEMENTS & 5 INNOVATION DOMAINS
        ========================================================================= -->
   <section id="tracks">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-lock-open"></i> Innovation Domains</span>
-        <h2 class="section-title">5 Strategic AI Innovation Tracks</h2>
+        <span class="section-tag"><i class="fa-solid fa-compass"></i> Innovation Domains & Challenges</span>
+        <h2 class="section-title">Problem Statements by Strategic Domain</h2>
         <p class="section-subtitle">
-          Specific problem statements will be revealed to registered participants on 21 September 2026 at 12:00 PM IST. Explore the core tracks below.
+          Explore 20 curated real-world AI challenges across Education, Transport, Healthcare, Sustainable Energy, and Agriculture. Filter by domain, inspect problem scopes, and select your challenge.
         </p>
       </div>
 
-      <!-- 3D Locked Vault Teaser Box -->
-      <div class="vault-hero-card">
-        <div class="vault-lock-icon">
-          <i class="fa-solid fa-shield-halved"></i>
-        </div>
-        <h3 class="vault-title">Official Problem Statements Locked</h3>
-        <p class="vault-desc">
-          To maintain equal competitive fairness, problem statements will be unlocked on <strong>21 September 2026 at 12:00 PM IST</strong>. Assemble your team, choose your preferred domain, and prepare your development stack.
-        </p>
-        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
-          <button class="btn btn-primary" onclick="notifyOnRelease()">
-            <i class="fa-regular fa-bell"></i> Get Alert When Challenges Unlock
-          </button>
-          <button class="btn btn-secondary" data-open-register>
-            <i class="fa-solid fa-user-plus"></i> Pre-Register Your Team
-          </button>
-        </div>
-      </div>
-
-      <!-- 5 Vibrant 3D Track Cards -->
+      <!-- 5 Vibrant Domain Cards in Requested Order -->
       <div class="themes-grid-5">
         
-        <!-- Track 1 -->
-        <div class="theme-card-3d theme-transport">
+        <!-- Domain 1: Education -->
+        <div class="theme-card-3d theme-education" onclick="openRegisterModal('track-education');" style="cursor: pointer;">
+          <div class="theme-icon-orb">
+            <i class="fa-solid fa-graduation-cap"></i>
+          </div>
+          <h3 class="theme-card-title">Education</h3>
+          <p class="theme-card-desc">
+            Socratic algorithmic visualizers, vernacular dialect adaptation, 3D spatial sign language translation, and smartphone camera OMR/handwritten grading engines.
+          </p>
+          <div class="theme-focus-chips">
+            <span class="focus-chip">LLM Agents</span>
+            <span class="focus-chip">Indic NLP</span>
+            <span class="focus-chip">Spatial Hand Tracking</span>
+            <span class="focus-chip">Document OCR</span>
+          </div>
+          <div class="theme-card-footer">
+            <span class="theme-card-action">Register for Track <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Domain 2: Transport -->
+        <div class="theme-card-3d theme-transport" onclick="openRegisterModal('track-mobility');" style="cursor: pointer;">
           <div class="theme-icon-orb">
             <i class="fa-solid fa-train-subway"></i>
           </div>
-          <h3 class="theme-card-title">Intelligent Mobility & Transport</h3>
+          <h3 class="theme-card-title">Transport</h3>
           <p class="theme-card-desc">
-            AI for predictive transit maintenance, edge-vision driver cognitive safety, automated airport/railway traffic routing, and corridor wildlife collision mitigation.
+            AI for predictive transit fleet maintenance, edge-vision driver cognitive fatigue prevention, automated airport/railway traffic routing, and corridor wildlife collision mitigation.
           </p>
           <div class="theme-focus-chips">
             <span class="focus-chip">Edge Vision</span>
@@ -340,65 +376,37 @@
             <span class="focus-chip">Reinforcement Learning</span>
             <span class="focus-chip">IoT Telemetry</span>
           </div>
-        </div>
-
-        <!-- Track 2 -->
-        <div class="theme-card-3d theme-education">
-          <div class="theme-icon-orb">
-            <i class="fa-solid fa-graduation-cap"></i>
-          </div>
-          <h3 class="theme-card-title">AI for Education & Inclusion</h3>
-          <p class="theme-card-desc">
-            Socratic algorithmic visualizers, vernacular dialect adaptation, 3D spatial sign language translation, and smartphone camera OMR/handwritten grading engines.
-          </p>
-          <div class="theme-focus-chips">
-            <span class="focus-chip">LLM Agents</span>
-            <span class="focus-chip">Indian Vernacular NLP</span>
-            <span class="focus-chip">Spatial Hand Tracking</span>
-            <span class="focus-chip">Document OCR</span>
+          <div class="theme-card-footer">
+            <span class="theme-card-action">Register for Track <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </div>
 
-        <!-- Track 3 -->
-        <div class="theme-card-3d theme-agriculture">
-          <div class="theme-icon-orb">
-            <i class="fa-solid fa-seedling"></i>
-          </div>
-          <h3 class="theme-card-title">AgriTech & Rural Innovation</h3>
-          <p class="theme-card-desc">
-            Multispectral foliar pathogen severity segmentation, NPK soil health prescription models, livestock muzzle biometrics, and autonomous drone weed mapping.
-          </p>
-          <div class="theme-focus-chips">
-            <span class="focus-chip">Satellite NDVI</span>
-            <span class="focus-chip">Semantic Segmentation</span>
-            <span class="focus-chip">Bio-Acoustics</span>
-            <span class="focus-chip">Drone Mission Waypoints</span>
-          </div>
-        </div>
-
-        <!-- Track 4 -->
-        <div class="theme-card-3d theme-healthcare">
+        <!-- Domain 3: Healthcare -->
+        <div class="theme-card-3d theme-healthcare" onclick="openRegisterModal('track-healthcare');" style="cursor: pointer;">
           <div class="theme-icon-orb">
             <i class="fa-solid fa-heart-pulse"></i>
           </div>
-          <h3 class="theme-card-title">AI for Health & Wellbeing</h3>
+          <h3 class="theme-card-title">Healthcare</h3>
           <p class="theme-card-desc">
             Prescription OCR contraindication sentinels, explainable radiograph triaging with Grad-CAM, regional meal calorie estimation, and acoustic vocal tremor Parkinson's screening.
           </p>
           <div class="theme-focus-chips">
             <span class="focus-chip">Medical Imaging</span>
             <span class="focus-chip">Biomedical NLP</span>
-            <span class="focus-chip">Explainable AI (XAI)</span>
-            <span class="focus-chip">Signal Biomarkers</span>
+            <span class="focus-chip">Grad-CAM XAI</span>
+            <span class="focus-chip">Biomarkers</span>
+          </div>
+          <div class="theme-card-footer">
+            <span class="theme-card-action">Register for Track <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </div>
 
-        <!-- Track 5 -->
-        <div class="theme-card-3d theme-climate">
+        <!-- Domain 4: Sustainable Energy -->
+        <div class="theme-card-3d theme-climate" onclick="openRegisterModal('track-climate');" style="cursor: pointer;">
           <div class="theme-icon-orb">
             <i class="fa-solid fa-solar-panel"></i>
           </div>
-          <h3 class="theme-card-title">Climate, Energy & Safety</h3>
+          <h3 class="theme-card-title">Sustainable Energy</h3>
           <p class="theme-card-desc">
             Spatio-temporal solar/wind generation forecasting, Scope 1-3 industrial carbon accounting, CCTV PPE safety sentinel, and smart campus load balancers.
           </p>
@@ -406,11 +414,35 @@
             <span class="focus-chip">Grid Forecasting</span>
             <span class="focus-chip">Carbon Analytics</span>
             <span class="focus-chip">Industrial CCTV Vision</span>
-            <span class="focus-chip">NILM Load Shaving</span>
+            <span class="focus-chip">NILM Energy</span>
+          </div>
+          <div class="theme-card-footer">
+            <span class="theme-card-action">Register for Track <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Domain 5: Agriculture -->
+        <div class="theme-card-3d theme-agriculture" onclick="openRegisterModal('track-agriculture');" style="cursor: pointer;">
+          <div class="theme-icon-orb">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 class="theme-card-title">Agriculture</h3>
+          <p class="theme-card-desc">
+            Multispectral foliar pathogen severity segmentation, NPK soil health prescription models, livestock muzzle biometrics, and autonomous drone weed mapping.
+          </p>
+          <div class="theme-focus-chips">
+            <span class="focus-chip">Satellite NDVI</span>
+            <span class="focus-chip">Semantic Segmentation</span>
+            <span class="focus-chip">Bio-Acoustics</span>
+            <span class="focus-chip">Drone Waypoints</span>
+          </div>
+          <div class="theme-card-footer">
+            <span class="theme-card-action">Register for Track <i class="fa-solid fa-arrow-right"></i></span>
           </div>
         </div>
 
       </div>
+
     </div>
   </section>
 
@@ -504,93 +536,256 @@
   </section>
 
   <!-- =========================================================================
-       7. JUDGING RUBRIC & EVALUATION
+       7. MULTI-LEVEL JUDGING RUBRIC & EVALUATION STANDARDS
        ========================================================================= -->
   <section id="rubric">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag"><i class="fa-solid fa-chart-pie"></i> Evaluation Standards</span>
-        <h2 class="section-title">Official Judging Rubric & Weightage</h2>
+        <span class="section-tag"><i class="fa-solid fa-layer-group"></i> Multi-Level Evaluation</span>
+        <h2 class="section-title">Evaluation Levels & 100-Point Scoring Rubric</h2>
         <p class="section-subtitle">
-          Transparent 100-point scoring matrix applied consistently by our industry and academic jury.
+          A rigorous 3-stage elimination funnel and 4-tier mastery benchmark applied consistently by our industry and academic jury.
         </p>
       </div>
 
+      <!-- 1. The 3 Multi-Tier Evaluation Stages -->
+      <div class="eval-levels-grid" style="margin-bottom: var(--space-16);">
+        
+        <!-- Level 1 -->
+        <div class="eval-level-card level-1">
+          <div class="eval-level-header">
+            <span class="eval-level-badge"><i class="fa-solid fa-file-lines"></i> LEVEL 01</span>
+            <span class="eval-gate-pill">Filter: Top 50 Teams</span>
+          </div>
+          <h3 class="eval-level-title">Online Abstract & Architecture Review</h3>
+          <p class="eval-level-desc">
+            Initial screening of registered teams based on technical depth, dataset feasibility, and algorithmic innovation.
+          </p>
+          <div class="eval-criteria-list">
+            <div class="eval-criteria-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Clear problem formulation & domain relevance</span>
+            </div>
+            <div class="eval-criteria-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Proposed ML/DL pipeline architecture feasibility</span>
+            </div>
+            <div class="eval-criteria-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Dataset provenance & ethical curation strategy</span>
+            </div>
+          </div>
+          <div class="eval-deliverable-bar">
+            <strong>Key Deliverable:</strong> 2-Page Architecture Abstract + System Design
+          </div>
+        </div>
+
+        <!-- Level 2 -->
+        <div class="eval-level-card level-2">
+          <div class="eval-level-header">
+            <span class="eval-level-badge"><i class="fa-solid fa-code"></i> LEVEL 02</span>
+            <span class="eval-gate-pill">Filter: Top 25 Finalists</span>
+          </div>
+          <h3 class="eval-level-title">24-Hour Code Sprint & Milestone Audit</h3>
+          <p class="eval-level-desc">
+            Rigorous technical milestone checkpoints during the 24-hour online sprint with live GitHub commit monitoring.
+          </p>
+          <div class="eval-criteria-list">
+            <div class="eval-criteria-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Live Git commit timeline & reproducible code structure</span>
+            </div>
+            <div class="eval-criteria-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Functional model training & validation loss convergence</span>
+            </div>
+            <div class="eval-criteria-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Zero-mock policy: verified real-time model inference</span>
+            </div>
+          </div>
+          <div class="eval-deliverable-bar">
+            <strong>Key Deliverable:</strong> Public GitHub Repo + 3-Min Video Demo
+          </div>
+        </div>
+
+        <!-- Level 3 -->
+        <div class="eval-level-card level-3">
+          <div class="eval-level-header">
+            <span class="eval-level-badge"><i class="fa-solid fa-trophy"></i> LEVEL 03</span>
+            <span class="eval-gate-pill champion-gate">Finals: Top 10 on Stage</span>
+          </div>
+          <h3 class="eval-level-title">Offline Grand Finale & Live Jury Defense</h3>
+          <p class="eval-level-desc">
+            On-campus live prototype demonstrations, stress-testing against unseen test vectors, and cross-examination at KLNCE.
+          </p>
+          <div class="eval-criteria-list">
+            <div class="eval-criteria-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Live working prototype demonstration on stage</span>
+            </div>
+            <div class="eval-criteria-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Inference latency, throughput & memory benchmarks</span>
+            </div>
+            <div class="eval-criteria-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Stress-testing against adversarial & out-of-distribution inputs</span>
+            </div>
+          </div>
+          <div class="eval-deliverable-bar">
+            <strong>Key Deliverable:</strong> 7-Min Stage Pitch + 5-Min Live Jury Defense
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 2. The 4-Tier Scoring Mastery Benchmark Matrix -->
+      <div class="scoring-matrix-card" style="margin-bottom: var(--space-12);">
+        <div class="scoring-matrix-header">
+          <h4 style="font-size: var(--text-lg); font-weight: 700; color: var(--color-text-primary);">
+            <i class="fa-solid fa-chart-simple" style="color: var(--color-primary); margin-right: 0.5rem;"></i> Performance Scoring Levels
+          </h4>
+          <span style="font-size: var(--text-xs); color: var(--color-text-muted);">How your score is graded across all 6 rubric categories</span>
+        </div>
+        <div class="scoring-tiers-row">
+          <div class="scoring-tier-box tier-1">
+            <span class="tier-tag">LEVEL 1</span>
+            <span class="tier-score">0 – 40%</span>
+            <span class="tier-name">Emerging</span>
+            <p class="tier-desc">Static mock logic, superficial UI, no functional ML/DL execution.</p>
+          </div>
+          <div class="scoring-tier-box tier-2">
+            <span class="tier-tag">LEVEL 2</span>
+            <span class="tier-score">41 – 70%</span>
+            <span class="tier-name">Developing</span>
+            <p class="tier-desc">Generic baseline model with stock weights; basic functional pipeline.</p>
+          </div>
+          <div class="scoring-tier-box tier-3">
+            <span class="tier-tag">LEVEL 3</span>
+            <span class="tier-score">71 – 85%</span>
+            <span class="tier-name">Proficient</span>
+            <p class="tier-desc">Custom fine-tuning, quantitative evaluation curves, robust UI & error handling.</p>
+          </div>
+          <div class="scoring-tier-box tier-4">
+            <span class="tier-tag">LEVEL 4</span>
+            <span class="tier-score">86 – 100%</span>
+            <span class="tier-name">Mastery</span>
+            <p class="tier-desc">Novel architecture, XAI (Grad-CAM/SHAP), edge optimization, low-latency, scalable.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. 100-Point Detailed Criteria Breakdown Cards -->
       <div class="judging-grid">
         <div class="rubric-card">
+          
+          <!-- Metric 1 -->
           <div class="rubric-item">
             <div class="rubric-header">
               <span><i class="fa-solid fa-microchip"></i> AI/ML Technical Implementation</span>
-              <span class="rubric-weight">25% (25 Points)</span>
+              <span class="rubric-weight">25 Points (25%)</span>
+            </div>
+            <div class="rubric-level-hint">
+              <span>Level 4 Benchmark: Custom model training, validation curves, XAI explainability, quantitative metrics</span>
             </div>
             <div class="rubric-bar-bg">
               <div class="rubric-bar-fill" style="width: 25%;"></div>
             </div>
           </div>
 
+          <!-- Metric 2 -->
           <div class="rubric-item">
             <div class="rubric-header">
-              <span><i class="fa-solid fa-lightbulb"></i> Innovation & Originality</span>
-              <span class="rubric-weight">20% (20 Points)</span>
+              <span><i class="fa-solid fa-cube"></i> Working Prototype & Functionality</span>
+              <span class="rubric-weight">20 Points (20%)</span>
+            </div>
+            <div class="rubric-level-hint">
+              <span>Level 4 Benchmark: Fully interactive zero-mock UI connected to live inference backend</span>
             </div>
             <div class="rubric-bar-bg">
               <div class="rubric-bar-fill" style="width: 20%;"></div>
             </div>
           </div>
 
+          <!-- Metric 3 -->
           <div class="rubric-item">
             <div class="rubric-header">
-              <span><i class="fa-solid fa-cube"></i> Working Prototype / Functionality</span>
-              <span class="rubric-weight">20% (20 Points)</span>
+              <span><i class="fa-solid fa-lightbulb"></i> Innovation & Algorithmic Originality</span>
+              <span class="rubric-weight">20 Points (20%)</span>
+            </div>
+            <div class="rubric-level-hint">
+              <span>Level 4 Benchmark: Novel problem formulation, creative feature engineering, superior to existing baselines</span>
             </div>
             <div class="rubric-bar-bg">
               <div class="rubric-bar-fill" style="width: 20%;"></div>
             </div>
           </div>
 
+          <!-- Metric 4 -->
           <div class="rubric-item">
             <div class="rubric-header">
               <span><i class="fa-solid fa-bullseye"></i> Problem Understanding & Relevance</span>
-              <span class="rubric-weight">15% (15 Points)</span>
+              <span class="rubric-weight">15 Points (15%)</span>
+            </div>
+            <div class="rubric-level-hint">
+              <span>Level 4 Benchmark: Deep domain grasp, practical feasibility for Indian & global contexts</span>
             </div>
             <div class="rubric-bar-bg">
               <div class="rubric-bar-fill" style="width: 15%;"></div>
             </div>
           </div>
 
+          <!-- Metric 5 -->
           <div class="rubric-item">
             <div class="rubric-header">
-              <span><i class="fa-solid fa-chart-line"></i> Scalability & Social/Commercial Impact</span>
-              <span class="rubric-weight">10% (10 Points)</span>
+              <span><i class="fa-solid fa-chart-line"></i> Scalability & System Architecture</span>
+              <span class="rubric-weight">10 Points (10%)</span>
+            </div>
+            <div class="rubric-level-hint">
+              <span>Level 4 Benchmark: Modular clean code, API endpoints, low latency, resource-efficient inference</span>
             </div>
             <div class="rubric-bar-bg">
               <div class="rubric-bar-fill" style="width: 10%;"></div>
             </div>
           </div>
 
+          <!-- Metric 6 -->
           <div class="rubric-item">
             <div class="rubric-header">
               <span><i class="fa-solid fa-person-chalkboard"></i> Presentation & Defense Quality</span>
-              <span class="rubric-weight">10% (10 Points)</span>
+              <span class="rubric-weight">10 Points (10%)</span>
+            </div>
+            <div class="rubric-level-hint">
+              <span>Level 4 Benchmark: Crystal-clear technical communication, robust defense under jury cross-examination</span>
             </div>
             <div class="rubric-bar-bg">
               <div class="rubric-bar-fill" style="width: 10%;"></div>
             </div>
           </div>
+
         </div>
 
+        <!-- Mandatory AI Policy Card -->
         <div class="mandatory-alert-card">
           <h3><i class="fa-solid fa-triangle-exclamation"></i> Mandatory AI Policy</h3>
           <p>
-            TENSORA is strictly an <strong>Artificial Intelligence hackathon</strong>. If a submitted project uses purely static mock logic, hard-coded rules, or superficial UI without functional ML/DL models or genuine LLM orchestration, the submission will receive <strong>0 / 25 in the AI category</strong> and will not be eligible for podium honors.
+            TENSORA is strictly an <strong>Artificial Intelligence innovation hackathon</strong>. Submissions relying on purely static mock logic, hard-coded rules, or wrapper UIs without functional ML/DL models will receive <strong>Level 1 (0 / 25 in AI Implementation)</strong> and are automatically eliminated from podium consideration.
           </p>
-          <ul class="modal-list" style="margin-top: 1rem; list-style: none;">
-            <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--neon-emerald);"></i> <span>Custom trained or fine-tuned model architectures</span></li>
-            <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--neon-emerald);"></i> <span>Explainable AI outputs (Grad-CAM, SHAP, etc.)</span></li>
-            <li style="display: flex; gap: 0.5rem;"><i class="fa-solid fa-check" style="color: var(--neon-emerald);"></i> <span>Original feature engineering & pipeline code</span></li>
-          </ul>
+          <div style="margin-top: 1.25rem;">
+            <div style="font-size: 0.85rem; font-weight: 700; color: var(--color-text-primary); margin-bottom: 0.5rem;">
+              Qualifying Level 3 & 4 Submissions Must Include:
+            </div>
+            <ul class="modal-list" style="list-style: none;">
+              <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.88rem; color: var(--color-text-secondary);"><i class="fa-solid fa-circle-check" style="color: var(--color-success); margin-top: 0.2rem;"></i> <span>Custom trained, fine-tuned, or chained ML/DL models</span></li>
+              <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.88rem; color: var(--color-text-secondary);"><i class="fa-solid fa-circle-check" style="color: var(--color-success); margin-top: 0.2rem;"></i> <span>Explainable AI outputs (Grad-CAM, SHAP, attention maps)</span></li>
+              <li style="display: flex; gap: 0.5rem; margin-bottom: 0.5rem; font-size: 0.88rem; color: var(--color-text-secondary);"><i class="fa-solid fa-circle-check" style="color: var(--color-success); margin-top: 0.2rem;"></i> <span>Reproducible pipeline code with dependencies and test dataset</span></li>
+              <li style="display: flex; gap: 0.5rem; font-size: 0.88rem; color: var(--color-text-secondary);"><i class="fa-solid fa-circle-check" style="color: var(--color-success); margin-top: 0.2rem;"></i> <span>Live interactive inference demonstration with real inputs</span></li>
+            </ul>
+          </div>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -721,27 +916,27 @@
 
       <div class="pillars-grid">
         <div class="pillar-card">
-          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-id-card"></i> Rule 01: Eligibility & Teams</h4>
+          <h4 class="rule-heading"><i class="fa-solid fa-id-card"></i> Rule 01: Eligibility & Teams</h4>
           <p class="pillar-desc">Open to enrolled UG/PG students across recognized Indian colleges. Teams must comprise 2–4 members. Cross-college teams are fully permitted.</p>
         </div>
         <div class="pillar-card">
-          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-code"></i> Rule 02: Build Window</h4>
+          <h4 class="rule-heading"><i class="fa-solid fa-code"></i> Rule 02: Build Window</h4>
           <p class="pillar-desc">All core coding and pipeline construction must take place between 21 Sept 6:00 PM and 22 Sept 6:00 PM IST. Pre-built apps are strictly prohibited.</p>
         </div>
         <div class="pillar-card">
-          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-copyright"></i> Rule 03: 100% IP Ownership</h4>
+          <h4 class="rule-heading"><i class="fa-solid fa-copyright"></i> Rule 03: 100% IP Ownership</h4>
           <p class="pillar-desc">Participants retain complete ownership of the intellectual property they independently create during the hackathon.</p>
         </div>
         <div class="pillar-card">
-          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-box-open"></i> Rule 04: Open Source & APIs</h4>
+          <h4 class="rule-heading"><i class="fa-solid fa-box-open"></i> Rule 04: Open Source & APIs</h4>
           <p class="pillar-desc">Public open-source libraries, frameworks, and foundational model weights are allowed with proper citation in the README.</p>
         </div>
         <div class="pillar-card">
-          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-file-arrow-up"></i> Rule 05: Submission Deliverables</h4>
+          <h4 class="rule-heading"><i class="fa-solid fa-file-arrow-up"></i> Rule 05: Submission Deliverables</h4>
           <p class="pillar-desc">Teams must submit public GitHub repo, setup documentation, 3-min video demo link, and presentation slide deck before the deadline.</p>
         </div>
         <div class="pillar-card">
-          <h4 style="color: var(--neon-cyan); margin-bottom: 0.5rem;"><i class="fa-solid fa-scale-balanced"></i> Rule 06: Zero Plagiarism</h4>
+          <h4 class="rule-heading"><i class="fa-solid fa-scale-balanced"></i> Rule 06: Zero Plagiarism</h4>
           <p class="pillar-desc">Direct copying of other teams' code or submitting existing commercial products will result in immediate disqualification.</p>
         </div>
       </div>
@@ -799,7 +994,7 @@
 
       <div class="organizer-turing-hero">
         <div style="max-width: 760px; margin: 0 auto;">
-          <h3 style="margin-bottom: 0.85rem;"><i class="fa-solid fa-brain" style="color: var(--neon-cyan);"></i> The Turing Club</h3>
+          <h3 style="margin-bottom: 0.85rem;"><i class="fa-solid fa-brain" style="color: var(--color-secondary);"></i> The Turing Club</h3>
           <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.7;">
             The Turing Club is the student innovation community at KLNCE driving technical excellence, open-source AI development, and competitive problem-solving. From challenge curation to 24/7 participant support, the club bridges academic rigor and real-world AI deployment.
           </p>
@@ -864,7 +1059,7 @@
 
       <div class="footer-bottom-bar">
         <span>© 2026 TENSORA — Department of AI & DS, K.L.N. College of Engineering. All rights reserved.</span>
-        <span>Stark Arc Reactor AI Edition • Built for College Innovators.</span>
+        <span>Engineered for AI Innovation.</span>
       </div>
     </div>
   </footer>

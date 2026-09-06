@@ -1,113 +1,16 @@
 /**
  * TENSORA 2026 - Official Problem Statements Dataset
- * 5 Themes x 4 Problems = 20 Real-World AI Challenges
+ * 5 Strategic Domains x 4 Problems = 20 Real-World AI Challenges
+ * Domains: Education, Transport, Healthcare, Sustainable Energy, Agriculture
  */
 
 const CHALLENGES_DATA = [
-  // ==================== THEME: TRANSPORT / INTELLIGENT MOBILITY ====================
+  // ==================== 1. THEME: EDUCATION ====================
   {
-    id: "T01",
-    theme: "transport",
-    themeName: "Intelligent Mobility & Transport",
-    themeIcon: "fa-solid fa-train-subway",
-    title: "AI-Based Predictive Maintenance of Metro Compressor Units",
-    tagline: "Predict air compressor failures and calculate Remaining Useful Life (RUL) before breakdowns occur.",
-    difficulty: "Advanced",
-    aiCategory: "Time-Series & Predictive Analytics",
-    tags: ["Time-Series", "LSTM / Transformers", "Anomaly Detection", "IoT Sensors", "RUL Estimation"],
-    summary: "Air compressor units in metro train braking systems operate under severe thermal and mechanical stresses. Unexpected compressor failure causes emergency braking and operational gridlock. Teams must build an AI pipeline using real-world multi-sensor time-series data to detect anomalous degradation patterns and forecast remaining useful operating hours with high precision.",
-    problemScope: "Metro operators rely on reactive or scheduled maintenance which is either too late or unnecessarily costly. Sensor logs capture vibration, oil pressure, motor temperature, cylinder pressure, and electrical current drawn. The objective is to construct an end-to-end anomaly detection and RUL forecasting engine with false-positive mitigation.",
-    aiRequirements: [
-      "Deep learning or ensemble time-series model (e.g. Temporal Convolutional Networks, LSTM, PatchTST, or XGBoost on engineered lag features).",
-      "Dynamic thresholding algorithm for anomaly scoring in noisy industrial sensor telemetry.",
-      "Explainability module (SHAP / Integrated Gradients) identifying which sensor signals triggered the failure warning."
-    ],
-    deliverables: [
-      "Predictive modeling pipeline with evaluated RMSE/MAE and precision-recall curves.",
-      "Interactive engineer dashboard showing real-time health index of compressor units.",
-      "Automated maintenance dispatch alert system with recommended intervention time."
-    ],
-    sampleDatasets: ["Metro PT Compressor Dataset (Kaggle/UCI)", "NASA Turbofan Engine Degradation Simulation (C-MAPSS)"]
-  },
-  {
-    id: "T02",
-    theme: "transport",
-    themeName: "Intelligent Mobility & Transport",
-    themeIcon: "fa-solid fa-car-burst",
-    title: "Edge-AI Driver Distraction & Drowsiness Prevention",
-    tagline: "Real-time edge computer vision to detect cognitive fatigue, eye closure, and phone usage.",
-    difficulty: "Intermediate",
-    aiCategory: "Computer Vision & Edge AI",
-    tags: ["Computer Vision", "YOLOv8/v11", "Facial Landmarks", "Edge AI", "EAR/MAR Analysis"],
-    summary: "Commercial and private vehicle accidents frequently result from microsleep, driver drowsiness, and smartphone distractions. Teams must build a lightweight, low-latency edge AI system that detects eye-aspect ratio (EAR), mouth-opening ratio (MAR), head gaze drift, and device usage in varying lighting conditions.",
-    problemScope: "Existing driver monitoring systems struggle with low illumination, sunglasses, and extreme computational overhead. Solutions must run smoothly on edge hardware (e.g., Raspberry Pi, Jetson Nano, or standard mobile/laptop webcams at 30+ FPS) while ensuring zero biometric privacy leakage.",
-    aiRequirements: [
-      "Facial landmark tracking and head pose estimation pipeline (MediaPipe, OpenCV, or custom CNNs).",
-      "Object detection model optimized for hand-held smartphone and cigarette detection.",
-      "Temporal smoothing classifier to distinguish intentional glances from micro-sleep episodes."
-    ],
-    deliverables: [
-      "Working real-time live webcam/video demonstration.",
-      "Auditory and visual multi-level alert dashboard with distraction logging.",
-      "Optimized lightweight inference pipeline (ONNX / TensorRT / TFLite)."
-    ],
-    sampleDatasets: ["State Farm Distracted Driver Detection (Kaggle)", "Driver Drowsiness Dataset (DDD)", "NTHU Driver Drowsiness Video Dataset"]
-  },
-  {
-    id: "T03",
-    theme: "transport",
-    themeName: "Intelligent Mobility & Transport",
-    themeIcon: "fa-solid fa-plane-departure",
-    title: "Flight Schedule & Gate Allocation Optimizer for Congested Hubs",
-    tagline: "Reinforcement learning and graph AI to minimize runway delays, gate conflicts, and carbon burn.",
-    difficulty: "Advanced",
-    aiCategory: "Reinforcement Learning & Graph AI",
-    tags: ["Reinforcement Learning", "Graph Neural Networks", "Combinatorial Optimization", "Aviation"],
-    summary: "Air traffic congestion at major international and domestic hubs leads to cascading departure delays, excessive apron idling, and thousands of tons of avoidable jet fuel emissions. Build an AI-driven optimization system that re-sequences departure taxi queues and dynamically reallocates airport arrival gates during weather disruptions.",
-    problemScope: "A single delayed flight ripples across subsequent sector rotations. The challenge requires processing multi-airline flight schedules, runway turnarounds, gate constraints, and historical delay matrices to compute optimal conflict-free assignments in under 60 seconds.",
-    aiRequirements: [
-      "Constraint-aware Reinforcement Learning agent (PPO/DQN) or Graph Neural Network (GNN) model.",
-      "Delay propagation predictor using historical aviation flight matrices.",
-      "Dynamic re-routing optimizer capable of simulating gate swap scenarios."
-    ],
-    deliverables: [
-      "Flight simulation testbed demonstrating turnaround throughput improvements.",
-      "Interactive gate schedule heatmap and runway taxiway dispatcher view.",
-      "Comparative metrics showing simulated reduction in idle taxi emissions and passenger missed connections."
-    ],
-    sampleDatasets: ["Bureau of Transportation Statistics (BTS) Flight Delay Database", "OpenSky Network Historical Flight Traces"]
-  },
-  {
-    id: "T04",
-    theme: "transport",
-    themeName: "Intelligent Mobility & Transport",
-    themeIcon: "fa-solid fa-paw",
-    title: "Human-Wildlife Conflict Mitigation on Railway Corridors",
-    tagline: "Multi-sensory acoustic and thermal vision system for early elephant and wildlife track trespass alerts.",
-    difficulty: "Intermediate",
-    aiCategory: "Multimodal AI & Acoustic Vision",
-    tags: ["Multimodal AI", "Thermal Imaging", "Bioacoustic AI", "Geofencing", "Railway Safety"],
-    summary: "High-speed train collisions with elephants and other endangered wildlife along forest corridors cause severe ecological loss and derailment dangers. Develop an automated trackside AI sentinel system that combines thermal camera feeds with seismic/acoustic sensor processing to identify approaching herds 500m+ ahead and send automated locomotive braking alerts.",
-    problemScope: "Dense foliage, heavy nighttime fog, and harsh outdoor railway environments render standard optical cameras ineffective. The system must filter out false positives (e.g., wind, cattle, small mammals) and trigger instant geofenced alerts to nearby loco pilots and station master consoles.",
-    aiRequirements: [
-      "Thermal / Infrared object detection pipeline specialized for large mammal silhouettes.",
-      "Audio spectrogram / seismic wave classifier for seismic footfall and trumpet vocalization detection.",
-      "Sensor fusion engine delivering confidence-calibrated telemetry alerts to the train crew."
-    ],
-    deliverables: [
-      "Multimodal inference pipeline supporting thermal video and audio input streams.",
-      "Station Master & Locomotive Pilot Telemetry Dashboard with automated warning sirens and maps.",
-      "False-alarm resistance benchmark against ambient environmental noise."
-    ],
-    sampleDatasets: ["WildTrack Footprint & Silhouette Dataset", "Elephant Seismic & Infrasonic Audio Archives", "Kaggle Thermal Wildlife Video Sets"]
-  },
-
-  // ==================== THEME: EDUCATION / AI FOR LEARNING ====================
-  {
-    id: "E01",
+    id: "EDU-01",
     theme: "education",
-    themeName: "AI for Education",
-    themeIcon: "fa-solid fa-code",
+    themeName: "Education",
+    themeIcon: "fa-solid fa-graduation-cap",
     title: "CodeAI — Interactive DSA & Algorithmic Visual Tutor",
     tagline: "AI tutor that steps through student code, visualizes memory pointers, and provides Socratic debugging guidance.",
     difficulty: "Intermediate",
@@ -128,9 +31,9 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["HumanEval & MBPP Benchmark Datasets", "LeetCode Algorithmic Problem Ontologies", "CodeNet Multi-Language AST Datasets"]
   },
   {
-    id: "E02",
+    id: "EDU-02",
     theme: "education",
-    themeName: "AI for Education",
+    themeName: "Education",
     themeIcon: "fa-solid fa-language",
     title: "LangPairAI — Contextual Vernacular Language Learning",
     tagline: "Culturally-grounded regional language adaptation with dialect nuance, voice cloning, and idiom translation.",
@@ -152,9 +55,9 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["AI4Bharat IndicTrans2 & IndicWhisper Corpus", "Bhashini Open Indic Speech Datasets", "Common Voice Indic Subsets"]
   },
   {
-    id: "E03",
+    id: "EDU-03",
     theme: "education",
-    themeName: "AI for Education",
+    themeName: "Education",
     themeIcon: "fa-solid fa-hands-asl-interpreting",
     title: "GestureLearnAI — Vision-Based Sign Language & Gesture Tutoring",
     tagline: "Two-way sign language recognition and educational translation for inclusive classroom learning.",
@@ -176,9 +79,9 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["INCLUDE Indian Sign Language Dataset", "Sign3D Skeletal Landmark Corpus", "WLASL (World Level American Sign Language)"]
   },
   {
-    id: "E04",
+    id: "EDU-04",
     theme: "education",
-    themeName: "AI for Education",
+    themeName: "Education",
     themeIcon: "fa-solid fa-file-circle-check",
     title: "AI-Powered Optical Mark & Handwritten Exam Sheet Evaluator",
     tagline: "Robust mobile-camera OMR grading and handwritten step-mark verification with fraud detection.",
@@ -200,109 +103,109 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["OpenOMR Form Image Benchmark Sets", "IAM Handwriting Database", "Synthetic Distorted Sheet Generator Dataset"]
   },
 
-  // ==================== THEME: AGRICULTURE / AGRITECH ====================
+  // ==================== 2. THEME: TRANSPORT ====================
   {
-    id: "A01",
-    theme: "agriculture",
-    themeName: "AgriTech & Rural Innovation",
-    themeIcon: "fa-solid fa-seedling",
-    title: "Multispectral AI Crop Disease & Severity Quantification",
-    tagline: "Detect foliar crop pathogens, estimate infected surface area, and suggest organic treatments in regional languages.",
+    id: "TRN-01",
+    theme: "transport",
+    themeName: "Transport",
+    themeIcon: "fa-solid fa-train-subway",
+    title: "AI-Based Predictive Maintenance of Metro Compressor Units",
+    tagline: "Predict air compressor failures and calculate Remaining Useful Life (RUL) before breakdowns occur.",
+    difficulty: "Advanced",
+    aiCategory: "Time-Series & Predictive Analytics",
+    tags: ["Time-Series", "LSTM / Transformers", "Anomaly Detection", "IoT Sensors", "RUL Estimation"],
+    summary: "Air compressor units in metro train braking systems operate under severe thermal and mechanical stresses. Unexpected compressor failure causes emergency braking and operational gridlock. Teams must build an AI pipeline using real-world multi-sensor time-series data to detect anomalous degradation patterns and forecast remaining useful operating hours with high precision.",
+    problemScope: "Metro operators rely on reactive or scheduled maintenance which is either too late or unnecessarily costly. Sensor logs capture vibration, oil pressure, motor temperature, cylinder pressure, and electrical current drawn. The objective is to construct an end-to-end anomaly detection and RUL forecasting engine with false-positive mitigation.",
+    aiRequirements: [
+      "Deep learning or ensemble time-series model (e.g. Temporal Convolutional Networks, LSTM, PatchTST, or XGBoost on engineered lag features).",
+      "Dynamic thresholding algorithm for anomaly scoring in noisy industrial sensor telemetry.",
+      "Explainability module (SHAP / Integrated Gradients) identifying which sensor signals triggered the failure warning."
+    ],
+    deliverables: [
+      "Predictive modeling pipeline with evaluated RMSE/MAE and precision-recall curves.",
+      "Interactive engineer dashboard showing real-time health index of compressor units.",
+      "Automated maintenance dispatch alert system with recommended intervention time."
+    ],
+    sampleDatasets: ["Metro PT Compressor Dataset (Kaggle/UCI)", "NASA Turbofan Engine Degradation Simulation (C-MAPSS)"]
+  },
+  {
+    id: "TRN-02",
+    theme: "transport",
+    themeName: "Transport",
+    themeIcon: "fa-solid fa-car-burst",
+    title: "Edge-AI Driver Distraction & Drowsiness Prevention",
+    tagline: "Real-time edge computer vision to detect cognitive fatigue, eye closure, and phone usage.",
     difficulty: "Intermediate",
     aiCategory: "Computer Vision & Edge AI",
-    tags: ["Computer Vision", "Semantic Segmentation", "Plant Pathology", "Vernacular Advisory", "Edge AI"],
-    summary: "Crop disease outbreaks destroy up to 30% of agricultural yields annually before smallholder farmers identify the underlying pathogen. Build an offline-first mobile AI vision application that identifies plant diseases from leaf photos, segments the infected surface area to calculate severity percentage, and generates tailored organic/chemical treatment advisories in local languages.",
-    problemScope: "Field conditions feature extreme variations: direct sunlight glare, shadows, cluttered soil backgrounds, and multiple concurrent diseases on a single leaf. The AI must isolate the plant leaf, diagnose fungal/bacterial/viral blights, and provide actionable dosage calculations based on land acreage.",
+    tags: ["Computer Vision", "YOLOv8/v11", "Facial Landmarks", "Edge AI", "EAR/MAR Analysis"],
+    summary: "Commercial and private vehicle accidents frequently result from microsleep, driver drowsiness, and smartphone distractions. Teams must build a lightweight, low-latency edge AI system that detects eye-aspect ratio (EAR), mouth-opening ratio (MAR), head gaze drift, and device usage in varying lighting conditions.",
+    problemScope: "Existing driver monitoring systems struggle with low illumination, sunglasses, and extreme computational overhead. Solutions must run smoothly on edge hardware (e.g., Raspberry Pi, Jetson Nano, or standard mobile/laptop webcams at 30+ FPS) while ensuring zero biometric privacy leakage.",
     aiRequirements: [
-      "Fine-grained CNN / Vision Transformer classifier (EfficientNet, ConvNeXt, Swin) for multi-class foliar pathology.",
-      "Semantic segmentation model (YOLO-Seg or U-Net) to quantify percentage surface necrosis.",
-      "Offline inference pipeline and vernacular multilingual text/voice generation for regional farmers."
+      "Facial landmark tracking and head pose estimation pipeline (MediaPipe, OpenCV, or custom CNNs).",
+      "Object detection model optimized for hand-held smartphone and cigarette detection.",
+      "Temporal smoothing classifier to distinguish intentional glances from micro-sleep episodes."
     ],
     deliverables: [
-      "Offline-capable web/mobile progressive web app.",
-      "Leaf inspection visualizer highlighting disease clusters with bounding boxes and segment masks.",
-      "Acreage-based treatment calculation engine with local fertilizer/pesticide recommendations."
+      "Working real-time live webcam/video demonstration.",
+      "Auditory and visual multi-level alert dashboard with distraction logging.",
+      "Optimized lightweight inference pipeline (ONNX / TensorRT / TFLite)."
     ],
-    sampleDatasets: ["PlantVillage Benchmark Dataset (54,000+ images)", "New Plant Diseases Dataset (Kaggle)", "ICAR Indian Crop Pathology Repositories"]
+    sampleDatasets: ["State Farm Distracted Driver Detection (Kaggle)", "Driver Drowsiness Dataset (DDD)", "NTHU Driver Drowsiness Video Dataset"]
   },
   {
-    id: "A02",
-    theme: "agriculture",
-    themeName: "AgriTech & Rural Innovation",
-    themeIcon: "fa-solid fa-flask-vial",
-    title: "AI-Powered Soil Health Analysis & Crop Recommendation Engine",
-    tagline: "Multi-parameter NPK, pH, climate, and soil moisture analytics for optimal yield and crop rotation.",
+    id: "TRN-03",
+    theme: "transport",
+    themeName: "Transport",
+    themeIcon: "fa-solid fa-plane-departure",
+    title: "Flight Schedule & Gate Allocation Optimizer for Congested Hubs",
+    tagline: "Reinforcement learning and graph AI to minimize runway delays, gate conflicts, and carbon burn.",
+    difficulty: "Advanced",
+    aiCategory: "Reinforcement Learning & Graph AI",
+    tags: ["Reinforcement Learning", "Graph Neural Networks", "Combinatorial Optimization", "Aviation"],
+    summary: "Air traffic congestion at major international and domestic hubs leads to cascading departure delays, excessive apron idling, and thousands of tons of avoidable jet fuel emissions. Build an AI-driven optimization system that re-sequences departure taxi queues and dynamically reallocates airport arrival gates during weather disruptions.",
+    problemScope: "A single delayed flight ripples across subsequent sector rotations. The challenge requires processing multi-airline flight schedules, runway turnarounds, gate constraints, and historical delay matrices to compute optimal conflict-free assignments in under 60 seconds.",
+    aiRequirements: [
+      "Constraint-aware Reinforcement Learning agent (PPO/DQN) or Graph Neural Network (GNN) model.",
+      "Delay propagation predictor using historical aviation flight matrices.",
+      "Dynamic re-routing optimizer capable of simulating gate swap scenarios."
+    ],
+    deliverables: [
+      "Flight simulation testbed demonstrating turnaround throughput improvements.",
+      "Interactive gate schedule heatmap and runway taxiway dispatcher view.",
+      "Comparative metrics showing simulated reduction in idle taxi emissions and passenger missed connections."
+    ],
+    sampleDatasets: ["Bureau of Transportation Statistics (BTS) Flight Delay Database", "OpenSky Network Historical Flight Traces"]
+  },
+  {
+    id: "TRN-04",
+    theme: "transport",
+    themeName: "Transport",
+    themeIcon: "fa-solid fa-paw",
+    title: "Human-Wildlife Conflict Mitigation on Railway Corridors",
+    tagline: "Multi-sensory acoustic and thermal vision system for early elephant and wildlife track trespass alerts.",
     difficulty: "Intermediate",
-    aiCategory: "Machine Learning & Decision Systems",
-    tags: ["XGBoost / LightGBM", "Soil Chemistry", "Crop Yield Prediction", "Agro-Climatology", "Fertilizer Optimizer"],
-    summary: "Imbalanced chemical fertilizer application degrades soil microbiome health and reduces farmer profitability. Develop an AI agro-advisory system that correlates laboratory NPK values, soil electrical conductivity, geographic climate forecasts, and historical crop yields to prescribe optimal seed selections, fertilizer schedules, and multi-season crop rotation plans.",
-    problemScope: "Farmers need actionable advice that takes economic market price forecasts, local water availability, and historical seasonal rain patterns into account rather than generic textbook recommendations.",
+    aiCategory: "Multimodal AI & Acoustic Vision",
+    tags: ["Multimodal AI", "Thermal Imaging", "Bioacoustic AI", "Geofencing", "Railway Safety"],
+    summary: "High-speed train collisions with elephants and other endangered wildlife along forest corridors cause severe ecological loss and derailment dangers. Develop an automated trackside AI sentinel system that combines thermal camera feeds with seismic/acoustic sensor processing to identify approaching herds 500m+ ahead and send automated locomotive braking alerts.",
+    problemScope: "Dense foliage, heavy nighttime fog, and harsh outdoor railway environments render standard optical cameras ineffective. The system must filter out false positives (e.g., wind, cattle, small mammals) and trigger instant geofenced alerts to nearby loco pilots and station master consoles.",
     aiRequirements: [
-      "Supervised ensemble regression & classification models (XGBoost, CatBoost, Random Forest).",
-      "Dynamic fertilizer dosage calculator optimizing for minimum cost and maximum nutrient absorption.",
-      "Crop rotation recommendation engine using reinforcement learning or constraint satisfaction programming."
+      "Thermal / Infrared object detection pipeline specialized for large mammal silhouettes.",
+      "Audio spectrogram / seismic wave classifier for seismic footfall and trumpet vocalization detection.",
+      "Sensor fusion engine delivering confidence-calibrated telemetry alerts to the train crew."
     ],
     deliverables: [
-      "Interactive farmer portal with simple NPK sliders, soil card scan input, and GPS weather integration.",
-      "Visual Soil Health Card with nutrient deficiency radar chart and remediation steps.",
-      "Profit & Yield simulator comparing 3 alternative crop cultivation strategies."
+      "Multimodal inference pipeline supporting thermal video and audio input streams.",
+      "Station Master & Locomotive Pilot Telemetry Dashboard with automated warning sirens and maps.",
+      "False-alarm resistance benchmark against ambient environmental noise."
     ],
-    sampleDatasets: ["ICAR Soil Health Card Dataset", "Crop Recommendation Dataset (Kaggle)", "NASA POWER Agro-Climatology Meteorological Records"]
-  },
-  {
-    id: "A03",
-    theme: "agriculture",
-    themeName: "AgriTech & Rural Innovation",
-    themeIcon: "fa-solid fa-cow",
-    title: "DairyAI — Cattle Health, Milk Yield & Quality Prediction",
-    tagline: "Computer vision cattle muzzle biometrics, thermal mastitis detection, and lactation curve forecasting.",
-    difficulty: "Advanced",
-    aiCategory: "Multimodal AI & Agri-Vision",
-    tags: ["Computer Vision", "Cattle Biometrics", "Mastitis Detection", "Lactation Forecasting", "Dairy Tech"],
-    summary: "Bovine mastitis and sub-optimal feed nutrition cause massive financial loss in dairy cooperatives. DairyAI integrates facial/muzzle biometric cow identification, thermal imaging for early udder inflammation detection, and historical milking logs to predict daily yield and flag early subclinical sickness.",
-    problemScope: "Traditional cattle tagging is prone to loss or tampering. Automated non-invasive muzzle pattern recognition combined with thermal computer vision provides early detection of inflammatory disease days before milk contamination occurs.",
-    aiRequirements: [
-      "Muzzle pattern / facial biometric recognition model (Siamese CNN / Triplet Loss Network).",
-      "Thermal image anomaly segmentation for early udder inflammation and mastitis detection.",
-      "Time-series lactation curve forecasting model (Prophet / DeepAR / LSTM)."
-    ],
-    deliverables: [
-      "Farm management dashboard showing individual cattle health cards and yield projections.",
-      "Thermal scan upload and automated mastitis heat map classifier.",
-      "Feed nutrition optimizer tailored to lactation cycle stage."
-    ],
-    sampleDatasets: ["Open Muzzle Print Biometric Database", "Thermal Imaging Bovine Mastitis Dataset", "Cooperative Dairy Milking Records"]
-  },
-  {
-    id: "A04",
-    theme: "agriculture",
-    themeName: "AgriTech & Rural Innovation",
-    themeIcon: "fa-solid fa-satellite",
-    title: "Satellite & Drone Weed Density Mapping for Precision Spraying",
-    tagline: "High-resolution multispectral imagery segmentation to guide autonomous drone spraying and reduce pesticide runoff.",
-    difficulty: "Advanced",
-    aiCategory: "Remote Sensing & Geospatial AI",
-    tags: ["Geospatial AI", "Sentinel-2 / Drone Imagery", "NDVI Indices", "Weed Segmentation", "Precision Agriculture"],
-    summary: "Blanket pesticide spraying wastes up to 70% of chemical agrochemicals into the water table. Build an AI geospatial mapping tool that ingests drone and high-res satellite multispectral imagery (NDVI/NDRE), distinguishes crop canopies from aggressive weed infestations, and outputs precise GPS-tagged prescription spraying maps for agricultural drones.",
-    problemScope: "Weeds and young cash crops share very similar spectral signatures and green color palettes. The challenge requires spatial texture segmentation and multispectral band mathematical analysis to pinpoint weed clusters.",
-    aiRequirements: [
-      "Deep semantic segmentation network (DeepLabV3+, SegFormer, or YOLO-NAS-Seg) trained on multispectral crop/weed aerial imagery.",
-      "NDVI / NDRE vegetation index calculation and spatial clustering pipeline.",
-      "GeoTIFF export engine generating GeoJSON prescription flight paths for DJI / open-source agricultural drones."
-    ],
-    deliverables: [
-      "Interactive map dashboard allowing farmers to upload drone imagery and draw field boundaries.",
-      "Color-coded weed infestation heatmap with calculated chemical volume savings.",
-      "Downloadable GeoJSON / KML flight mission waypoint file for autonomous drone sprayers."
-    ],
-    sampleDatasets: ["Crop/Weed Field Image Dataset (CWFID)", "DeepWeeds Drone Aerial Benchmark", "Sentinel-2 Multi-Spectral Agricultural Tiles"]
+    sampleDatasets: ["WildTrack Footprint & Silhouette Dataset", "Elephant Seismic & Infrasonic Audio Archives", "Kaggle Thermal Wildlife Video Sets"]
   },
 
-  // ==================== THEME: HEALTHCARE / AI FOR HEALTH & WELLBEING ====================
+  // ==================== 3. THEME: HEALTHCARE ====================
   {
-    id: "H01",
+    id: "HLT-01",
     theme: "healthcare",
-    themeName: "AI for Health & Wellbeing",
+    themeName: "Healthcare",
     themeIcon: "fa-solid fa-pills",
     title: "Prescription Risk & Drug-Drug Interaction Sentinel",
     tagline: "OCR handwritten prescriptions, cross-reference contraindications, and flag dangerous drug interactions.",
@@ -324,9 +227,9 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["DrugBank Open Interaction Dataset", "RxNorm Knowledge Base", "Kaggle Medical Prescription Handwriting Corpus"]
   },
   {
-    id: "H02",
+    id: "HLT-02",
     theme: "healthcare",
-    themeName: "AI for Health & Wellbeing",
+    themeName: "Healthcare",
     themeIcon: "fa-solid fa-x-ray",
     title: "Intelligent Radiology Anomaly Localization (Chest X-Ray & CT)",
     tagline: "Multi-class pulmonary pathology detection with Grad-CAM visual heatmaps and radiologist preliminary reporting.",
@@ -348,9 +251,9 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["NIH ChestX-ray14 Benchmark Dataset", "CheXpert Dataset (Stanford ML Group)", "RSNA Pneumonia Detection Challenge"]
   },
   {
-    id: "H03",
+    id: "HLT-03",
     theme: "healthcare",
-    themeName: "AI for Health & Wellbeing",
+    themeName: "Healthcare",
     themeIcon: "fa-solid fa-bowl-food",
     title: "NutritionAI — Vision-Based Food Plate Calorie & Diet Planner",
     tagline: "Estimate portion sizes, macro/micronutrients from food photos, and create personalized diabetic/cardiac meal plans.",
@@ -372,9 +275,9 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["Food201 & Indian Food Image Dataset (Kaggle)", "Nutrition5k Benchmark Volume Dataset", "USDA FoodData Central Database"]
   },
   {
-    id: "H04",
+    id: "HLT-04",
     theme: "healthcare",
-    themeName: "AI for Health & Wellbeing",
+    themeName: "Healthcare",
     themeIcon: "fa-solid fa-brain",
     title: "AI-Based Non-Invasive Early Detection of Parkinson's Disease",
     tagline: "Multimodal biomarker analysis of acoustic voice tremors, spiral drawing kinetics, and keystroke dynamics.",
@@ -396,11 +299,11 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["Oxford Parkinson's Disease Voice Dataset (UCI)", "HandPD Spiral & Meander Drawing Dataset", "Tappy Keystroke Dynamics Parkinson's Corpus"]
   },
 
-  // ==================== THEME: SUSTAINABLE ENERGY, CLIMATE & SAFETY ====================
+  // ==================== 4. THEME: SUSTAINABLE ENERGY ====================
   {
-    id: "S01",
+    id: "NRG-01",
     theme: "climate",
-    themeName: "Climate, Energy & Safety",
+    themeName: "Sustainable Energy",
     themeIcon: "fa-solid fa-solar-panel",
     title: "AI Solar & Wind Renewable Generation Forecasting",
     tagline: "Hyper-local weather forecasting and irradiance models to predict renewable power generation and optimize grid storage.",
@@ -422,9 +325,9 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["NREL National Solar Radiation Database (NSRDB)", "Renewable Power SCADA Generation Dataset (Kaggle)", "NOAA Global Forecast System (GFS) Meteorological Feeds"]
   },
   {
-    id: "S02",
+    id: "NRG-02",
     theme: "climate",
-    themeName: "Climate, Energy & Safety",
+    themeName: "Sustainable Energy",
     themeIcon: "fa-solid fa-smog",
     title: "Industrial Carbon Footprint Tracking & ESG Optimization",
     tagline: "Automated Scope 1, 2, and 3 carbon accounting with supply-chain emission anomaly detection and reduction modeling.",
@@ -446,9 +349,9 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["EPA GHG Emission Factors Hub", "UK DEFRA Conversion Factors Database", "Synthetic Industrial Manufacturing Energy Telemetry"]
   },
   {
-    id: "S03",
+    id: "NRG-03",
     theme: "climate",
-    themeName: "Climate, Energy & Safety",
+    themeName: "Sustainable Energy",
     themeIcon: "fa-solid fa-hard-hat",
     title: "AI Worker Safety & PPE Compliance Vision Sentinel",
     tagline: "Real-time CCTV vision pipeline detecting helmet, vest, harness compliance, and hazardous zone incursions.",
@@ -470,9 +373,9 @@ const CHALLENGES_DATA = [
     sampleDatasets: ["Pictor PPE Industrial Dataset (Kaggle)", "Construction Site Safety Image Database (CHUK)", "Worker Geofence & Fall Detection Video Corpus"]
   },
   {
-    id: "S04",
+    id: "NRG-04",
     theme: "climate",
-    themeName: "Climate, Energy & Safety",
+    themeName: "Sustainable Energy",
     themeIcon: "fa-solid fa-bolt",
     title: "GridWise — Smart Campus Energy Consumption & Load Balancer",
     tagline: "Non-Intrusive Load Monitoring (NILM) and AI HVAC/lighting optimization to slash institutional power waste.",
@@ -492,6 +395,104 @@ const CHALLENGES_DATA = [
       "Automated energy-saving schedule calculator predicting annual kilowatt-hour (kWh) and cost reductions."
     ],
     sampleDatasets: ["UK-DALE Energy Disaggregation Dataset", "REDD (Reference Energy Disaggregation Data Set)", "Open Institutional Building Smart Meter Telemetry"]
+  },
+
+  // ==================== 5. THEME: AGRICULTURE ====================
+  {
+    id: "AGR-01",
+    theme: "agriculture",
+    themeName: "Agriculture",
+    themeIcon: "fa-solid fa-seedling",
+    title: "Multispectral AI Crop Disease & Severity Quantification",
+    tagline: "Detect foliar crop pathogens, estimate infected surface area, and suggest organic treatments in regional languages.",
+    difficulty: "Intermediate",
+    aiCategory: "Computer Vision & Edge AI",
+    tags: ["Computer Vision", "Semantic Segmentation", "Plant Pathology", "Vernacular Advisory", "Edge AI"],
+    summary: "Crop disease outbreaks destroy up to 30% of agricultural yields annually before smallholder farmers identify the underlying pathogen. Build an offline-first mobile AI vision application that identifies plant diseases from leaf photos, segments the infected surface area to calculate severity percentage, and generates tailored organic/chemical treatment advisories in local languages.",
+    problemScope: "Field conditions feature extreme variations: direct sunlight glare, shadows, cluttered soil backgrounds, and multiple concurrent diseases on a single leaf. The AI must isolate the plant leaf, diagnose fungal/bacterial/viral blights, and provide actionable dosage calculations based on land acreage.",
+    aiRequirements: [
+      "Fine-grained CNN / Vision Transformer classifier (EfficientNet, ConvNeXt, Swin) for multi-class foliar pathology.",
+      "Semantic segmentation model (YOLO-Seg or U-Net) to quantify percentage surface necrosis.",
+      "Offline inference pipeline and vernacular multilingual text/voice generation for regional farmers."
+    ],
+    deliverables: [
+      "Offline-capable web/mobile progressive web app.",
+      "Leaf inspection visualizer highlighting disease clusters with bounding boxes and segment masks.",
+      "Acreage-based treatment calculation engine with local fertilizer/pesticide recommendations."
+    ],
+    sampleDatasets: ["PlantVillage Benchmark Dataset (54,000+ images)", "New Plant Diseases Dataset (Kaggle)", "ICAR Indian Crop Pathology Repositories"]
+  },
+  {
+    id: "AGR-02",
+    theme: "agriculture",
+    themeName: "Agriculture",
+    themeIcon: "fa-solid fa-flask-vial",
+    title: "AI-Powered Soil Health Analysis & Crop Recommendation Engine",
+    tagline: "Multi-parameter NPK, pH, climate, and soil moisture analytics for optimal yield and crop rotation.",
+    difficulty: "Intermediate",
+    aiCategory: "Machine Learning & Decision Systems",
+    tags: ["XGBoost / LightGBM", "Soil Chemistry", "Crop Yield Prediction", "Agro-Climatology", "Fertilizer Optimizer"],
+    summary: "Imbalanced chemical fertilizer application degrades soil microbiome health and reduces farmer profitability. Develop an AI agro-advisory system that correlates laboratory NPK values, soil electrical conductivity, geographic climate forecasts, and historical crop yields to prescribe optimal seed selections, fertilizer schedules, and multi-season crop rotation plans.",
+    problemScope: "Farmers need actionable advice that takes economic market price forecasts, local water availability, and historical seasonal rain patterns into account rather than generic textbook recommendations.",
+    aiRequirements: [
+      "Supervised ensemble regression & classification models (XGBoost, CatBoost, Random Forest).",
+      "Dynamic fertilizer dosage calculator optimizing for minimum cost and maximum nutrient absorption.",
+      "Crop rotation recommendation engine using reinforcement learning or constraint satisfaction programming."
+    ],
+    deliverables: [
+      "Interactive farmer portal with simple NPK sliders, soil card scan input, and GPS weather integration.",
+      "Visual Soil Health Card with nutrient deficiency radar chart and remediation steps.",
+      "Profit & Yield simulator comparing 3 alternative crop cultivation strategies."
+    ],
+    sampleDatasets: ["ICAR Soil Health Card Dataset", "Crop Recommendation Dataset (Kaggle)", "NASA POWER Agro-Climatology Meteorological Records"]
+  },
+  {
+    id: "AGR-03",
+    theme: "agriculture",
+    themeName: "Agriculture",
+    themeIcon: "fa-solid fa-cow",
+    title: "DairyAI — Cattle Health, Milk Yield & Quality Prediction",
+    tagline: "Computer vision cattle muzzle biometrics, thermal mastitis detection, and lactation curve forecasting.",
+    difficulty: "Advanced",
+    aiCategory: "Multimodal AI & Agri-Vision",
+    tags: ["Computer Vision", "Cattle Biometrics", "Mastitis Detection", "Lactation Forecasting", "Dairy Tech"],
+    summary: "Bovine mastitis and sub-optimal feed nutrition cause massive financial loss in dairy cooperatives. DairyAI integrates facial/muzzle biometric cow identification, thermal imaging for early udder inflammation detection, and historical milking logs to predict daily yield and flag early subclinical sickness.",
+    problemScope: "Traditional cattle tagging is prone to loss or tampering. Automated non-invasive muzzle pattern recognition combined with thermal computer vision provides early detection of inflammatory disease days before milk contamination occurs.",
+    aiRequirements: [
+      "Muzzle pattern / facial biometric recognition model (Siamese CNN / Triplet Loss Network).",
+      "Thermal image anomaly segmentation for early udder inflammation and mastitis detection.",
+      "Time-series lactation curve forecasting model (Prophet / DeepAR / LSTM)."
+    ],
+    deliverables: [
+      "Farm management dashboard showing individual cattle health cards and yield projections.",
+      "Thermal scan upload and automated mastitis heat map classifier.",
+      "Feed nutrition optimizer tailored to lactation cycle stage."
+    ],
+    sampleDatasets: ["Open Muzzle Print Biometric Database", "Thermal Imaging Bovine Mastitis Dataset", "Cooperative Dairy Milking Records"]
+  },
+  {
+    id: "AGR-04",
+    theme: "agriculture",
+    themeName: "Agriculture",
+    themeIcon: "fa-solid fa-satellite",
+    title: "Satellite & Drone Weed Density Mapping for Precision Spraying",
+    tagline: "High-resolution multispectral imagery segmentation to guide autonomous drone spraying and reduce pesticide runoff.",
+    difficulty: "Advanced",
+    aiCategory: "Remote Sensing & Geospatial AI",
+    tags: ["Geospatial AI", "Sentinel-2 / Drone Imagery", "NDVI Indices", "Weed Segmentation", "Precision Agriculture"],
+    summary: "Blanket pesticide spraying wastes up to 70% of chemical agrochemicals into the water table. Build an AI geospatial mapping tool that ingests drone and high-res satellite multispectral imagery (NDVI/NDRE), distinguishes crop canopies from aggressive weed infestations, and outputs precise GPS-tagged prescription spraying maps for agricultural drones.",
+    problemScope: "Weeds and young cash crops share very similar spectral signatures and green color palettes. The challenge requires spatial texture segmentation and multispectral band mathematical analysis to pinpoint weed clusters.",
+    aiRequirements: [
+      "Deep semantic segmentation network (DeepLabV3+, SegFormer, or YOLO-NAS-Seg) trained on multispectral crop/weed aerial imagery.",
+      "NDVI / NDRE vegetation index calculation and spatial clustering pipeline.",
+      "GeoTIFF export engine generating GeoJSON prescription flight paths for DJI / open-source agricultural drones."
+    ],
+    deliverables: [
+      "Interactive map dashboard allowing farmers to upload drone imagery and draw field boundaries.",
+      "Color-coded weed infestation heatmap with calculated chemical volume savings.",
+      "Downloadable GeoJSON / KML flight mission waypoint file for autonomous drone sprayers."
+    ],
+    sampleDatasets: ["Crop/Weed Field Image Dataset (CWFID)", "DeepWeeds Drone Aerial Benchmark", "Sentinel-2 Multi-Spectral Agricultural Tiles"]
   }
 ];
 

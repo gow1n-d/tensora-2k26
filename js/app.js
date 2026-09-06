@@ -115,6 +115,65 @@ function initKeyboardAccessibility() {
   }
 }
 
+// Stitch Design System: Dynamic Ripple Micro-Animation
+function initButtonRipples() {
+  document.querySelectorAll('.btn, button.btn, a.btn, .modal-close-btn').forEach(btn => {
+    btn.addEventListener('click', function(e) {
+      const existing = this.querySelector('.btn-ripple-wave');
+      if (existing) existing.remove();
+
+      const rect = this.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+
+      const ripple = document.createElement('span');
+      ripple.className = 'btn-ripple-wave';
+      ripple.style.left = `${x}px`;
+      ripple.style.top = `${y}px`;
+
+      this.appendChild(ripple);
+
+      setTimeout(() => {
+        if (ripple.parentElement) ripple.parentElement.removeChild(ripple);
+      }, 550);
+    });
+  });
+}
+
+// Mobile Drawer Navigation
+function initMobileDrawer() {
+  const toggleBtn = document.getElementById('mobileMenuBtn');
+  const closeBtn = document.getElementById('drawerCloseBtn');
+  const backdrop = document.getElementById('mobileDrawerBackdrop');
+  const drawerLinks = document.querySelectorAll('.drawer-link');
+
+  if (!toggleBtn || !backdrop) return;
+
+  function openDrawer() {
+    backdrop.classList.add('active');
+    document.body.style.overflow = 'hidden';
+    toggleBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeDrawer() {
+    backdrop.classList.remove('active');
+    document.body.style.overflow = '';
+    toggleBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  toggleBtn.addEventListener('click', openDrawer);
+  if (closeBtn) closeBtn.addEventListener('click', closeDrawer);
+  backdrop.addEventListener('click', (e) => {
+    if (e.target === backdrop) closeDrawer();
+  });
+
+  drawerLinks.forEach(link => {
+    link.addEventListener('click', closeDrawer);
+  });
+
+  window.closeMobileDrawer = closeDrawer;
+}
+
 // App initialization
 document.addEventListener('DOMContentLoaded', () => {
   if (typeof initCountdown === 'function') initCountdown();
@@ -125,6 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initScrollSpy();
   init3DTilt();
   initKeyboardAccessibility();
+  initButtonRipples();
+  initMobileDrawer();
 
-  console.log("🚀 TENSORA 2026 - 3D Cyber Experience Active");
+  console.log("🚀 TENSORA 2026 - Luminous Experience Active");
 });

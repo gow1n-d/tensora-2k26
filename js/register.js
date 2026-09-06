@@ -3,11 +3,11 @@
  */
 
 const INNOVATION_TRACKS = [
-  { id: "track-mobility", name: "Intelligent Mobility & Autonomous Transport", icon: "fa-solid fa-train-subway" },
-  { id: "track-education", name: "AI for Education & Vernacular Learning", icon: "fa-solid fa-graduation-cap" },
-  { id: "track-agriculture", name: "AgriTech & Rural Innovation", icon: "fa-solid fa-seedling" },
+  { id: "track-education", name: "AI for Education & Adaptive Learning", icon: "fa-solid fa-graduation-cap" },
+  { id: "track-mobility", name: "Intelligent Mobility & Transport", icon: "fa-solid fa-train-subway" },
   { id: "track-healthcare", name: "AI for Health & Wellbeing", icon: "fa-solid fa-heart-pulse" },
-  { id: "track-climate", name: "Climate, Sustainable Energy & Industrial Safety", icon: "fa-solid fa-solar-panel" }
+  { id: "track-climate", name: "Sustainable Energy & Climate Solutions", icon: "fa-solid fa-solar-panel" },
+  { id: "track-agriculture", name: "AgriTech & Rural Innovation", icon: "fa-solid fa-seedling" }
 ];
 
 let currentStep = 1;
