@@ -313,6 +313,7 @@ TEAM NAME       : ${registrationData.teamName}
 INSTITUTION     : ${registrationData.institution}
 LOCATION        : ${registrationData.city}, ${registrationData.state}
 TEAM SIZE       : ${registrationData.teamSize} Members
+EVENT DATES     : 20.09.2026 to 22.09.2026
 
 PRIMARY TRACK   : ${trkObj ? trkObj.name : 'All Tracks'}
 
@@ -324,10 +325,10 @@ TEAM MEMBERS:
 ${registrationData.members.map((m, i) => `${i + 2}. ${m.name} (${m.role}) - ${m.email}`).join('\n')}
 
 MASTER EVENT SCHEDULE:
-- 20 Sept 2026, 05:00 PM IST : Problem Statements Revealed
-- 20 Sept 2026, 06:00 PM IST : 24-Hour Online Build Sprint Begins
-- 21 Sept 2026, 06:00 PM IST : Submission Deadline
-- 22 Sept 2026, 09:00 AM IST : Offline Grand Finale at KLNCE
+- 20.09.2026, 05:00 PM IST : Problem Statements Revealed
+- 20.09.2026, 06:00 PM IST : 24-Hour Online Build Sprint Begins
+- 21.09.2026, 06:00 PM IST : Submission Deadline
+- 22.09.2026, 09:00 AM IST : Offline Grand Finale at KLNCE
 
 VENUE:
 K.L.N. College of Engineering, Pottapalayam, Sivaganga, Tamil Nadu
@@ -348,7 +349,7 @@ K.L.N. College of Engineering, Pottapalayam, Sivaganga, Tamil Nadu
 
 function generateGoogleCalendarUrl() {
   const title = encodeURIComponent("TENSORA 2026 — AI Innovation Hackathon");
-  const details = encodeURIComponent("TENSORA 2026 National Level AI Hackathon. 24h Online Build (20-21 Sept) + Offline Grand Finale at KLN College of Engineering (22 Sept). Reg ID: " + registrationData.regId);
+  const details = encodeURIComponent("TENSORA 2026 National Level AI Hackathon (20.09.2026 to 22.09.2026). 24h Online Build (20-21 Sept) + Offline Grand Finale at KLN College of Engineering (22 Sept). Reg ID: " + registrationData.regId);
   const location = encodeURIComponent("K.L.N. College of Engineering, Pottapalayam, Sivaganga, Tamil Nadu");
   const start = "20260920T113000Z";
   const end = "20260922T130000Z";

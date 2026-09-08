@@ -3,7 +3,7 @@
 <div align="center">
 
 ![TENSORA 2K26 Banner](https://img.shields.io/badge/TENSORA-2026-00F5FF?style=for-the-badge&logo=atom&logoColor=black)
-[![Event Dates](https://img.shields.io/badge/Event%20Dates-20%E2%80%9322%20Sept%202026-7928CA?style=for-the-badge&logo=googlecalendar&logoColor=white)](https://github.com/gow1n-d/tensora-2k26)
+[![Event Dates](https://img.shields.io/badge/Event%20Dates-20.09.2026%20to%2022.09.2026-7928CA?style=for-the-badge&logo=googlecalendar&logoColor=white)](https://github.com/gow1n-d/tensora-2k26)
 [![Format](https://img.shields.io/badge/Format-Hybrid%20(24h%20Online%20%2B%20Offline%20Finale)-00DFD8?style=for-the-badge&logo=target&logoColor=black)](https://github.com/gow1n-d/tensora-2k26)
 [![Host](https://img.shields.io/badge/Organized%20By-Dept%20of%20AI%20%26%20DS%20%7C%20KLNCE-FF0080?style=for-the-badge&logo=affinitydesigner&logoColor=white)](https://klnce.edu)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
@@ -80,7 +80,7 @@ This repository contains the official production web platform for **TENSORA 2026
 
 ---
 
-## 📅 Master Event Timeline
+## 📅 Master Event Timeline (20.09.2026 to 22.09.2026)
 
 | Stage | Date | Time (IST) | Phase Description |
 |---|---|---|---|

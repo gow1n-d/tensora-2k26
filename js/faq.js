@@ -36,7 +36,7 @@ const FAQ_DATA = [
   {
     category: "submissions",
     q: "What are the exact master dates and timeline for TENSORA 2026?",
-    a: "The master schedule is:<br>• <strong>20 Sept 2026, 05:00 PM IST:</strong> Problem statements dropped online.<br>• <strong>20 Sept 2026, 06:00 PM IST:</strong> 24-Hour Online Hackathon sprint begins.<br>• <strong>21 Sept 2026, 06:00 PM IST:</strong> 24-Hour Submission deadline.<br>• <strong>21–22 Sept:</strong> Shortlisting and jury assessment.<br>• <strong>22 Sept 2026, 09:00 AM – 06:30 PM:</strong> Offline Grand Finale & Awards at KLNCE."
+    a: "TENSORA 2026 takes place from <strong>20.09.2026 to 22.09.2026</strong>.<br><br>The master schedule is:<br>• <strong>20.09.2026, 05:00 PM IST:</strong> Problem statements dropped online.<br>• <strong>20.09.2026, 06:00 PM IST:</strong> 24-Hour Online Hackathon sprint begins.<br>• <strong>21.09.2026, 06:00 PM IST:</strong> 24-Hour Submission deadline.<br>• <strong>21.09.2026–22.09.2026:</strong> Shortlisting and jury assessment.<br>• <strong>22.09.2026, 09:00 AM – 06:30 PM:</strong> Offline Grand Finale & Awards at KLNCE."
   },
   {
     category: "submissions",

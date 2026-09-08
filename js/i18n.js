@@ -5,7 +5,7 @@
 const I18N_DATA = {
   en: {
     langBtn: "English",
-    eventBadge: "20–22 SEPTEMBER 2026 | HYBRID | KLN COLLEGE OF ENGINEERING",
+    eventBadge: "20.09.2026 TO 22.09.2026 | HYBRID | KLN COLLEGE OF ENGINEERING",
     heroHeadline: "BUILD INTELLIGENCE.<br><span class=\"gradient-text\">SOLVE REALITY.</span>",
     heroSubheadline: "TENSORA 2026 is a premier national-level AI innovation hackathon where ambitious student teams transform real-world challenges into working AI-powered solutions.",
     registerBtn: "Register Your Team",
@@ -14,7 +14,7 @@ const I18N_DATA = {
     formatPill: "24-Hour Online Sprint + Offline Grand Finale",
     mandatoryPill: "AI Implementation is Mandatory",
     problemDropPill: "Problem Statements Drop: 20 Sept 2026, 5:00 PM IST",
-    statDays: "20–22 Sept",
+    statDays: "20.09.2026 to 22.09.2026",
     statDaysLabel: "Master Event Dates",
     statHours: "24 Hours",
     statHoursLabel: "Online Build Sprint",
@@ -43,7 +43,7 @@ const I18N_DATA = {
   },
   ta: {
     langBtn: "தமிழ்",
-    eventBadge: "20–22 செப்டம்பர் 2026 | நேரடி & இணையவழி | கே.எல்.என் பொறியியல் கல்லூரி",
+    eventBadge: "20.09.2026 முதல் 22.09.2026 வரை | நேரடி & இணையவழி | கே.எல்.என் பொறியியல் கல்லூரி",
     heroHeadline: "அறிவாற்றலை உருவாக்குங்கள்.<br><span class=\"gradient-text\">உண்மையை வெல்லுங்கள்.</span>",
     heroSubheadline: "டென்சோரா 2026 (TENSORA 2026) என்பது கல்லூரி மாணவர்கள் நிஜ உலகச் சவால்களை செயற்கை நுண்ணறிவு (AI) மூலம் தீர்க்கும் தேசிய அளவிலான ஹேக்கத்தான்.",
     registerBtn: "அணியைப் பதிவு செய்க",
@@ -52,7 +52,7 @@ const I18N_DATA = {
     formatPill: "24 மணி நேர இணையவழி உருவாக்கம் + நேரடி இறுதிச்சுற்று",
     mandatoryPill: "செயற்கை நுண்ணறிவு (AI) கட்டாயம்",
     problemDropPill: "சிக்கல் அறிக்கைகள் வெளியீடு: 20 செப் 2026, மாலை 5:00 IST",
-    statDays: "20–22 செப்டம்பர்",
+    statDays: "20.09.2026 முதல் 22.09.2026 வரை",
     statDaysLabel: "நிகழ்வு நாட்கள்",
     statHours: "24 மணி நேரம்",
     statHoursLabel: "இணையவழி வடிவமைப்பு",
