@@ -151,7 +151,7 @@ function copyChallengeDetails(challengeId) {
   const challenge = CHALLENGES_DATA.find(c => c.id === challengeId);
   if (!challenge) return;
 
-  const text = `TENSORA 2026 Problem Statement [${challenge.id}]: ${challenge.title}\nTheme: ${challenge.themeName}\nSummary: ${challenge.summary}\nAI Requirements: ${challenge.aiRequirements.join('; ')}\nMaster Schedule: 21-23 Sept 2026 | KLN College of Engineering`;
+  const text = `TENSORA 2026 Problem Statement [${challenge.id}]: ${challenge.title}\nTheme: ${challenge.themeName}\nSummary: ${challenge.summary}\nAI Requirements: ${challenge.aiRequirements.join('; ')}\nMaster Schedule: 20-22 Sept 2026 | KLN College of Engineering`;
   
   navigator.clipboard.writeText(text).then(() => {
     showToast(`Copied Challenge [${challenge.id}] details to clipboard!`, 'success');

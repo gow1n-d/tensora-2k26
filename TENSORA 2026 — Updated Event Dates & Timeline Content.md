@@ -2,7 +2,7 @@
 
 ## 1. Official Event Window
 
-**TENSORA 2026 will be conducted from 21 September 2026 to 23 September 2026.**
+**TENSORA 2026 will be conducted from 20 September 2026 to 22 September 2026.**
 
 The event will follow a hybrid format consisting of:
 
@@ -14,11 +14,11 @@ The event will follow a hybrid format consisting of:
 
 ## Date
 
-**21 September 2026**
+**20 September 2026**
 
 ## Announcement Time
 
-**12:00 PM IST**
+**5:00 PM IST**
 
 ## Website Copy
 
@@ -26,7 +26,7 @@ The event will follow a hybrid format consisting of:
 **The Challenges Are Live.**
 
 ### Body
-**The official TENSORA 2026 problem statements will be revealed on 21 September 2026 at 12:00 PM IST. Choose your challenge, assemble your strategy and get ready to build.**
+**The official TENSORA 2026 problem statements will be revealed on 20 September 2026 at 5:00 PM IST. Choose your challenge, assemble your strategy and get ready to build.**
 
 ### CTA
 **Explore Problem Statements**
@@ -40,11 +40,11 @@ The event will follow a hybrid format consisting of:
 
 ## Start
 
-**21 September 2026 — 6:00 PM IST**
+**20 September 2026 — 6:00 PM IST**
 
 ## End
 
-**22 September 2026 — 6:00 PM IST**
+**21 September 2026 — 6:00 PM IST**
 
 ## Duration
 
@@ -54,7 +54,7 @@ The event will follow a hybrid format consisting of:
 
 **24 Hours. One Challenge. One Working Solution.**
 
-The online build phase begins at **6:00 PM IST on 21 September 2026** and concludes at **6:00 PM IST on 22 September 2026**.
+The online build phase begins at **6:00 PM IST on 20 September 2026** and concludes at **6:00 PM IST on 21 September 2026**.
 
 Teams must design, develop, test and submit their AI-powered solutions within the official 24-hour window.
 
@@ -64,7 +64,7 @@ Teams must design, develop, test and submit their AI-powered solutions within th
 
 ## Date
 
-**23 September 2026**
+**22 September 2026**
 
 ## Recommended timing
 
@@ -94,7 +94,7 @@ The strongest teams from the online hackathon will advance to the TENSORA 2026 o
 
 ## Date
 
-**23 September 2026**
+**22 September 2026**
 
 ## Recommended timing
 
@@ -112,14 +112,14 @@ Celebrate the teams that demonstrated exceptional innovation, technical executio
 
 | Date | Time | Event |
 |---|---|---|
-| **21 Sept 2026** | 12:00 PM IST | Problem Statements Announced |
-| **21 Sept 2026** | 6:00 PM IST | Online Hackathon Begins |
-| **22 Sept 2026** | 6:00 PM IST | Online Hackathon Ends |
-| **22 Sept 2026** | 6:00 PM IST | Project Submission Deadline |
-| **22–23 Sept** | — | Jury Evaluation & Shortlisting |
-| **23 Sept 2026** | 9:00 AM IST | Offline Grand Finale Begins |
-| **23 Sept 2026** | 9:00 AM–5:30 PM | Final Presentations & Judging |
-| **23 Sept 2026** | 5:30 PM–6:30 PM | Results & Awards |
+| **20 Sept 2026** | 5:00 PM IST | Problem Statements Announced |
+| **20 Sept 2026** | 6:00 PM IST | Online Hackathon Begins |
+| **21 Sept 2026** | 6:00 PM IST | Online Hackathon Ends |
+| **21 Sept 2026** | 6:00 PM IST | Project Submission Deadline |
+| **21–22 Sept** | — | Jury Evaluation & Shortlisting |
+| **22 Sept 2026** | 9:00 AM IST | Offline Grand Finale Begins |
+| **22 Sept 2026** | 9:00 AM–5:30 PM | Final Presentations & Judging |
+| **22 Sept 2026** | 5:30 PM–6:30 PM | Results & Awards |
 
 ---
 

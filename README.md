@@ -3,7 +3,7 @@
 <div align="center">
 
 ![TENSORA 2K26 Banner](https://img.shields.io/badge/TENSORA-2026-00F5FF?style=for-the-badge&logo=atom&logoColor=black)
-[![Event Dates](https://img.shields.io/badge/Event%20Dates-21%E2%80%9323%20Sept%202026-7928CA?style=for-the-badge&logo=googlecalendar&logoColor=white)](https://github.com/gow1n-d/tensora-2k26)
+[![Event Dates](https://img.shields.io/badge/Event%20Dates-20%E2%80%9322%20Sept%202026-7928CA?style=for-the-badge&logo=googlecalendar&logoColor=white)](https://github.com/gow1n-d/tensora-2k26)
 [![Format](https://img.shields.io/badge/Format-Hybrid%20(24h%20Online%20%2B%20Offline%20Finale)-00DFD8?style=for-the-badge&logo=target&logoColor=black)](https://github.com/gow1n-d/tensora-2k26)
 [![Host](https://img.shields.io/badge/Organized%20By-Dept%20of%20AI%20%26%20DS%20%7C%20KLNCE-FF0080?style=for-the-badge&logo=affinitydesigner&logoColor=white)](https://klnce.edu)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge)](LICENSE)
@@ -57,10 +57,10 @@ This repository contains the official production web platform for **TENSORA 2026
 
 - 🌌 **Cyber-Glassmorphic UI/UX**: Custom design system featuring deep space backgrounds (`#040711`), ambient neon glow meshes, glassmorphism containers (`backdrop-filter`), and fluid CSS typography (`Outfit`, `Inter`, `JetBrains Mono`).
 - ⏱️ **Adaptive Multi-Phase Countdown**: Real-time IST-synchronized countdown that dynamically updates across event milestones:
-  - *Phase 1:* Challenge Reveal Countdown (21 Sept, 5:00 PM IST)
-  - *Phase 2:* 24-Hour Online Build Sprint (21 Sept, 6:00 PM IST)
-  - *Phase 3:* Project Submission Window (22 Sept, 6:00 PM IST)
-  - *Phase 4:* Offline Grand Finale (23 Sept, 9:00 AM IST)
+  - *Phase 1:* Challenge Reveal Countdown (20 Sept, 5:00 PM IST)
+  - *Phase 2:* 24-Hour Online Build Sprint (20 Sept, 6:00 PM IST)
+  - *Phase 3:* Project Submission Window (21 Sept, 6:00 PM IST)
+  - *Phase 4:* Offline Grand Finale (22 Sept, 9:00 AM IST)
 - 🔍 **Interactive 20-Challenge Problem Statement Explorer**:
   - Live filtering across 5 innovation tracks.
   - Difficulty badges (*Intermediate*, *Advanced*, *Specialist*).
@@ -84,12 +84,12 @@ This repository contains the official production web platform for **TENSORA 2026
 
 | Stage | Date | Time (IST) | Phase Description |
 |---|---|---|---|
-| **01** | **21 September 2026** | **05:00 PM** | 🔓 **Problem Statements Drop:** Official 20 challenges unlocked for registered teams. |
-| **02** | **21 September 2026** | **06:00 PM** | ⚡ **Online Build Sprint Begins:** 24-hour non-stop hacking & prototyping kickoff. |
-| **03** | **22 September 2026** | **06:00 PM** | 🏁 **Submission Deadline:** Final code push, demo video, and documentation submission closes. |
-| **04** | **22–23 September 2026** | — | ⚖️ **Jury Evaluation & Shortlisting:** Rigorous evaluation to select finalist teams. |
-| **05** | **23 September 2026** | **09:00 AM – 05:30 PM** | 🏛️ **Offline Grand Finale:** Live prototype demos and stage defense at KLNCE. |
-| **06** | **23 September 2026** | **05:30 PM – 06:30 PM** | 🏆 **Awards Ceremony:** Valedictory session and cash prize distribution. |
+| **01** | **20 September 2026** | **05:00 PM** | 🔓 **Problem Statements Drop:** Official 20 challenges unlocked for registered teams. |
+| **02** | **20 September 2026** | **06:00 PM** | ⚡ **Online Build Sprint Begins:** 24-hour non-stop hacking & prototyping kickoff. |
+| **03** | **21 September 2026** | **06:00 PM** | 🏁 **Submission Deadline:** Final code push, demo video, and documentation submission closes. |
+| **04** | **21–22 September 2026** | — | ⚖️ **Jury Evaluation & Shortlisting:** Rigorous evaluation to select finalist teams. |
+| **05** | **22 September 2026** | **09:00 AM – 05:30 PM** | 🏛️ **Offline Grand Finale:** Live prototype demos and stage defense at KLNCE. |
+| **06** | **22 September 2026** | **05:30 PM – 06:30 PM** | 🏆 **Awards Ceremony:** Valedictory session and cash prize distribution. |
 
 ---
 
@@ -101,11 +101,11 @@ This repository contains the official production web platform for **TENSORA 2026
   └────────┬────────┘
            │
   ┌────────▼────────┐
-  │ CHALLENGE DROP  │  21 Sept, 5:00 PM IST: 20 Industry Problems Revealed
+  │ CHALLENGE DROP  │  20 Sept, 5:00 PM IST: 20 Industry Problems Revealed
   └────────┬────────┘
            │
   ┌────────▼────────┐
-  │ 24H BUILD SPRINT│  21 Sept, 6:00 PM – 22 Sept, 6:00 PM: Online Development
+  │ 24H BUILD SPRINT│  20 Sept, 6:00 PM – 21 Sept, 6:00 PM: Online Development
   └────────┬────────┘
            │
   ┌────────▼────────┐
@@ -117,7 +117,7 @@ This repository contains the official production web platform for **TENSORA 2026
   └────────┬────────┘
            │
   ┌────────▼────────┐
-  │ OFFLINE FINALE  │  23 Sept: 7m Pitch + 5m Live Demo + 3m Jury Q&A at KLNCE
+  │ OFFLINE FINALE  │  22 Sept: 7m Pitch + 5m Live Demo + 3m Jury Q&A at KLNCE
   └────────┬────────┘
            │
   ┌────────▼────────┐

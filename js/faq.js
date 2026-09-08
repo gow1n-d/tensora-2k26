@@ -36,7 +36,7 @@ const FAQ_DATA = [
   {
     category: "submissions",
     q: "What are the exact master dates and timeline for TENSORA 2026?",
-    a: "The master schedule is:<br>• <strong>21 Sept 2026, 05:00 PM IST:</strong> Problem statements dropped online.<br>• <strong>21 Sept 2026, 06:00 PM IST:</strong> 24-Hour Online Hackathon sprint begins.<br>• <strong>22 Sept 2026, 06:00 PM IST:</strong> 24-Hour Submission deadline.<br>• <strong>22–23 Sept:</strong> Shortlisting and jury assessment.<br>• <strong>23 Sept 2026, 09:00 AM – 06:30 PM:</strong> Offline Grand Finale & Awards at KLNCE."
+    a: "The master schedule is:<br>• <strong>20 Sept 2026, 05:00 PM IST:</strong> Problem statements dropped online.<br>• <strong>20 Sept 2026, 06:00 PM IST:</strong> 24-Hour Online Hackathon sprint begins.<br>• <strong>21 Sept 2026, 06:00 PM IST:</strong> 24-Hour Submission deadline.<br>• <strong>21–22 Sept:</strong> Shortlisting and jury assessment.<br>• <strong>22 Sept 2026, 09:00 AM – 06:30 PM:</strong> Offline Grand Finale & Awards at KLNCE."
   },
   {
     category: "submissions",
@@ -56,7 +56,7 @@ const FAQ_DATA = [
   {
     category: "finale",
     q: "Is food and hospitality provided at the venue?",
-    a: "Yes. Meals, high tea, refreshments, and workspace facilities will be provided for all registered finalists and faculty mentors on 23 September 2026 at KLN College of Engineering."
+    a: "Yes. Meals, high tea, refreshments, and workspace facilities will be provided for all registered finalists and faculty mentors on 22 September 2026 at KLN College of Engineering."
   },
   {
     category: "policy",

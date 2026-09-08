@@ -1,47 +1,47 @@
 /**
  * TENSORA 2026 - Phase-Aware Dynamic Event Countdown Engine
  * Automatically steps through:
- * 1. Problem Statements Drop (21 Sept 2026, 5:00 PM IST)
- * 2. Hackathon Sprint Starts (21 Sept 2026, 6:00 PM IST)
- * 3. 24h Submission Deadline (22 Sept 2026, 6:00 PM IST)
- * 4. Offline Grand Finale (23 Sept 2026, 9:00 AM IST)
- * 5. Awards & Results (23 Sept 2026, 5:30 PM IST)
+ * 1. Problem Statements Drop (20 Sept 2026, 5:00 PM IST)
+ * 2. Hackathon Sprint Starts (20 Sept 2026, 6:00 PM IST)
+ * 3. 24h Submission Deadline (21 Sept 2026, 6:00 PM IST)
+ * 4. Offline Grand Finale (22 Sept 2026, 9:00 AM IST)
+ * 5. Awards & Results (22 Sept 2026, 5:30 PM IST)
  */
 
 const EVENT_PHASES = [
   {
     name: "Problem Statements Drop In",
     badge: "PHASE 1: CHALLENGE REVEAL",
-    timeStr: "21 Sept 2026, 5:00 PM IST",
-    targetDate: new Date("2026-09-21T17:00:00+05:30").getTime(),
+    timeStr: "20 Sept 2026, 5:00 PM IST",
+    targetDate: new Date("2026-09-20T17:00:00+05:30").getTime(),
     description: "The 20 official problem statements will be revealed online."
   },
   {
     name: "24-Hour Hackathon Begins In",
     badge: "PHASE 2: BUILD SPRINT",
-    timeStr: "21 Sept 2026, 6:00 PM IST",
-    targetDate: new Date("2026-09-21T18:00:00+05:30").getTime(),
+    timeStr: "20 Sept 2026, 6:00 PM IST",
+    targetDate: new Date("2026-09-20T18:00:00+05:30").getTime(),
     description: "The 24-hour remote development sprint officially commences."
   },
   {
     name: "Submission Deadline In",
     badge: "PHASE 3: SUBMISSION CLOSING",
-    timeStr: "22 Sept 2026, 6:00 PM IST",
-    targetDate: new Date("2026-09-22T18:00:00+05:30").getTime(),
+    timeStr: "21 Sept 2026, 6:00 PM IST",
+    targetDate: new Date("2026-09-21T18:00:00+05:30").getTime(),
     description: "GitHub repositories, demo videos, and technical reports must be locked."
   },
   {
     name: "Grand Finale Begins In",
     badge: "PHASE 4: OFFLINE PITCH AT KLNCE",
-    timeStr: "23 Sept 2026, 9:00 AM IST",
-    targetDate: new Date("2026-09-23T09:00:00+05:30").getTime(),
+    timeStr: "22 Sept 2026, 9:00 AM IST",
+    targetDate: new Date("2026-09-22T09:00:00+05:30").getTime(),
     description: "Shortlisted teams assemble at K.L.N. College of Engineering for live defense."
   },
   {
     name: "Awards Ceremony In",
     badge: "PHASE 5: RESULTS & AWARDS",
-    timeStr: "23 Sept 2026, 5:30 PM IST",
-    targetDate: new Date("2026-09-23T17:30:00+05:30").getTime(),
+    timeStr: "22 Sept 2026, 5:30 PM IST",
+    targetDate: new Date("2026-09-22T17:30:00+05:30").getTime(),
     description: "Winners of TENSORA 2026 and category awards are announced."
   }
 ];
