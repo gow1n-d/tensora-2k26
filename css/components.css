@@ -501,6 +501,21 @@ button.nav-cta-btn,
   border-radius: inherit;
 }
 
+.inst-logo {
+  height: clamp(44px, 4.8vw, 58px);
+  width: auto;
+  max-width: 60px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 12px rgba(37, 99, 235, 0.35));
+  flex-shrink: 0;
+  transition: transform var(--duration-fast) ease, filter var(--duration-fast) ease;
+}
+
+.inst-logo:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 4px 14px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 18px rgba(59, 130, 246, 0.6));
+}
+
 .inst-college-name {
   font-family: 'Times New Roman', Times, Georgia, serif;
   font-size: clamp(1.35rem, 2.6vw, 2.15rem);
@@ -509,7 +524,7 @@ button.nav-cta-btn,
   margin: 0;
   letter-spacing: 0.02em;
   text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
-  flex-grow: 1;
+  flex-grow: 0;
 }
 
 .inst-affiliation {
