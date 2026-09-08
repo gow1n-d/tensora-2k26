@@ -95,7 +95,7 @@ function initScrollSpy() {
 
 // Challenge reminder notify action
 function notifyOnRelease() {
-  showToast("You're subscribed! We'll alert you on 21 Sept, 12:00 PM IST when challenges unlock.", "success");
+  showToast("You're subscribed! We'll alert you on 21 Sept, 5:00 PM IST when challenges unlock.", "success");
 }
 
 // Global keyboard listeners

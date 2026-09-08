@@ -267,7 +267,7 @@ function populateReviewSummary() {
         <h5><i class="fa-solid fa-shapes"></i> Selected Innovation Tracks</h5>
         <p><strong>Primary Track:</strong> ${trk1Obj ? trk1Obj.name : 'None'}</p>
         <p><strong>Secondary Track:</strong> ${trk2Obj ? trk2Obj.name : 'None'}</p>
-        <p style="font-size: 0.82rem; color: var(--neon-cyan); margin-top: 0.4rem;"><i class="fa-solid fa-lock"></i> Exact problem statements will be revealed on 21 Sept 2026 at 12:00 PM IST.</p>
+        <p style="font-size: 0.82rem; color: var(--neon-cyan); margin-top: 0.4rem;"><i class="fa-solid fa-lock"></i> Exact problem statements will be revealed on 21 Sept 2026 at 5:00 PM IST.</p>
       </div>
 
       <div class="review-box full-width fee-box">
@@ -324,7 +324,7 @@ TEAM MEMBERS:
 ${registrationData.members.map((m, i) => `${i + 2}. ${m.name} (${m.role}) - ${m.email}`).join('\n')}
 
 MASTER EVENT SCHEDULE:
-- 21 Sept 2026, 12:00 PM IST : Problem Statements Revealed
+- 21 Sept 2026, 05:00 PM IST : Problem Statements Revealed
 - 21 Sept 2026, 06:00 PM IST : 24-Hour Online Build Sprint Begins
 - 22 Sept 2026, 06:00 PM IST : Submission Deadline
 - 23 Sept 2026, 09:00 AM IST : Offline Grand Finale at KLNCE

@@ -1,7 +1,7 @@
 /**
  * TENSORA 2026 - Phase-Aware Dynamic Event Countdown Engine
  * Automatically steps through:
- * 1. Problem Statements Drop (21 Sept 2026, 12:00 PM IST)
+ * 1. Problem Statements Drop (21 Sept 2026, 5:00 PM IST)
  * 2. Hackathon Sprint Starts (21 Sept 2026, 6:00 PM IST)
  * 3. 24h Submission Deadline (22 Sept 2026, 6:00 PM IST)
  * 4. Offline Grand Finale (23 Sept 2026, 9:00 AM IST)
@@ -12,8 +12,8 @@ const EVENT_PHASES = [
   {
     name: "Problem Statements Drop In",
     badge: "PHASE 1: CHALLENGE REVEAL",
-    timeStr: "21 Sept 2026, 12:00 PM IST",
-    targetDate: new Date("2026-09-21T12:00:00+05:30").getTime(),
+    timeStr: "21 Sept 2026, 5:00 PM IST",
+    targetDate: new Date("2026-09-21T17:00:00+05:30").getTime(),
     description: "The 20 official problem statements will be revealed online."
   },
   {

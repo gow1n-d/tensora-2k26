@@ -57,7 +57,7 @@ This repository contains the official production web platform for **TENSORA 2026
 
 - 🌌 **Cyber-Glassmorphic UI/UX**: Custom design system featuring deep space backgrounds (`#040711`), ambient neon glow meshes, glassmorphism containers (`backdrop-filter`), and fluid CSS typography (`Outfit`, `Inter`, `JetBrains Mono`).
 - ⏱️ **Adaptive Multi-Phase Countdown**: Real-time IST-synchronized countdown that dynamically updates across event milestones:
-  - *Phase 1:* Challenge Reveal Countdown (21 Sept, 12:00 PM IST)
+  - *Phase 1:* Challenge Reveal Countdown (21 Sept, 5:00 PM IST)
   - *Phase 2:* 24-Hour Online Build Sprint (21 Sept, 6:00 PM IST)
   - *Phase 3:* Project Submission Window (22 Sept, 6:00 PM IST)
   - *Phase 4:* Offline Grand Finale (23 Sept, 9:00 AM IST)
@@ -84,7 +84,7 @@ This repository contains the official production web platform for **TENSORA 2026
 
 | Stage | Date | Time (IST) | Phase Description |
 |---|---|---|---|
-| **01** | **21 September 2026** | **12:00 PM** | 🔓 **Problem Statements Drop:** Official 20 challenges unlocked for registered teams. |
+| **01** | **21 September 2026** | **05:00 PM** | 🔓 **Problem Statements Drop:** Official 20 challenges unlocked for registered teams. |
 | **02** | **21 September 2026** | **06:00 PM** | ⚡ **Online Build Sprint Begins:** 24-hour non-stop hacking & prototyping kickoff. |
 | **03** | **22 September 2026** | **06:00 PM** | 🏁 **Submission Deadline:** Final code push, demo video, and documentation submission closes. |
 | **04** | **22–23 September 2026** | — | ⚖️ **Jury Evaluation & Shortlisting:** Rigorous evaluation to select finalist teams. |
@@ -101,7 +101,7 @@ This repository contains the official production web platform for **TENSORA 2026
   └────────┬────────┘
            │
   ┌────────▼────────┐
-  │ CHALLENGE DROP  │  21 Sept, 12:00 PM IST: 20 Industry Problems Revealed
+  │ CHALLENGE DROP  │  21 Sept, 5:00 PM IST: 20 Industry Problems Revealed
   └────────┬────────┘
            │
   ┌────────▼────────┐

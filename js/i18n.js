@@ -13,7 +13,7 @@ const I18N_DATA = {
     viewRulesBtn: "Official Rulebook",
     formatPill: "24-Hour Online Sprint + Offline Grand Finale",
     mandatoryPill: "AI Implementation is Mandatory",
-    problemDropPill: "Problem Statements Drop: 21 Sept 2026, 12:00 PM IST",
+    problemDropPill: "Problem Statements Drop: 21 Sept 2026, 5:00 PM IST",
     statDays: "21–23 Sept",
     statDaysLabel: "Master Event Dates",
     statHours: "24 Hours",
