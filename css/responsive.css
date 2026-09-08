@@ -78,7 +78,13 @@
 
   /* Themes Grid — 2 columns on tablet */
   .themes-grid-5 {
-    grid-template-columns: repeat(2, 1fr) !important;
+    gap: var(--space-5) !important;
+  }
+
+  .themes-grid-5 .theme-card-3d {
+    flex: 0 0 calc((100% - var(--space-5)) / 2) !important;
+    max-width: calc((100% - var(--space-5)) / 2) !important;
+    width: calc((100% - var(--space-5)) / 2) !important;
   }
 
   /* Evaluation Levels — Stack to 1 column on tablet */
@@ -370,7 +376,13 @@
   }
 
   .themes-grid-5 {
-    grid-template-columns: 1fr !important;
+    gap: var(--space-4) !important;
+  }
+
+  .themes-grid-5 .theme-card-3d {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
   }
 
   .scoring-tiers-row {
