@@ -99,7 +99,6 @@ function renderChallenges() {
           <span>${challenge.id}</span>
         </div>
         <span class="challenge-theme-pill pill-${challenge.theme}">${challenge.themeName}</span>
-        <span class="challenge-difficulty difficulty-${challenge.difficulty.toLowerCase().replace(/[^a-z]/g, '')}">${challenge.difficulty}</span>
       </div>
 
       <h3 class="challenge-card-title">${challenge.title}</h3>
@@ -143,7 +142,6 @@ function openChallengeModal(challengeId) {
           <i class="${challenge.themeIcon}"></i> ${challenge.id}
         </span>
         <span class="challenge-theme-pill pill-${challenge.theme}">${challenge.themeName} Track</span>
-        <span class="challenge-difficulty difficulty-${challenge.difficulty.toLowerCase().replace(/[^a-z]/g, '')}">${challenge.difficulty}</span>
       </div>
       <h2 class="modal-challenge-title">${challenge.title}</h2>
       <p class="modal-challenge-tagline">${challenge.tagline}</p>

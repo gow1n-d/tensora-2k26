@@ -61,11 +61,10 @@ This repository contains the official production web platform for **TENSORA 2026
   - *Phase 2:* 24-Hour Online Build Sprint (20 Sept, 6:00 PM IST)
   - *Phase 3:* Project Submission Window (21 Sept, 6:00 PM IST)
   - *Phase 4:* Offline Grand Finale (22 Sept, 9:00 AM IST)
-- 🔍 **Interactive 20-Challenge Problem Statement Explorer**:
-  - Live filtering across 5 innovation tracks.
-  - Difficulty badges (*Intermediate*, *Advanced*, *Specialist*).
+- 🔍 **Interactive 25-Challenge Problem Statement Explorer**:
+  - Live filtering across 5 innovation tracks (Transport, Healthcare, Education, Agriculture, Sustainable).
   - Search engine with instant client-side query matching.
-  - Comprehensive problem detail modals featuring Problem Scope, Mandatory AI Requirements, Deliverables, and Curated Datasets.
+  - Comprehensive problem detail modals featuring Problem Scope, Suggested AI Focus, Deliverables, and Curated Datasets.
 - 📋 **Integrated Team Registration Modal**:
   - Dynamic member allocation (2–4 team members).
   - Client-side validation with real-time feedback.
