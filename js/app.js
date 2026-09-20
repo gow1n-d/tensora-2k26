@@ -104,6 +104,7 @@ function initKeyboardAccessibility() {
     if (e.key === 'Escape') {
       if (typeof closeRegisterModal === 'function') closeRegisterModal();
       if (typeof closeSubmissionModal === 'function') closeSubmissionModal();
+      if (typeof closeChallengeModal === 'function') closeChallengeModal();
     }
   });
 
@@ -228,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (typeof initCountdown === 'function') initCountdown();
   if (typeof initRegistration === 'function') initRegistration();
   if (typeof initSubmission === 'function') initSubmission();
+  if (typeof initChallenges === 'function') initChallenges();
   if (typeof initFaq === 'function') initFaq();
   
   initHeroBackgroundVideo();

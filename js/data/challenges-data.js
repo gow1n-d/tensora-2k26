@@ -1,498 +1,629 @@
 /**
  * TENSORA 2026 - Official Problem Statements Dataset
- * 5 Strategic Domains x 4 Problems = 20 Real-World AI Challenges
- * Domains: Education, Transport, Healthcare, Sustainable Energy, Agriculture
+ * Extracted from official hackathon document: problem statement for hackathon techgenio 2k26.docx
+ * 5 Strategic Domains x 5 Challenges = 25 Real-World AI Challenges
+ * Tracks: Transport, Healthcare, Education, Agriculture, Sustainable
  */
 
 const CHALLENGES_DATA = [
-  // ==================== 1. THEME: EDUCATION ====================
+  // =========================================================================
+  // 1. TRACK: TRANSPORT
+  // =========================================================================
+  {
+    id: "TRN-01",
+    theme: "transport",
+    themeName: "Transport",
+    themeIcon: "fa-solid fa-train-subway",
+    title: "Station Congestion and Charging Delays",
+    tagline: "Dynamic AI queue orchestration and slot reallocation for electric vehicle charging infrastructure.",
+    difficulty: "Advanced",
+    aiCategory: "Predictive AI & Dynamic Scheduling",
+    tags: ["EV Charging", "Smart Mobility", "Queue Optimization", "Dynamic Scheduling", "Predictive Routing"],
+    summary: "Electric vehicle drivers frequently head toward the same open charging point at once, causing sudden crowding and long wait times. Fixed time-slot reservations collapse whenever unpredictable traffic delays cause motorists to miss their turn. This leaves following drivers waiting unnecessarily while station capacity goes unused.",
+    problemScope: "Participants should build an intelligent dispatching and queue-reallocation system that continuously tracks EV battery state, real-time arterial traffic congestion, and station throughput to dynamically balance loads across charging networks.",
+    aiRequirements: [
+      "Dynamic reservation realignment model responding to upstream traffic velocity anomalies.",
+      "Predictive demand-forecasting algorithm to prevent regional charger herd behavior.",
+      "Optimized route and charger reassignment engine maximizing station capacity utilization."
+    ],
+    deliverables: [
+      "Live interactive dispatcher dashboard visualizing real-time station occupancy and queue states.",
+      "Driver recommendation engine/API calculating optimal charging detours.",
+      "Simulation bench showing wait-time reductions compared to static time-slot booking."
+    ],
+    sampleDatasets: ["Open Charge Point Network APIs", "City Traffic Velocity GeoJSON feeds", "Synthetic EV Battery Telemetry logs"]
+  },
+  {
+    id: "TRN-02",
+    theme: "transport",
+    themeName: "Transport",
+    themeIcon: "fa-solid fa-car",
+    title: "Vehicle Operator Fatigue and Privacy",
+    tagline: "Privacy-preserving edge-native computer vision for long-distance driver drowsiness detection.",
+    difficulty: "Intermediate",
+    aiCategory: "Edge AI & Computer Vision",
+    tags: ["Edge AI", "Fatigue Detection", "Privacy-Preserving", "Offline Vision", "Operator Safety"],
+    summary: "Drowsy driving and inattention among long-distance operators lead to dangerous roadway accidents. Existing camera setups that stream cabin footage externally raise severe privacy concerns for operators. Furthermore, systems that depend on continuous network connections completely fail in remote, zero-connectivity zones.",
+    problemScope: "Design an on-device, offline-first vision AI system that computes micro-nodding, PERCLOS (percentage of eyelid closure), and yawning metrics locally without transmitting or storing raw operator video feeds.",
+    aiRequirements: [
+      "Lightweight face mesh / landmark model runnable on edge hardware (e.g. Raspberry Pi, ONNX, TFLite).",
+      "Real-time temporal eye-aspect-ratio (EAR) and head-pose gaze vector analysis.",
+      "Strict zero-cloud raw video transmission architecture with encrypted local telemetry."
+    ],
+    deliverables: [
+      "Working edge-vision detection pipeline processing video at >= 20 FPS.",
+      "Multi-stage acoustic/visual warning trigger responding to micro-sleep episodes.",
+      "Privacy architecture report proving compliance with zero-external-streaming constraints."
+    ],
+    sampleDatasets: ["National Tsing Hua University Drowsiness Dataset (NTHU-DDD)", "RLDD Driver Drowsiness Dataset", "Synthesized Local Edge Video Streams"]
+  },
+  {
+    id: "TRN-03",
+    theme: "transport",
+    themeName: "Transport",
+    themeIcon: "fa-solid fa-traffic-light",
+    title: "Smart Traffic Signal Time Management",
+    tagline: "Adaptive vision-based traffic light timing optimization to eliminate phantom red signal delays.",
+    difficulty: "Intermediate",
+    aiCategory: "Reinforcement Learning & Vision",
+    tags: ["Adaptive Signals", "Computer Vision", "Traffic Flow", "Fuel Conservation", "Smart Cities"],
+    summary: "At many traffic signals, the red signal remains active even when there are very few or no vehicles waiting. This causes unnecessary waiting time, fuel consumption, and traffic delays. An intelligent way of managing signal timing is needed to reduce unnecessary waiting and improve traffic flow.",
+    problemScope: "Develop an adaptive signal controller that leverages intersection cameras or density sensors to dynamically alter green light intervals based on actual queue depths and approaching vehicle momentum.",
+    aiRequirements: [
+      "Vehicle detection and queue-depth estimation model (YOLOv8-nano / MobileNet).",
+      "Dynamic cycle calculation or Reinforcement Learning agent (e.g., Deep Q-Network) optimizing green phases.",
+      "Failsafe logic ensuring pedestrian crossing safety and emergency vehicle priority override."
+    ],
+    deliverables: [
+      "Simulated multi-intersection environment (e.g., SUMO or interactive HTML5 Canvas simulation).",
+      "Real-time signal switching controller demonstrating fuel savings and reduced idle times.",
+      "Benchmarked performance comparison against fixed-timer control schedules."
+    ],
+    sampleDatasets: ["Urban Intersection Video Feeds", "SUMO Simulation Scenarios", "Open Traffic Density & Flow Datasets"]
+  },
+  {
+    id: "TRN-04",
+    theme: "transport",
+    themeName: "Transport",
+    themeIcon: "fa-solid fa-bus",
+    title: "Public Transport Arrival & Location Awareness",
+    tagline: "Zero-hardware crowdsourced and telemetry-driven transit ETA prediction for commuters.",
+    difficulty: "Beginner-Friendly",
+    aiCategory: "Geospatial AI & Time-Series",
+    tags: ["Transit ETA", "Zero Hardware", "Crowdsourced Telemetry", "Route Planning", "Commuter UX"],
+    summary: "Passengers often do not know where their bus or train is currently located or when it is expected to arrive. This can lead to unnecessary waiting and difficulty in planning their journey. The solution should consider the resources and technology that are already available as part of the public transport system, without requiring additional external hardware to be installed.",
+    problemScope: "Engineer a high-precision transit ETA and location awareness engine using preexisting signals (such as passenger smartphone pings, conductor ticketing devices, public GTFS-RT feeds, or cellular tower handoffs) without requiring expensive new onboard sensors.",
+    aiRequirements: [
+      "Kalman filter or LSTM-based transit velocity estimator filtering erratic crowd GPS traces.",
+      "Historical headway and bottleneck-aware arrival ETA regression model.",
+      "Anonymized passenger aggregation algorithm ensuring commuter location privacy."
+    ],
+    deliverables: [
+      "Passenger web application showing live approaching bus/train telemetry and arrival countdowns.",
+      "Conductor / driver lightweight mobile web telemetry broadcaster.",
+      "Low-bandwidth data synchronization protocol suitable for 2G/3G connectivity conditions."
+    ],
+    sampleDatasets: ["Open GTFS & GTFS-Realtime Datasets", "Synthetic Transit Route Breadcrumbs", "Municipal Bus Timetables"]
+  },
+  {
+    id: "TRN-05",
+    theme: "transport",
+    themeName: "Transport",
+    themeIcon: "fa-solid fa-lightbulb",
+    title: "Student Innovation — Open Mobility & Transport",
+    tagline: "Open problem track for groundbreaking student-driven AI solutions in urban mobility, logistics, or safety.",
+    difficulty: "Open",
+    aiCategory: "Open AI Innovation",
+    tags: ["Student Innovation", "Open Mobility", "Fleet Optimization", "Green Transit", "Autonomous AI"],
+    summary: "Propose an original, student-driven AI innovation addressing a critical, high-impact bottleneck in transportation, urban transit, micro-mobility, safety, or logistics using modern AI/ML frameworks.",
+    problemScope: "Teams are invited to present an end-to-end prototype tackling any transport problem not covered by the predefined statements, demonstrating algorithmic ingenuity, feasibility, and measurable community or environmental impact.",
+    aiRequirements: [
+      "Clear AI/ML component (deep learning, reinforcement learning, computer vision, or predictive analytics).",
+      "Demonstrable real-world dataset and validation methodology.",
+      "Scalable system architecture with working proof of concept."
+    ],
+    deliverables: [
+      "Functional working prototype or interactive application demonstrating the innovation.",
+      "Technical architecture documentation detailing model pipeline and data flow.",
+      "Impact assessment quantifying speed, safety, cost, or carbon footprint benefits."
+    ],
+    sampleDatasets: ["Self-Curated or Public Transport / Geospatial Benchmarks"]
+  },
+
+  // =========================================================================
+  // 2. TRACK: HEALTHCARE
+  // =========================================================================
+  {
+    id: "HLT-01",
+    theme: "healthcare",
+    themeName: "Healthcare",
+    themeIcon: "fa-solid fa-heart-pulse",
+    title: "Elderly Patient Safety & Assistance",
+    tagline: "Ambient multi-modal sensing and computer vision for fall detection and rapid emergency dispatch.",
+    difficulty: "Intermediate",
+    aiCategory: "Ambient AI & Pose Estimation",
+    tags: ["Elderly Care", "Fall Detection", "Pose Estimation", "Ambient AI", "Emergency Alerts"],
+    summary: "Elderly people living alone may face difficulties when they fall, become unwell, or need immediate assistance. In some situations, they may not be able to contact someone quickly. A better way of identifying situations where an elderly person may need assistance is needed.",
+    problemScope: "Create a compassionate, non-intrusive monitoring assistant that accurately differentiates harmless everyday actions (lying on a couch, bending down to pick up items) from critical falls or sudden collapses, and immediately alerts caregivers.",
+    aiRequirements: [
+      "Human skeleton pose estimation (MediaPipe / MoveNet / YOLO-Pose) tracking key joints.",
+      "Temporal fall verification model (analyzing velocity vectors and post-fall immobility).",
+      "Automated SOS dispatch webhook with location, timestamp, and severity indicator."
+    ],
+    deliverables: [
+      "Real-time webcam or video stream monitoring interface with skeleton overlays.",
+      "Emergency alert notification dispatch (SMS, Webhook, Telegram/WhatsApp alert).",
+      "False-positive rejection test suite distinguishing sitting/lying from accidental falls."
+    ],
+    sampleDatasets: ["UR Fall Detection Dataset (URFD)", "Multiple Cameras Fall Dataset", "Thermal / RGB Fall Action Sequences"]
+  },
+  {
+    id: "HLT-02",
+    theme: "healthcare",
+    themeName: "Healthcare",
+    themeIcon: "fa-solid fa-wave-square",
+    title: "Heartbeat Changes During Stress",
+    tagline: "Correlating physiological cardiovascular response fluctuations with everyday stress triggers.",
+    difficulty: "Advanced",
+    aiCategory: "Biosignal Processing & Time-Series ML",
+    tags: ["Heart Rate Variability", "Stress Tracking", "Time-Series ML", "Wearable Biosignals", "Digital Health"],
+    summary: "Stress, anxiety, and strong emotions can affect heart rate and other body responses. People may experience noticeable changes without understanding when or why they occur. A better way of observing the relationship between daily situations and changes in heart activity is needed.",
+    problemScope: "Develop an intelligent biosignal analytics system that processes photoplethysmography (PPG) or ECG time-series data to detect stress spikes, calculate Heart Rate Variability (HRV) metrics, and correlate physiological shifts with daily context.",
+    aiRequirements: [
+      "Signal preprocessing module for noise filtering, peak detection (R-peaks), and artifact removal.",
+      "Feature extractor computing SDNN, RMSSD, LF/HF frequency domain balance.",
+      "Stress classification model predicting acute cognitive stress episodes."
+    ],
+    deliverables: [
+      "Interactive health dashboard visualizing real-time heart rate trends and stress severity bands.",
+      "Context correlation log linking calendar events or user inputs to cardiovascular spikes.",
+      "Personalized biofeedback and guided relaxation pacing interface."
+    ],
+    sampleDatasets: ["WESAD (Wearable Stress and Affect Detection)", "SWELL-KW Dataset", "PhysioNet PPG & ECG databases"]
+  },
+  {
+    id: "HLT-03",
+    theme: "healthcare",
+    themeName: "Healthcare",
+    themeIcon: "fa-solid fa-file-medical",
+    title: "Medical Report Management",
+    tagline: "Intelligent multimodal OCR and clinical entity extraction for unified patient health histories.",
+    difficulty: "Intermediate",
+    aiCategory: "Document AI & Clinical NLP",
+    tags: ["Medical OCR", "Document AI", "Clinical NLP", "EHR Standards", "Patient Records"],
+    summary: "Patients may have medical reports from different hospitals, laboratories, and doctors stored in different places. Finding an older report when it is needed can be difficult and time-consuming. A better way of organizing and accessing a patient's medical reports is needed.",
+    problemScope: "Engineer a secure personal health record companion that digests messy photos/scans of blood tests, prescriptions, and radiology summaries, extracts clinical entities into structured timelines, and allows semantic search.",
+    aiRequirements: [
+      "High-accuracy document OCR engine optimized for noisy medical print and handwriting.",
+      "Named Entity Recognition (NER) pipeline identifying medications, dosages, lab biomarkers, and diagnoses.",
+      "Structured health timeline builder normalizing lab values into standard reference ranges."
+    ],
+    deliverables: [
+      "Mobile-friendly report scanner and uploader with automatic document classification.",
+      "Interactive longitudinal health charts (e.g. cholesterol, blood glucose trends over years).",
+      "Semantic search bar answering questions like 'Show all prescriptions from last December'."
+    ],
+    sampleDatasets: ["MIMIC-IV Clinical Document Extracts", "Synthea Synthetic EHR Records", "Open Medical Lab Report Samples"]
+  },
+  {
+    id: "HLT-04",
+    theme: "healthcare",
+    themeName: "Healthcare",
+    themeIcon: "fa-solid fa-hospital-user",
+    title: "Rural Healthcare Access",
+    tagline: "Offline-first intelligent triage and vernacular symptom checker for remote clinical deserts.",
+    difficulty: "Intermediate",
+    aiCategory: "Diagnostic AI & Vernacular NLP",
+    tags: ["Rural Health", "Telemedicine", "Offline AI", "Vernacular Chatbot", "Clinical Triage"],
+    summary: "People living in rural and remote areas may have difficulty accessing specialized healthcare services. Long travel distances can delay medical consultation and treatment. A better way of improving access to healthcare in remote areas is needed.",
+    problemScope: "Construct an offline-capable, vernacular-friendly clinical triage system that assists community health workers (e.g., ASHA workers) in screening symptoms, prioritizing urgent emergencies, and preparing concise referral summaries for distant specialists.",
+    aiRequirements: [
+      "Lightweight clinical decision support model running locally on budget smartphone devices.",
+      "Multilingual speech and text interface supporting regional Indian dialects.",
+      "Asynchronous telemedicine store-and-forward synchronizer operating over spotty connectivity."
+    ],
+    deliverables: [
+      "Progressive Web App (PWA) with full offline triage checklists and voice queries.",
+      "Automated clinical risk stratification indicator (Green: Home Care, Amber: PHC Visit, Red: Immediate Referral).",
+      "Compact summarized patient digital token sent to regional hospital specialists via SMS/low-data packet."
+    ],
+    sampleDatasets: ["WHO Integrated Management of Childhood/Adult Illness Guidelines", "Synthea Multilingual Symptom Corpus", "Public Triage Clinical Protocols"]
+  },
+  {
+    id: "HLT-05",
+    theme: "healthcare",
+    themeName: "Healthcare",
+    themeIcon: "fa-solid fa-dna",
+    title: "Student Innovation — Open Healthcare & Wellbeing",
+    tagline: "Pioneer a student-led medical or wellbeing AI breakthrough with high societal impact.",
+    difficulty: "Open",
+    aiCategory: "Open Health Innovation",
+    tags: ["Student Innovation", "MedTech", "Preventive Health", "Biomedical AI", "Mental Wellness"],
+    summary: "Propose a novel AI-powered breakthrough in healthcare diagnostics, preventive medicine, clinical workflows, patient accessibility, medical imaging, or community wellbeing.",
+    problemScope: "Student innovators are encouraged to submit end-to-end working prototypes tackling critical unmet clinical needs, mental wellness challenges, surgical planning aids, or accessible assistive devices for people with disabilities.",
+    aiRequirements: [
+      "Rigorous AI/ML algorithm addressing an authentic clinical or health-access need.",
+      "Clear clinical safety guardrails, disclaimer design, and bias mitigation awareness.",
+      "Functional interactive demonstration showcasing patient/practitioner workflow."
+    ],
+    deliverables: [
+      "Working web or mobile application with live clinical/health inference demo.",
+      "Architecture diagram outlining data privacy, patient security, and model inference.",
+      "Validation study comparing model predictions with standard baseline metrics."
+    ],
+    sampleDatasets: ["Open-Source Biomedical, Clinical, or Physiological Repositories"]
+  },
+
+  // =========================================================================
+  // 3. TRACK: EDUCATION
+  // =========================================================================
   {
     id: "EDU-01",
     theme: "education",
     themeName: "Education",
     themeIcon: "fa-solid fa-graduation-cap",
-    title: "CodeAI — Interactive DSA & Algorithmic Visual Tutor",
-    tagline: "AI tutor that steps through student code, visualizes memory pointers, and provides Socratic debugging guidance.",
+    title: "Uniform Pacing and Unidentified Knowledge Gaps",
+    tagline: "Adaptive knowledge tracing and granular prerequisite mastery diagnostics for individual students.",
     difficulty: "Intermediate",
-    aiCategory: "Generative AI & LLM Systems",
-    tags: ["LLM Agents", "AST Analysis", "Code Visualization", "DSA", "Socratic Prompting"],
-    summary: "Computer science students frequently struggle to grasp abstract Data Structures & Algorithms (such as recursion trees, dynamic programming tables, and linked list pointer mutations). CodeAI parses arbitrary C++/Java/Python snippets, generates step-by-step visual animation trees, and uses a guided LLM tutor that never gives direct answers, but instead asks diagnostic Socratic questions.",
-    problemScope: "Generic generative AI tools simply spit out complete answers, depriving students of deep algorithmic reasoning and problem-solving intuition. CodeAI must perform static AST syntax tree parsing, simulate execution memory frames, and provide interactive contextual guidance.",
+    aiCategory: "Adaptive Learning & Knowledge Tracing",
+    tags: ["Knowledge Tracing", "Adaptive Learning", "Concept Mastery", "Diagnostic Testing", "EdTech AI"],
+    summary: "Every student understands topics at a different pace, yet standard instruction treats the entire class as a single unit. Learners frequently struggle with specific foundational concepts without realizing where their confusion began. Without individual tracking, struggling students fall further behind as tests fail to adapt to their exact weak points.",
+    problemScope: "Build an adaptive learning engine that tracks concept-level mastery networks (knowledge graphs), pinpointing precisely which prerequisite foundational misconception is tripping up a student and generating customized micro-practice paths.",
     aiRequirements: [
-      "LLM agent orchestrator with custom Socratic pedagogical system prompts.",
-      "AST (Abstract Syntax Tree) extractor mapping state mutations across lines of code.",
-      "Complexity analyzer generating asymptotic Big-O runtime and space bound breakdowns."
+      "Bayesian Knowledge Tracing (BKT) or Deep Knowledge Tracing (DKT) recurrent model.",
+      "Prerequisite knowledge graph mapping relationships between syllabus concepts.",
+      "Dynamic question difficulty selector adapting in real-time to student response patterns."
     ],
     deliverables: [
-      "Full web IDE with split-pane code editor, execution visualizer, and AI chat tutor.",
-      "Interactive pointer mutation diagram for linked lists/trees/graphs.",
-      "Student learning analytics panel highlighting conceptual bottlenecks."
+      "Student interactive dashboard showing visual concept mastery trees and identified gaps.",
+      "Personalized remedial quiz generator targeting exact weak points.",
+      "Teacher analytics panel identifying classroom-wide conceptual bottlenecks."
     ],
-    sampleDatasets: ["HumanEval & MBPP Benchmark Datasets", "LeetCode Algorithmic Problem Ontologies", "CodeNet Multi-Language AST Datasets"]
+    sampleDatasets: ["Assistments Open Educational Benchmark", "EdNet Student Interaction Dataset", "Curated STEM Subject Knowledge Graphs"]
   },
   {
     id: "EDU-02",
     theme: "education",
     themeName: "Education",
     themeIcon: "fa-solid fa-language",
-    title: "LangPairAI — Contextual Vernacular Language Learning",
-    tagline: "Culturally-grounded regional language adaptation with dialect nuance, voice cloning, and idiom translation.",
+    title: "Classroom Language Barriers and Note Retention",
+    tagline: "Real-time vernacular speech translation, concept extraction, and structured study note synthesizer.",
     difficulty: "Intermediate",
-    aiCategory: "Natural Language Processing",
-    tags: ["NLP", "Indian Vernacular Languages", "ASR / TTS", "Cultural Translation", "LLMs"],
-    summary: "Direct literal machine translation fails catastrophically when applied to vernacular Indian regional idioms, slang, and cultural context (such as colloquial Tamil, Telugu, Hindi, or Malayalam phrases). LangPairAI delivers immersive conversational language learning through real-time speech evaluation, dialect mapping, and contextual cultural storytelling.",
-    problemScope: "Language learners need more than flashcard vocabulary drills; they need conversational roleplay with phonetic feedback, pronunciation scoring, and situational context (ordering street food, bargaining, academic discussions).",
+    aiCategory: "Speech AI & Multilingual NLP",
+    tags: ["Speech-to-Text", "Vernacular Translation", "Lecture Summarization", "Smart Notes", "EdTech AI"],
+    summary: "Spoken lectures move too quickly for many students to capture key ideas while simultaneously trying to understand the material. Language differences and varied listening comprehension make it difficult for everyone to follow along equally. As a result, students miss critical explanations and lack structured revision materials when studying on their own.",
+    problemScope: "Design a real-time lecture companion that captures teacher speech, translates technical explanations into the student's chosen vernacular tongue, and synthesizes structured revision cheat sheets with key definitions and diagrams.",
     aiRequirements: [
-      "Fine-tuned multilingual translation model (IndicTrans2, Llama-3-Indic, or Whisper Indic fine-tunes).",
-      "Phoneme-level speech pronunciation evaluation using ASR acoustic scoring.",
-      "Dynamic conversational agent roleplaying real-world cultural scenarios with adaptive difficulty."
+      "Low-latency Automatic Speech Recognition (ASR) capable of parsing classroom acoustic conditions.",
+      "Domain-adapted machine translation preserving technical STEM terminology.",
+      "Hierarchical text summarizer extracting bulleted key takeaways, formulas, and flashcards."
     ],
     deliverables: [
-      "Interactive speech-to-speech learning web/mobile interface.",
-      "Real-time pronunciation waveform and phonetic accuracy visualizer.",
-      "Contextual idiom dictionary with cultural origins and usage examples."
+      "Real-time dual-language lecture captions web viewer.",
+      "One-click auto-generated study guide with downloadable PDF summary.",
+      "Interactive Q&A bot grounded specifically in that day's lecture transcript."
     ],
-    sampleDatasets: ["AI4Bharat IndicTrans2 & IndicWhisper Corpus", "Bhashini Open Indic Speech Datasets", "Common Voice Indic Subsets"]
+    sampleDatasets: ["AI4Bharat IndicSpeech & IndicTrans Corpora", "Open NPTEL / MIT OCW Lecture Transcripts", "Common Voice Multi-Lingual Speech"]
   },
   {
     id: "EDU-03",
     theme: "education",
     themeName: "Education",
-    themeIcon: "fa-solid fa-hands-asl-interpreting",
-    title: "GestureLearnAI — Vision-Based Sign Language & Gesture Tutoring",
-    tagline: "Two-way sign language recognition and educational translation for inclusive classroom learning.",
+    themeIcon: "fa-solid fa-chart-line",
+    title: "Delayed Detection of Academic Dropouts",
+    tagline: "Multi-dimensional early warning system identifying silent disengagement before grades crash.",
     difficulty: "Advanced",
-    aiCategory: "Computer Vision & Spatial AI",
-    tags: ["Indian Sign Language (ISL)", "MediaPipe Hands", "Spatial AI", "Bi-Directional Translation", "Accessibility"],
-    summary: "Millions of deaf and hard-of-hearing students face communication barriers in standard educational institutions. GestureLearnAI provides two-way translation: converting spoken classroom lectures into animated 3D sign language gestures in real time, while utilizing webcam spatial recognition to evaluate students practicing sign gestures.",
-    problemScope: "Continuous dynamic sign recognition requires tracking finger micro-gestures, facial expressions, and spatial body posture across time rather than merely classifying static alphabet hand-poses.",
+    aiCategory: "Predictive Modeling & Behavioral Analytics",
+    tags: ["Dropout Prevention", "Early Warning", "Student Retention", "Behavioral ML", "Academic Analytics"],
+    summary: "Institutions often realize a student is struggling only after they fail an examination or stop attending classes entirely. Subtle warning signs, such as slipping participation and slow assignment turn-ins, go unnoticed in large classrooms. By the time educators identify the problem, it is often too late to prevent the student from falling behind or dropping out.",
+    problemScope: "Create an ethical, privacy-first early-warning predictive system that analyzes multidimensional student engagement signals (LMS activity, submission timing shifts, library usage, assignment lags) to flag students needing empathetic human counselor intervention.",
     aiRequirements: [
-      "Continuous 3D skeletal hand and facial landmark spatial tracking (MediaPipe / OpenPose).",
-      "Spatial-Temporal Graph Convolutional Network (ST-GCN) or Transformer for continuous gesture sequence decoding.",
-      "Text-to-Sign animation synthesis engine translating academic curriculum vocabulary into ISL."
+      "Time-series anomaly detection or survival analysis model predicting disengagement trajectories.",
+      "SHAP / LIME explainability module explaining to mentors why a student was flagged.",
+      "Strict ethical privacy controls preventing punitive automated actions."
     ],
     deliverables: [
-      "Two-way live video-to-text and text-to-avatar sign synthesis platform.",
-      "Interactive practice module with immediate skeletal overlay corrections.",
-      "Curriculum-ready glossary covering STEM and academic concepts in Indian Sign Language."
+      "Faculty/Mentor early-warning dashboard with actionable student intervention alerts.",
+      "Automated empathetic student check-in survey mechanism with resource recommendations.",
+      "Historical retention simulation showing early intervention success rates."
     ],
-    sampleDatasets: ["INCLUDE Indian Sign Language Dataset", "Sign3D Skeletal Landmark Corpus", "WLASL (World Level American Sign Language)"]
+    sampleDatasets: ["Open University Learning Analytics Dataset (OULAD)", "Higher Education Student Performance Data", "Synthetic LMS Interaction Logs"]
   },
   {
     id: "EDU-04",
     theme: "education",
     themeName: "Education",
-    themeIcon: "fa-solid fa-file-circle-check",
-    title: "AI-Powered Optical Mark & Handwritten Exam Sheet Evaluator",
-    tagline: "Robust mobile-camera OMR grading and handwritten step-mark verification with fraud detection.",
-    difficulty: "Intermediate",
-    aiCategory: "Document AI & Computer Vision",
-    tags: ["Document AI", "OCR", "Perspective Correction", "Automated Grading", "Tamper Detection"],
-    summary: "Manual evaluation of standardized competitive examinations and college test sheets is labor-intensive and prone to human grading errors, skew distortions, and lighting shadows. This challenge requires building an automated grading system that corrects perspective distortion from smartphone camera captures, evaluates bubbles and handwritten numerical answers, and outputs instant grade sheets.",
-    problemScope: "Hardware OMR scanners cost thousands of dollars and require pristine flat sheets. Rural colleges and small institutions need a software solution that works reliably on crumpled paper photos captured with basic smartphones under uneven lighting.",
+    themeIcon: "fa-solid fa-users-viewfinder",
+    title: "Superficial Attendance and Passive Classroom Presence",
+    tagline: "Interactive cognitive pulse check and micro-engagement loops to measure true classroom resonance.",
+    difficulty: "Beginner-Friendly",
+    aiCategory: "Interaction AI & Engagement Analytics",
+    tags: ["Cognitive Engagement", "Active Learning", "Classroom Pulse", "Interactive Polling", "EdTech"],
+    summary: "Marking physical presence does not reflect whether a student is actually paying attention or absorbing the material. Quiet disengagement, passive sitting, and lack of interaction often go unnoticed until coursework grades drop. Relying only on roll calls obscures whether the classroom environment is genuinely holding student interest.",
+    problemScope: "Develop an interactive, non-surveillance classroom engagement platform that measures real comprehension through frictionless 30-second cognitive pulse checks, anonymous peer confidence meters, and micro-challenges.",
     aiRequirements: [
-      "Automated document boundary detection, perspective homography rectification, and shadow removal.",
-      "Bubble fill density classifier robust against partial erasures and ink bleeds.",
-      "Handwritten digit and math step verification engine (CRNN / TrOCR) with confidence thresholding."
+      "Real-time comprehension clustering algorithm aggregating anonymous classroom feedback.",
+      "Adaptive micro-quiz generator synthesizing questions based on what the instructor just explained.",
+      "Classroom Resonance Index (CRI) calculation quantifying lecture clarity and pacing."
     ],
     deliverables: [
-      "Batch image upload and instant score calculation dashboard.",
-      "Interactive inspection tool highlighting ambiguous marks for manual teacher review.",
-      "Automated Excel / CSV grade report generator with statistical analytics."
+      "Student zero-install smartphone interface for real-time anonymous pulse voting.",
+      "Teacher live HUD displaying classroom comprehension thermometer and pace recommendations.",
+      "Lecture heat-map showing which topics caused the most confusion."
     ],
-    sampleDatasets: ["OpenOMR Form Image Benchmark Sets", "IAM Handwriting Database", "Synthetic Distorted Sheet Generator Dataset"]
+    sampleDatasets: ["Active Learning Classroom Interaction Benchmarks", "Peer Instruction Question Repositories"]
+  },
+  {
+    id: "EDU-05",
+    theme: "education",
+    themeName: "Education",
+    themeIcon: "fa-solid fa-lightbulb",
+    title: "Student Innovation — Open Education & Adaptive Learning",
+    tagline: "Propose an original educational technology breakthrough to democratize high-impact learning.",
+    difficulty: "Open",
+    aiCategory: "Open Educational Innovation",
+    tags: ["Student Innovation", "EdTech", "Gamified Learning", "Accessible Education", "Generative AI"],
+    summary: "Develop a ground-breaking student-created AI solution that transforms pedagogical methods, accessibility, assessment, or educational empowerment.",
+    problemScope: "Teams may showcase novel AI tutors, multimodal accessibility tools for neurodivergent or visually-impaired students, automated peer code reviewers, or gamified skill mastery platforms.",
+    aiRequirements: [
+      "Demonstrated AI/ML model integration (LLMs, Computer Vision, Speech, or Recommendation).",
+      "Student-centric usability design validated through practical trial workflows.",
+      "Clear metrics proving enhanced learning efficiency or accessibility."
+    ],
+    deliverables: [
+      "Interactive working software prototype accessible via web/mobile.",
+      "Comprehensive walkthrough showcasing learner interaction and feedback loops.",
+      "Source repository with reproducible setup and test documentation."
+    ],
+    sampleDatasets: ["Public Educational Data Repositories or Self-Collected Learning Traces"]
   },
 
-  // ==================== 2. THEME: TRANSPORT ====================
-  {
-    id: "TRN-01",
-    theme: "transport",
-    themeName: "Transport",
-    themeIcon: "fa-solid fa-train-subway",
-    title: "AI-Based Predictive Maintenance of Metro Compressor Units",
-    tagline: "Predict air compressor failures and calculate Remaining Useful Life (RUL) before breakdowns occur.",
-    difficulty: "Advanced",
-    aiCategory: "Time-Series & Predictive Analytics",
-    tags: ["Time-Series", "LSTM / Transformers", "Anomaly Detection", "IoT Sensors", "RUL Estimation"],
-    summary: "Air compressor units in metro train braking systems operate under severe thermal and mechanical stresses. Unexpected compressor failure causes emergency braking and operational gridlock. Teams must build an AI pipeline using real-world multi-sensor time-series data to detect anomalous degradation patterns and forecast remaining useful operating hours with high precision.",
-    problemScope: "Metro operators rely on reactive or scheduled maintenance which is either too late or unnecessarily costly. Sensor logs capture vibration, oil pressure, motor temperature, cylinder pressure, and electrical current drawn. The objective is to construct an end-to-end anomaly detection and RUL forecasting engine with false-positive mitigation.",
-    aiRequirements: [
-      "Deep learning or ensemble time-series model (e.g. Temporal Convolutional Networks, LSTM, PatchTST, or XGBoost on engineered lag features).",
-      "Dynamic thresholding algorithm for anomaly scoring in noisy industrial sensor telemetry.",
-      "Explainability module (SHAP / Integrated Gradients) identifying which sensor signals triggered the failure warning."
-    ],
-    deliverables: [
-      "Predictive modeling pipeline with evaluated RMSE/MAE and precision-recall curves.",
-      "Interactive engineer dashboard showing real-time health index of compressor units.",
-      "Automated maintenance dispatch alert system with recommended intervention time."
-    ],
-    sampleDatasets: ["Metro PT Compressor Dataset (Kaggle/UCI)", "NASA Turbofan Engine Degradation Simulation (C-MAPSS)"]
-  },
-  {
-    id: "TRN-02",
-    theme: "transport",
-    themeName: "Transport",
-    themeIcon: "fa-solid fa-car-burst",
-    title: "Edge-AI Driver Distraction & Drowsiness Prevention",
-    tagline: "Real-time edge computer vision to detect cognitive fatigue, eye closure, and phone usage.",
-    difficulty: "Intermediate",
-    aiCategory: "Computer Vision & Edge AI",
-    tags: ["Computer Vision", "YOLOv8/v11", "Facial Landmarks", "Edge AI", "EAR/MAR Analysis"],
-    summary: "Commercial and private vehicle accidents frequently result from microsleep, driver drowsiness, and smartphone distractions. Teams must build a lightweight, low-latency edge AI system that detects eye-aspect ratio (EAR), mouth-opening ratio (MAR), head gaze drift, and device usage in varying lighting conditions.",
-    problemScope: "Existing driver monitoring systems struggle with low illumination, sunglasses, and extreme computational overhead. Solutions must run smoothly on edge hardware (e.g., Raspberry Pi, Jetson Nano, or standard mobile/laptop webcams at 30+ FPS) while ensuring zero biometric privacy leakage.",
-    aiRequirements: [
-      "Facial landmark tracking and head pose estimation pipeline (MediaPipe, OpenCV, or custom CNNs).",
-      "Object detection model optimized for hand-held smartphone and cigarette detection.",
-      "Temporal smoothing classifier to distinguish intentional glances from micro-sleep episodes."
-    ],
-    deliverables: [
-      "Working real-time live webcam/video demonstration.",
-      "Auditory and visual multi-level alert dashboard with distraction logging.",
-      "Optimized lightweight inference pipeline (ONNX / TensorRT / TFLite)."
-    ],
-    sampleDatasets: ["State Farm Distracted Driver Detection (Kaggle)", "Driver Drowsiness Dataset (DDD)", "NTHU Driver Drowsiness Video Dataset"]
-  },
-  {
-    id: "TRN-03",
-    theme: "transport",
-    themeName: "Transport",
-    themeIcon: "fa-solid fa-plane-departure",
-    title: "Flight Schedule & Gate Allocation Optimizer for Congested Hubs",
-    tagline: "Reinforcement learning and graph AI to minimize runway delays, gate conflicts, and carbon burn.",
-    difficulty: "Advanced",
-    aiCategory: "Reinforcement Learning & Graph AI",
-    tags: ["Reinforcement Learning", "Graph Neural Networks", "Combinatorial Optimization", "Aviation"],
-    summary: "Air traffic congestion at major international and domestic hubs leads to cascading departure delays, excessive apron idling, and thousands of tons of avoidable jet fuel emissions. Build an AI-driven optimization system that re-sequences departure taxi queues and dynamically reallocates airport arrival gates during weather disruptions.",
-    problemScope: "A single delayed flight ripples across subsequent sector rotations. The challenge requires processing multi-airline flight schedules, runway turnarounds, gate constraints, and historical delay matrices to compute optimal conflict-free assignments in under 60 seconds.",
-    aiRequirements: [
-      "Constraint-aware Reinforcement Learning agent (PPO/DQN) or Graph Neural Network (GNN) model.",
-      "Delay propagation predictor using historical aviation flight matrices.",
-      "Dynamic re-routing optimizer capable of simulating gate swap scenarios."
-    ],
-    deliverables: [
-      "Flight simulation testbed demonstrating turnaround throughput improvements.",
-      "Interactive gate schedule heatmap and runway taxiway dispatcher view.",
-      "Comparative metrics showing simulated reduction in idle taxi emissions and passenger missed connections."
-    ],
-    sampleDatasets: ["Bureau of Transportation Statistics (BTS) Flight Delay Database", "OpenSky Network Historical Flight Traces"]
-  },
-  {
-    id: "TRN-04",
-    theme: "transport",
-    themeName: "Transport",
-    themeIcon: "fa-solid fa-paw",
-    title: "Human-Wildlife Conflict Mitigation on Railway Corridors",
-    tagline: "Multi-sensory acoustic and thermal vision system for early elephant and wildlife track trespass alerts.",
-    difficulty: "Intermediate",
-    aiCategory: "Multimodal AI & Acoustic Vision",
-    tags: ["Multimodal AI", "Thermal Imaging", "Bioacoustic AI", "Geofencing", "Railway Safety"],
-    summary: "High-speed train collisions with elephants and other endangered wildlife along forest corridors cause severe ecological loss and derailment dangers. Develop an automated trackside AI sentinel system that combines thermal camera feeds with seismic/acoustic sensor processing to identify approaching herds 500m+ ahead and send automated locomotive braking alerts.",
-    problemScope: "Dense foliage, heavy nighttime fog, and harsh outdoor railway environments render standard optical cameras ineffective. The system must filter out false positives (e.g., wind, cattle, small mammals) and trigger instant geofenced alerts to nearby loco pilots and station master consoles.",
-    aiRequirements: [
-      "Thermal / Infrared object detection pipeline specialized for large mammal silhouettes.",
-      "Audio spectrogram / seismic wave classifier for seismic footfall and trumpet vocalization detection.",
-      "Sensor fusion engine delivering confidence-calibrated telemetry alerts to the train crew."
-    ],
-    deliverables: [
-      "Multimodal inference pipeline supporting thermal video and audio input streams.",
-      "Station Master & Locomotive Pilot Telemetry Dashboard with automated warning sirens and maps.",
-      "False-alarm resistance benchmark against ambient environmental noise."
-    ],
-    sampleDatasets: ["WildTrack Footprint & Silhouette Dataset", "Elephant Seismic & Infrasonic Audio Archives", "Kaggle Thermal Wildlife Video Sets"]
-  },
-
-  // ==================== 3. THEME: HEALTHCARE ====================
-  {
-    id: "HLT-01",
-    theme: "healthcare",
-    themeName: "Healthcare",
-    themeIcon: "fa-solid fa-pills",
-    title: "Prescription Risk & Drug-Drug Interaction Sentinel",
-    tagline: "OCR handwritten prescriptions, cross-reference contraindications, and flag dangerous drug interactions.",
-    difficulty: "Intermediate",
-    aiCategory: "NLP & Biomedical Knowledge Graphs",
-    tags: ["Biomedical NLP", "Knowledge Graphs", "Drug Interactions", "Prescription OCR", "Patient Safety"],
-    summary: "Adverse Drug Reactions (ADRs) and unintended contraindications cause thousands of emergency hospital admissions. This system extracts handwritten and printed doctor prescriptions via OCR, parses medication names and dosages, queries biomedical knowledge graphs, and flags severe drug-drug interactions, allergy risks, and kidney/liver dosage contraindications.",
-    problemScope: "Doctor handwriting is notoriously illegible and drug brand names frequently differ by only a single character from completely different pharmaceutical compounds. The AI must use fuzzy phonetics and clinical context to disambiguate medication names accurately.",
-    aiRequirements: [
-      "Specialized Medical OCR engine (fine-tuned TrOCR or Donut model) for clinical prescriptions.",
-      "Biomedical Entity Extraction and Normalization (BioBERT / ClinicalBERT) mapped to RxNorm / SNOMED-CT.",
-      "Graph-based drug-drug and drug-condition interaction inference engine."
-    ],
-    deliverables: [
-      "Prescription scan interface with extracted medicine breakdown and confidence indicators.",
-      "Color-coded Risk Matrix (Mild, Moderate, Severe, Life-Threatening) with clinical citations.",
-      "Patient-friendly dosage schedule generator with dietary warnings (e.g. avoid grapefruit, take after meals)."
-    ],
-    sampleDatasets: ["DrugBank Open Interaction Dataset", "RxNorm Knowledge Base", "Kaggle Medical Prescription Handwriting Corpus"]
-  },
-  {
-    id: "HLT-02",
-    theme: "healthcare",
-    themeName: "Healthcare",
-    themeIcon: "fa-solid fa-x-ray",
-    title: "Intelligent Radiology Anomaly Localization (Chest X-Ray & CT)",
-    tagline: "Multi-class pulmonary pathology detection with Grad-CAM visual heatmaps and radiologist preliminary reporting.",
-    difficulty: "Advanced",
-    aiCategory: "Medical Computer Vision & Explainable AI",
-    tags: ["Medical Imaging", "Grad-CAM Explainability", "Chest X-Ray", "Pneumonia / TB Detection", "DICOM"],
-    summary: "Overburdened hospital radiology departments face severe backlogs in reviewing emergency chest radiographs. Develop a computer vision diagnostic triage system capable of classifying 14 common thoracic abnormalities (including Pneumonia, Pneumothorax, Tuberculosis, Cardiomegaly, and Effusions) while generating Grad-CAM explainability heatmaps for clinical validation.",
-    problemScope: "Black-box AI is unacceptable in clinical workflows. The AI must not only predict probabilities, but also pinpoint the exact anatomical bounding region and generate structured preliminary radiologist reports conforming to standard clinical terminology.",
-    aiRequirements: [
-      "Multi-label Deep Vision Architecture (DenseNet-121, Vision Transformer, or Swin-UNETR).",
-      "Explainable AI heatmap generator (Grad-CAM++ / Score-CAM) overlaid on high-resolution DICOM images.",
-      "Structured preliminary report generator translating findings into standardized BI-RADS / RadLex format."
-    ],
-    deliverables: [
-      "Web DICOM/X-Ray viewer with interactive opacity slider for anomaly heatmaps.",
-      "Multi-label risk assessment panel with calibrated confidence metrics.",
-      "Downloadable clinical PDF preliminary report highlighting urgent triage alerts."
-    ],
-    sampleDatasets: ["NIH ChestX-ray14 Benchmark Dataset", "CheXpert Dataset (Stanford ML Group)", "RSNA Pneumonia Detection Challenge"]
-  },
-  {
-    id: "HLT-03",
-    theme: "healthcare",
-    themeName: "Healthcare",
-    themeIcon: "fa-solid fa-bowl-food",
-    title: "NutritionAI — Vision-Based Food Plate Calorie & Diet Planner",
-    tagline: "Estimate portion sizes, macro/micronutrients from food photos, and create personalized diabetic/cardiac meal plans.",
-    difficulty: "Intermediate",
-    aiCategory: "Computer Vision & Personal Health AI",
-    tags: ["Food Vision", "Volume Estimation", "Nutritional AI", "Diabetic Diet Planning", "Personalized Health"],
-    summary: "Managing chronic lifestyle conditions such as Type-2 Diabetes and hypertension requires meticulous daily dietary tracking. NutritionAI utilizes multi-food segmentation and depth-assisted volume estimation to identify dishes from meal photos (including complex Indian gravies, curries, rotis, and rice), estimate calories and macronutrients, and suggest personalized swaps.",
-    problemScope: "South Asian meals consist of mixed, semi-solid dishes with indistinct boundaries. The model must segment multiple items on a single thali/plate, estimate approximate depth/density, and compute glycemic load index.",
-    aiRequirements: [
-      "Multi-food instance segmentation model (Mask R-CNN or YOLOv8-Seg fine-tuned on South Asian food datasets).",
-      "Monocular depth estimation network for portion volume and gram weight approximation.",
-      "Personalized nutrition recommendation engine tailored to user biometric goals (HbA1c, lipid profile, weight loss)."
-    ],
-    deliverables: [
-      "Interactive meal snap camera app with instant bounding box ingredient tagging.",
-      "Nutrition breakdown card showing Calories, Carbs, Protein, Fats, Fiber, and Glycemic Index.",
-      "Weekly automated meal calendar with healthy regional substitutes."
-    ],
-    sampleDatasets: ["Food201 & Indian Food Image Dataset (Kaggle)", "Nutrition5k Benchmark Volume Dataset", "USDA FoodData Central Database"]
-  },
-  {
-    id: "HLT-04",
-    theme: "healthcare",
-    themeName: "Healthcare",
-    themeIcon: "fa-solid fa-brain",
-    title: "AI-Based Non-Invasive Early Detection of Parkinson's Disease",
-    tagline: "Multimodal biomarker analysis of acoustic voice tremors, spiral drawing kinetics, and keystroke dynamics.",
-    difficulty: "Advanced",
-    aiCategory: "Multimodal Biomarkers & Signal Processing",
-    tags: ["Biomarkers", "Signal Processing", "Vocal Tremor Analysis", "Kinematic Handwriting", "Early Neuro-Diagnosis"],
-    summary: "Early motor and vocal symptoms of Parkinson's disease often appear years before irreversible dopamine neuron loss. This project builds a non-invasive screening suite that analyzes acoustic voice recordings (sustained vowel phonation jitter, shimmer, pitch perturbation), touchscreen spiral drawing kinematics (velocity and tremor variation), and typing latency patterns.",
-    problemScope: "Clinical neurological evaluations are costly and inaccessible to rural populations. A non-invasive screening tool allows self-administered remote evaluations on ordinary smartphones to flag early neurodegenerative indicators for physician referral.",
-    aiRequirements: [
-      "Acoustic feature extractor (Mel-spectrograms, MFCCs, Jitter, Shimmer) evaluated with 1D-CNN / SVM ensemble.",
-      "Kinematic handwriting analysis engine tracking pen velocity, acceleration, and curvature entropy on digital canvas.",
-      "Multimodal fusion classifier calculating unified Parkinsonian Motor Symptom Risk Index."
-    ],
-    deliverables: [
-      "Interactive digital patient testing portal with voice recording module and drawing canvas.",
-      "Real-time signal analysis dashboard displaying vocal tremor spectrograms and pen stroke jitter graphs.",
-      "Comprehensive neurological risk summary report for medical practitioners."
-    ],
-    sampleDatasets: ["Oxford Parkinson's Disease Voice Dataset (UCI)", "HandPD Spiral & Meander Drawing Dataset", "Tappy Keystroke Dynamics Parkinson's Corpus"]
-  },
-
-  // ==================== 4. THEME: SUSTAINABLE ENERGY ====================
-  {
-    id: "NRG-01",
-    theme: "climate",
-    themeName: "Sustainable Energy",
-    themeIcon: "fa-solid fa-solar-panel",
-    title: "AI Solar & Wind Renewable Generation Forecasting",
-    tagline: "Hyper-local weather forecasting and irradiance models to predict renewable power generation and optimize grid storage.",
-    difficulty: "Advanced",
-    aiCategory: "Time-Series & Spatio-Temporal AI",
-    tags: ["Spatio-Temporal AI", "Renewable Energy", "Solar Irradiance", "Grid Stability", "Weather Forecasting"],
-    summary: "The intermittent nature of solar irradiance and wind velocity causes severe grid instability and curtailment of green energy. Build an AI-driven forecasting platform that integrates satellite cloud motion vectors, historical SCADA turbine/inverter telemetry, and numerical weather predictions to forecast next 15-minute to 48-hour renewable power generation.",
-    problemScope: "Sudden cloud cover causes rapid ramp-down events that require power grid operators to spin up expensive coal or gas reserve plants. Accurate short-term hyper-local forecasting minimizes reserve spinning costs and maximizes battery storage efficiency.",
-    aiRequirements: [
-      "Spatio-temporal neural network (ConvLSTM, Graph Neural Network, or Temporal Fusion Transformer).",
-      "Satellite cloud vector tracking engine predicting cloud shadow transit across solar farms.",
-      "Battery energy storage system (BESS) charge-discharge scheduling optimizer."
-    ],
-    deliverables: [
-      "Interactive power generation forecast dashboard with confidence interval bands.",
-      "Ramp-rate alert system warning grid dispatchers of sudden drops 30 minutes in advance.",
-      "BESS battery dispatch simulation showing financial arbitrage and reduced curtailment."
-    ],
-    sampleDatasets: ["NREL National Solar Radiation Database (NSRDB)", "Renewable Power SCADA Generation Dataset (Kaggle)", "NOAA Global Forecast System (GFS) Meteorological Feeds"]
-  },
-  {
-    id: "NRG-02",
-    theme: "climate",
-    themeName: "Sustainable Energy",
-    themeIcon: "fa-solid fa-smog",
-    title: "Industrial Carbon Footprint Tracking & ESG Optimization",
-    tagline: "Automated Scope 1, 2, and 3 carbon accounting with supply-chain emission anomaly detection and reduction modeling.",
-    difficulty: "Intermediate",
-    aiCategory: "Data Science & Optimization",
-    tags: ["Carbon Accounting", "ESG Analytics", "Scope 1/2/3", "Supply Chain", "Optimization"],
-    summary: "Enterprises face stringent global sustainability regulations and carbon taxes. Develop an automated carbon emissions intelligence platform that ingests raw utility bills, IoT factory energy meters, fuel logs, and logistics invoices to calculate standardized greenhouse gas (GHG) Scope 1, 2, and 3 emissions, detect leakage anomalies, and prescribe cost-effective abatement strategies.",
-    problemScope: "Scope 3 supply-chain emissions are notoriously fragmented and difficult to measure. The AI must extract emissions factors from vendor invoices, audit anomalous emissions spikes, and simulate ROI on renewable retrofits.",
-    aiRequirements: [
-      "Document AI pipeline extracting energy, logistics, and material usage figures from heterogeneous supplier invoices.",
-      "GHG Protocol emission factor mapping engine using international carbon databases.",
-      "Prescriptive optimization algorithm simulating carbon reduction pathways (MACC curves - Marginal Abatement Cost Curves)."
-    ],
-    deliverables: [
-      "Interactive corporate carbon accounting dashboard with Scope 1/2/3 visual breakdown.",
-      "Anomaly detection feed flagging unexpected factory emissions spikes.",
-      "Interactive 'What-If' simulator modeling financial cost vs CO2 emissions saved across operational changes."
-    ],
-    sampleDatasets: ["EPA GHG Emission Factors Hub", "UK DEFRA Conversion Factors Database", "Synthetic Industrial Manufacturing Energy Telemetry"]
-  },
-  {
-    id: "NRG-03",
-    theme: "climate",
-    themeName: "Sustainable Energy",
-    themeIcon: "fa-solid fa-hard-hat",
-    title: "AI Worker Safety & PPE Compliance Vision Sentinel",
-    tagline: "Real-time CCTV vision pipeline detecting helmet, vest, harness compliance, and hazardous zone incursions.",
-    difficulty: "Intermediate",
-    aiCategory: "Computer Vision & Edge AI",
-    tags: ["Computer Vision", "PPE Detection", "Industrial Safety", "Hazardous Geofencing", "Edge Deployment"],
-    summary: "Industrial construction sites and manufacturing shop floors witness thousands of workplace injuries due to non-compliance with Personal Protective Equipment (PPE) and unauthorized entry into heavy machinery danger zones. Create a real-time CCTV AI sentinel that identifies hard hats, safety vests, boots, goggles, and dangerous fall risks in industrial environments.",
-    problemScope: "Harsh lighting, occlusions, varying worker poses, and heavy dust in industrial environments cause standard detectors to miss violations. The AI must run locally on edge hardware with zero video data leaving the factory network.",
-    aiRequirements: [
-      "Real-time multi-class object detection model (YOLOv8/v11 or RT-DETR) detecting helmets, hi-vis vests, goggles, and safety harnesses.",
-      "Dynamic polygon geofencing engine monitoring restricted heavy-machinery operating zones.",
-      "Automated incident alert trigger with privacy-preserving face blurring for worker dignity."
-    ],
-    deliverables: [
-      "Live multi-camera stream monitoring interface with instant bounding box overlays.",
-      "Safety Compliance Scorecard tracking department-wise violation frequency.",
-      "Real-time siren / SMS alert trigger when an unequipped worker crosses a designated hazard perimeter."
-    ],
-    sampleDatasets: ["Pictor PPE Industrial Dataset (Kaggle)", "Construction Site Safety Image Database (CHUK)", "Worker Geofence & Fall Detection Video Corpus"]
-  },
-  {
-    id: "NRG-04",
-    theme: "climate",
-    themeName: "Sustainable Energy",
-    themeIcon: "fa-solid fa-bolt",
-    title: "GridWise — Smart Campus Energy Consumption & Load Balancer",
-    tagline: "Non-Intrusive Load Monitoring (NILM) and AI HVAC/lighting optimization to slash institutional power waste.",
-    difficulty: "Intermediate",
-    aiCategory: "Machine Learning & Energy Analytics",
-    tags: ["NILM", "Smart Grid", "Energy Analytics", "Peak Load Shaving", "Campus Sustainability"],
-    summary: "Educational institutions and enterprise campuses waste substantial power through unoptimized central HVAC cooling, unmonitored server rooms, and empty classroom illumination during off-peak hours. GridWise implements Non-Intrusive Load Monitoring (NILM) on aggregate electrical sub-meters to disaggregate appliance-level consumption and dynamically orchestrate load-shedding schedules.",
-    problemScope: "Installing smart power meters on every individual air conditioner or lab appliance is prohibitively expensive. NILM uses high-frequency total power signature decomposition to determine which appliances are active without per-device sensors.",
-    aiRequirements: [
-      "Signal disaggregation model (Seq2Seq / 1D-CNN / Factorial Hidden Markov Model) for Non-Intrusive Load Monitoring.",
-      "Campus energy demand forecaster modeling occupancy schedules and ambient temperature.",
-      "Automated peak-shaving recommendation engine shifting deferrable electrical loads to off-peak tariff periods."
-    ],
-    deliverables: [
-      "Campus electrical energy breakdown dashboard with live department sub-meter analytics.",
-      "Appliance-level power usage breakdown extracted from a single aggregate meter.",
-      "Automated energy-saving schedule calculator predicting annual kilowatt-hour (kWh) and cost reductions."
-    ],
-    sampleDatasets: ["UK-DALE Energy Disaggregation Dataset", "REDD (Reference Energy Disaggregation Data Set)", "Open Institutional Building Smart Meter Telemetry"]
-  },
-
-  // ==================== 5. THEME: AGRICULTURE ====================
+  // =========================================================================
+  // 4. TRACK: AGRICULTURE
+  // =========================================================================
   {
     id: "AGR-01",
     theme: "agriculture",
     themeName: "Agriculture",
     themeIcon: "fa-solid fa-seedling",
-    title: "Multispectral AI Crop Disease & Severity Quantification",
-    tagline: "Detect foliar crop pathogens, estimate infected surface area, and suggest organic treatments in regional languages.",
+    title: "Soil Nutrient Degradation and Over-Fertilization",
+    tagline: "Hyper-local precision nutrient mapping and variable-rate NPK fertilizer optimization.",
     difficulty: "Intermediate",
-    aiCategory: "Computer Vision & Edge AI",
-    tags: ["Computer Vision", "Semantic Segmentation", "Plant Pathology", "Vernacular Advisory", "Edge AI"],
-    summary: "Crop disease outbreaks destroy up to 30% of agricultural yields annually before smallholder farmers identify the underlying pathogen. Build an offline-first mobile AI vision application that identifies plant diseases from leaf photos, segments the infected surface area to calculate severity percentage, and generates tailored organic/chemical treatment advisories in local languages.",
-    problemScope: "Field conditions feature extreme variations: direct sunlight glare, shadows, cluttered soil backgrounds, and multiple concurrent diseases on a single leaf. The AI must isolate the plant leaf, diagnose fungal/bacterial/viral blights, and provide actionable dosage calculations based on land acreage.",
+    aiCategory: "Soil Chemistry AI & Precision Ag",
+    tags: ["Soil Health", "NPK Optimization", "Precision Agriculture", "Runoff Prevention", "Fertilizer AI"],
+    summary: "Agricultural runoff pollutes local water systems and degrades soil health because farmers apply chemical fertilizers uniformly across fields rather than adjusting for localized soil needs.",
+    problemScope: "Engineer a localized soil nutrient recommendation platform that processes soil test data, crop variety requirements, and satellite imagery to calculate custom variable-rate nitrogen, phosphorus, and potassium (NPK) application zones.",
     aiRequirements: [
-      "Fine-grained CNN / Vision Transformer classifier (EfficientNet, ConvNeXt, Swin) for multi-class foliar pathology.",
-      "Semantic segmentation model (YOLO-Seg or U-Net) to quantify percentage surface necrosis.",
-      "Offline inference pipeline and vernacular multilingual text/voice generation for regional farmers."
+      "Multi-variable soil chemistry model predicting optimal NPK dosage based on crop life-cycle stage.",
+      "Satellite NDVI / soil moisture integration to map intra-field nutrient deficiency hotspots.",
+      "Cost-benefit calculator comparing uniform vs. variable-rate application savings."
     ],
     deliverables: [
-      "Offline-capable web/mobile progressive web app.",
-      "Leaf inspection visualizer highlighting disease clusters with bounding boxes and segment masks.",
-      "Acreage-based treatment calculation engine with local fertilizer/pesticide recommendations."
+      "Farmer-friendly prescription map highlighting distinct field zones with specific kg/acre advice.",
+      "Fertilizer cost reduction and runoff risk estimator.",
+      "Mobile vernacular advisory generator delivering plain-language recommendations via audio/SMS."
     ],
-    sampleDatasets: ["PlantVillage Benchmark Dataset (54,000+ images)", "New Plant Diseases Dataset (Kaggle)", "ICAR Indian Crop Pathology Repositories"]
+    sampleDatasets: ["ICAR Soil Health Card Datasets", "Sentinel-2 Multi-Spectral Agricultural Imagery", "Crop Nutrient Requirement Tables"]
   },
   {
     id: "AGR-02",
     theme: "agriculture",
     themeName: "Agriculture",
-    themeIcon: "fa-solid fa-flask-vial",
-    title: "AI-Powered Soil Health Analysis & Crop Recommendation Engine",
-    tagline: "Multi-parameter NPK, pH, climate, and soil moisture analytics for optimal yield and crop rotation.",
+    themeIcon: "fa-solid fa-droplet",
+    title: "Agricultural Water Waste in Irrigated Farming",
+    tagline: "Evapotranspiration-aware dynamic irrigation scheduling using localized sensor and weather forecasts.",
     difficulty: "Intermediate",
-    aiCategory: "Machine Learning & Decision Systems",
-    tags: ["XGBoost / LightGBM", "Soil Chemistry", "Crop Yield Prediction", "Agro-Climatology", "Fertilizer Optimizer"],
-    summary: "Imbalanced chemical fertilizer application degrades soil microbiome health and reduces farmer profitability. Develop an AI agro-advisory system that correlates laboratory NPK values, soil electrical conductivity, geographic climate forecasts, and historical crop yields to prescribe optimal seed selections, fertilizer schedules, and multi-season crop rotation plans.",
-    problemScope: "Farmers need actionable advice that takes economic market price forecasts, local water availability, and historical seasonal rain patterns into account rather than generic textbook recommendations.",
+    aiCategory: "Hydrological ML & IoT Systems",
+    tags: ["Smart Irrigation", "Water Conservation", "Evapotranspiration", "Soil Moisture IoT", "Weather AI"],
+    summary: "Billions of liters of fresh water are wasted annually due to rigid, time-based irrigation schedules that do not adjust for shifting weather forecasts or actual crop evapotranspiration rates.",
+    problemScope: "Build an automated, intelligent irrigation advisory engine that calculates actual daily crop evapotranspiration (ET0) using weather predictions and soil moisture status to deliver precise water volume requirements.",
     aiRequirements: [
-      "Supervised ensemble regression & classification models (XGBoost, CatBoost, Random Forest).",
-      "Dynamic fertilizer dosage calculator optimizing for minimum cost and maximum nutrient absorption.",
-      "Crop rotation recommendation engine using reinforcement learning or constraint satisfaction programming."
+      "FAO-56 Penman-Monteith equation / ML proxy estimating real-time crop evapotranspiration.",
+      "Predictive rainfall integration preventing irrigation right before major rain showers.",
+      "Soil moisture depletion forecasting model."
     ],
     deliverables: [
-      "Interactive farmer portal with simple NPK sliders, soil card scan input, and GPS weather integration.",
-      "Visual Soil Health Card with nutrient deficiency radar chart and remediation steps.",
-      "Profit & Yield simulator comparing 3 alternative crop cultivation strategies."
+      "Smart irrigation controller dashboard showing soil hydration zones and valve timings.",
+      "Daily water requirement alert system sent to farmers' feature phones/smartphones.",
+      "Simulated water-savings benchmark comparing scheduled timer vs. AI-driven watering."
     ],
-    sampleDatasets: ["ICAR Soil Health Card Dataset", "Crop Recommendation Dataset (Kaggle)", "NASA POWER Agro-Climatology Meteorological Records"]
+    sampleDatasets: ["NASA POWER Agroclimatology Data", "OpenWeatherMap Ag APIs", "Soil Moisture Active Passive (SMAP) Data"]
   },
   {
     id: "AGR-03",
     theme: "agriculture",
     themeName: "Agriculture",
-    themeIcon: "fa-solid fa-cow",
-    title: "DairyAI — Cattle Health, Milk Yield & Quality Prediction",
-    tagline: "Computer vision cattle muzzle biometrics, thermal mastitis detection, and lactation curve forecasting.",
+    themeIcon: "fa-solid fa-warehouse",
+    title: "Post-Harvest Grain and Produce Spoilage in Storage",
+    tagline: "Predictive microclimate monitoring and early spoilage detection in grain silos and farm warehouses.",
     difficulty: "Advanced",
-    aiCategory: "Multimodal AI & Agri-Vision",
-    tags: ["Computer Vision", "Cattle Biometrics", "Mastitis Detection", "Lactation Forecasting", "Dairy Tech"],
-    summary: "Bovine mastitis and sub-optimal feed nutrition cause massive financial loss in dairy cooperatives. DairyAI integrates facial/muzzle biometric cow identification, thermal imaging for early udder inflammation detection, and historical milking logs to predict daily yield and flag early subclinical sickness.",
-    problemScope: "Traditional cattle tagging is prone to loss or tampering. Automated non-invasive muzzle pattern recognition combined with thermal computer vision provides early detection of inflammatory disease days before milk contamination occurs.",
+    aiCategory: "IoT Telemetry & Predictive Spoilage ML",
+    tags: ["Grain Storage", "Post-Harvest Spoilage", "Silo Monitoring", "IoT Telemetry", "Food Security"],
+    summary: "Freshly harvested crops spoil in farm storage units before reaching markets because subtle environmental shifts in humidity, ventilation, and temperature go unmonitored.",
+    problemScope: "Develop an affordable multi-sensor telemetry and predictive AI sentry that monitors temperature gradients, CO2 spikes, and humidity anomalies inside grain storage silos to detect fungal growth and hot-spots days before physical rot appears.",
     aiRequirements: [
-      "Muzzle pattern / facial biometric recognition model (Siamese CNN / Triplet Loss Network).",
-      "Thermal image anomaly segmentation for early udder inflammation and mastitis detection.",
-      "Time-series lactation curve forecasting model (Prophet / DeepAR / LSTM)."
+      "Time-series anomaly detection model identifying early fermentation and pest respiration patterns.",
+      "Equilibrium Moisture Content (EMC) calculator assessing grain mycotoxin risk.",
+      "Predictive ventilation controller advising optimal aeration fan run-times."
     ],
     deliverables: [
-      "Farm management dashboard showing individual cattle health cards and yield projections.",
-      "Thermal scan upload and automated mastitis heat map classifier.",
-      "Feed nutrition optimizer tailored to lactation cycle stage."
+      "Warehouse silo monitoring dashboard with color-coded shelf-life degradation countdown.",
+      "Automated aeration fan trigger or ventilation alert notification.",
+      "Spoilage loss risk analysis report detailing financial value at risk."
     ],
-    sampleDatasets: ["Open Muzzle Print Biometric Database", "Thermal Imaging Bovine Mastitis Dataset", "Cooperative Dairy Milking Records"]
+    sampleDatasets: ["Post-Harvest Grain Silo Sensor Logs", "USDA Agricultural Spoilage Parameters", "Synthesized Temperature/Humidity/CO2 Records"]
   },
   {
     id: "AGR-04",
     theme: "agriculture",
     themeName: "Agriculture",
-    themeIcon: "fa-solid fa-satellite",
-    title: "Satellite & Drone Weed Density Mapping for Precision Spraying",
-    tagline: "High-resolution multispectral imagery segmentation to guide autonomous drone spraying and reduce pesticide runoff.",
-    difficulty: "Advanced",
-    aiCategory: "Remote Sensing & Geospatial AI",
-    tags: ["Geospatial AI", "Sentinel-2 / Drone Imagery", "NDVI Indices", "Weed Segmentation", "Precision Agriculture"],
-    summary: "Blanket pesticide spraying wastes up to 70% of chemical agrochemicals into the water table. Build an AI geospatial mapping tool that ingests drone and high-res satellite multispectral imagery (NDVI/NDRE), distinguishes crop canopies from aggressive weed infestations, and outputs precise GPS-tagged prescription spraying maps for agricultural drones.",
-    problemScope: "Weeds and young cash crops share very similar spectral signatures and green color palettes. The challenge requires spatial texture segmentation and multispectral band mathematical analysis to pinpoint weed clusters.",
+    themeIcon: "fa-solid fa-cloud-bolt",
+    title: "Unpredictable Frost and Extreme Weather Damage",
+    tagline: "Hyper-local field-level microclimate forecasting and early frost/heatwave alert system for high-value crops.",
+    difficulty: "Intermediate",
+    aiCategory: "Microclimate Modeling & Extreme Weather AI",
+    tags: ["Frost Prediction", "Extreme Weather", "Microclimate AI", "Crop Protection", "Actionable Alerts"],
+    summary: "Sudden localized microclimate changes, such as localized frosts or heatwaves, destroy high-value crops because general weather apps fail to provide hyper-local, actionable warnings at the field level.",
+    problemScope: "Create a localized microclimate forecasting model that factors in elevation, canopy density, valley cold-air pooling, and nearby water bodies to issue actionable 6-to-24 hour frost and thermal shock warnings with specific mitigation protocols (e.g. smudge pots, sprinkler icing, shade nets).",
     aiRequirements: [
-      "Deep semantic segmentation network (DeepLabV3+, SegFormer, or YOLO-NAS-Seg) trained on multispectral crop/weed aerial imagery.",
-      "NDVI / NDRE vegetation index calculation and spatial clustering pipeline.",
-      "GeoTIFF export engine generating GeoJSON prescription flight paths for DJI / open-source agricultural drones."
+      "Downscaling weather model refining coarse regional forecasts to 100m² field grids.",
+      "Surface temperature inversion and dew-point depression calculation model.",
+      "Actionable advisory rules engine pairing frost hazard with practical immediate field remedies."
     ],
     deliverables: [
-      "Interactive map dashboard allowing farmers to upload drone imagery and draw field boundaries.",
-      "Color-coded weed infestation heatmap with calculated chemical volume savings.",
-      "Downloadable GeoJSON / KML flight mission waypoint file for autonomous drone sprayers."
+      "Interactive field hazard map displaying frost and heat stress danger zones.",
+      "Automated SMS/Voice broadcast dispatching urgent mitigation steps in regional languages.",
+      "Historical back-testing tool demonstrating prediction accuracy on past frost events."
     ],
-    sampleDatasets: ["Crop/Weed Field Image Dataset (CWFID)", "DeepWeeds Drone Aerial Benchmark", "Sentinel-2 Multi-Spectral Agricultural Tiles"]
+    sampleDatasets: ["ERA5-Land Reanalysis Data", "IMD Gridded Weather Datasets", "Localized Micro-Weather Station Telemetry"]
+  },
+  {
+    id: "AGR-05",
+    theme: "agriculture",
+    themeName: "Agriculture",
+    themeIcon: "fa-solid fa-wheat-awn",
+    title: "Student Innovation — Open AgriTech & Rural Solutions",
+    tagline: "Pioneer a student-led agricultural technology invention to empower farming communities.",
+    difficulty: "Open",
+    aiCategory: "Open AgriTech Innovation",
+    tags: ["Student Innovation", "AgriTech", "Pest Management", "Rural Economy", "Autonomous Farming"],
+    summary: "Propose an innovative AI/IoT solution tackling critical farming challenges, yield optimization, pest management, or sustainable agro-ecosystems.",
+    problemScope: "Participants may invent novel drone-based weed sprayers, smartphone leaf pathogen diagnostic scanners, livestock biometric identifiers, fair-market price recommendation systems, or agricultural supply chain traceability tools.",
+    aiRequirements: [
+      "Rigorous AI/ML implementation tailored for practical agricultural realities.",
+      "Robustness against outdoor environmental noise (varying lighting, muddy backgrounds, spotty internet).",
+      "Clear economic and yield uplift rationale for smallholder farming families."
+    ],
+    deliverables: [
+      "Working prototype application or hardware-software integration demo.",
+      "Field validation test results and system architecture breakdown.",
+      "Scalability roadmap detailing deployment feasibility across rural India."
+    ],
+    sampleDatasets: ["Public Agricultural Imagery, Crop Yield, or Market Mandi Price Datasets"]
+  },
+
+  // =========================================================================
+  // 5. TRACK: SUSTAINABLE
+  // =========================================================================
+  {
+    id: "SUS-01",
+    theme: "sustainable",
+    themeName: "Sustainable",
+    themeIcon: "fa-solid fa-smog",
+    title: "Fugitive Industrial Methane Leaks",
+    tagline: "Automated detection and localization of invisible industrial greenhouse gas leaks using multispectral imagery.",
+    difficulty: "Advanced",
+    aiCategory: "Hyperspectral Vision & Environmental Remote Sensing",
+    tags: ["Methane Detection", "Industrial Safety", "Emissions Tracking", "Satellite Imagery", "Climate Action"],
+    summary: "Invisible methane leaks from pipelines, oil fields, and industrial facilities frequently go unnoticed for months, severely accelerating short-term global warming without being detected by facility managers.",
+    problemScope: "Build an automated detection pipeline that processes multispectral satellite passes (Sentinel-5P, Landsat 8/9, PRISMA) or thermal FLIR drone camera feeds to pinpoint anomalous methane absorption plumes and estimate emission flux rates.",
+    aiRequirements: [
+      "Short-Wave Infrared (SWIR) absorption band ratio and plume segmentation neural network.",
+      "Atmospheric dispersion modeling estimating metric tons of CH4 emitted per hour.",
+      "Automated facility alert and priority ranking based on plume volume and persistence."
+    ],
+    deliverables: [
+      "Interactive industrial emissions map highlighting verified methane plume hotspots.",
+      "Automated inspection report generator with GPS coordinates, estimated leak rate, and imagery.",
+      "Time-series tracker monitoring whether detected leaks have been remediated."
+    ],
+    sampleDatasets: ["Sentinel-5P TROPOMI Methane Products", "Carbon Mapper Open Data Portal", "NASA EMIT Imaging Spectrometer Data"]
+  },
+  {
+    id: "SUS-02",
+    theme: "sustainable",
+    themeName: "Sustainable",
+    themeIcon: "fa-solid fa-recycle",
+    title: "Premature E-Waste Discard and Unverified Device Resale",
+    tagline: "AI diagnostic grading, remaining battery health estimation, and circular electronics refurbishment verifier.",
+    difficulty: "Intermediate",
+    aiCategory: "Diagnostics AI & Circular Economy",
+    tags: ["E-Waste Reduction", "Battery Health", "Circular Economy", "Device Refurbishment", "Hardware Diagnostics"],
+    summary: "Consumers and secondary markets discard functioning consumer electronics prematurely because assessing remaining battery health, component authenticities, and device values is difficult without specialized technical testing.",
+    problemScope: "Engineer a standardized, software-driven diagnostic grading suite that tests hardware integrity, estimates remaining battery cycle degradation, verifies genuine parts, and outputs a trusted digital refurbishment passport.",
+    aiRequirements: [
+      "Electrochemical state-of-health (SoH) regression model predicting remaining useful battery cycles.",
+      "Automated hardware stress-test suite checking display pixels, sensor calibration, and thermal throttling.",
+      "Fair-market algorithmic valuation model encouraging secondary resale over landfill disposal."
+    ],
+    deliverables: [
+      "Cross-platform device diagnostic web/native testing agent runnable on used laptops/smartphones.",
+      "Verifiable Digital Device Passport certificate detailing hardware health scores.",
+      "Refurbishment vs. recycle decision matrix recommending optimal component salvage."
+    ],
+    sampleDatasets: ["NASA Battery Aging Datasets", "Synthetic Hardware Benchmark Traces", "Open E-Waste Market Valuation Indices"]
+  },
+  {
+    id: "SUS-03",
+    theme: "sustainable",
+    themeName: "Sustainable",
+    themeIcon: "fa-solid fa-solar-panel",
+    title: "Extreme Weather & Microclimate Resilience in Clean Energy Assets",
+    tagline: "Protecting solar arrays, wind installations, and microgrids from localized storms and extreme thermal swings.",
+    difficulty: "Intermediate",
+    aiCategory: "Microclimate Modeling & Renewable Grid AI",
+    tags: ["Renewable Energy", "Microclimate AI", "Asset Protection", "Solar Wind Resilience", "Extreme Weather"],
+    summary: "Sudden localized microclimate changes, such as localized frosts, hail storms, or heatwaves, destroy high-value green energy installations and agricultural buffer zones because general weather apps fail to provide hyper-local, actionable warnings at the facility level.",
+    problemScope: "Construct a predictive microclimate resilience system for decentralized clean energy installations (solar farms, wind turbines, battery storage containers) that anticipates severe local storms, hail, or heatwaves and executes automated defensive asset positioning (e.g. solar panel stow angle, wind turbine feathering).",
+    aiRequirements: [
+      "High-resolution weather radar & satellite nowcasting model predicting localized severe storm cells.",
+      "Thermal stress and generation derating prediction model for solar PV arrays and grid inverters.",
+      "Automated protective actuator control advisory (stowing angles, cooling activation)."
+    ],
+    deliverables: [
+      "Renewable plant command center showing real-time atmospheric threat vectors and alert tiers.",
+      "Defensive positioning actuator simulator demonstrating asset damage prevention.",
+      "Economic loss prevention dashboard calculating saved hardware replacement costs."
+    ],
+    sampleDatasets: ["NREL National Solar Radiation Database (NSRDB)", "NOAA HRRR High-Resolution Weather Model", "Solar Plant SCADA Incident Logs"]
+  },
+  {
+    id: "SUS-04",
+    theme: "sustainable",
+    themeName: "Sustainable",
+    themeIcon: "fa-solid fa-tree",
+    title: "Deforestation and Land Encroachment from Unmonitored Farming",
+    tagline: "Satellite Earth Observation and canopy change segmentation for autonomous forest boundary protection.",
+    difficulty: "Advanced",
+    aiCategory: "Geospatial AI & Satellite Earth Observation",
+    tags: ["Deforestation", "Satellite Earth Observation", "Canopy Tracking", "Forest Conservation", "Geospatial AI"],
+    summary: "Agricultural expansion illegally encroaches onto protected forest reserves and buffer zones because monitoring vast rural boundaries manually is impractical for local authorities.",
+    problemScope: "Build an automated Earth Observation pipeline that ingests bi-weekly satellite passes (Sentinel-2, Planet NICFI) to detect illegal canopy clearing, slash-and-burn smoke signatures, and boundary trespassing in protected ecological zones.",
+    aiRequirements: [
+      "Siamese / U-Net convolutional change detection model identifying forest loss with pixel-level precision.",
+      "Cloud and shadow filtering algorithm ensuring low false-alarm rates during monsoon seasons.",
+      "Geofenced boundary breach classifier notifying forest rangers with precise GPS polygons."
+    ],
+    deliverables: [
+      "Interactive satellite map with dynamic before-and-after deforestation change overlays.",
+      "Automated ranger dispatch alert containing deforestation hectare metrics and satellite evidence.",
+      "Historical trend visualizer showing encroachment rates along forest buffer perimeters."
+    ],
+    sampleDatasets: ["Global Forest Watch Deforestation Alerts", "Sentinel-2 Multi-Temporal Forest Imagery", "Open Protected Planet Conservation Boundaries"]
+  },
+  {
+    id: "SUS-05",
+    theme: "sustainable",
+    themeName: "Sustainable",
+    themeIcon: "fa-solid fa-leaf",
+    title: "Student Innovation — Open Clean Tech & Sustainable Development",
+    tagline: "Pioneer a student-led green technology or circular economy AI breakthrough for a sustainable planet.",
+    difficulty: "Open",
+    aiCategory: "Open Clean Tech Innovation",
+    tags: ["Student Innovation", "CleanTech", "Carbon Accounting", "Circular Economy", "Green AI"],
+    summary: "Propose an innovative AI concept accelerating renewable energy adoption, carbon accounting, biodiversity preservation, plastic waste recycling, or zero-waste circular systems.",
+    problemScope: "Student teams are challenged to design and build original AI algorithms tackling climate change, environmental sustainability, waste management, green building optimization, or ecological restoration.",
+    aiRequirements: [
+      "Direct relevance to environmental sustainability or climate resilience.",
+      "Demonstrated AI/ML integration solving a measurable ecological or efficiency challenge.",
+      "Practical deployment feasibility and environmental impact quantification."
+    ],
+    deliverables: [
+      "Functional interactive software or hardware prototype showcasing the solution.",
+      "System design blueprint explaining algorithmic workflow and sustainable architecture.",
+      "Carbon / resource savings estimation framework."
+    ],
+    sampleDatasets: ["Open Climate, Energy, Ecological, or Carbon Footprint Data Repositories"]
   }
 ];
 
